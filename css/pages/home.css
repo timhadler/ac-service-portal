@@ -1,0 +1,167 @@
+/* =============================================================
+   AIRCARE — HOME PAGE
+   Styles specific to index.html only.
+   ============================================================= */
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: calc(100vh - var(--nav-height));
+  overflow: hidden;
+}
+
+/* Dark navy base + subtle diagonal pattern */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  /* Prolly remove background */
+  background: linear-gradient(135deg, var(--color-brand-navy) 0%, #1e4d7a 55%, #2a6a9e 100%);
+}
+
+.hero__bg_img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+
+.hero__content {
+  position: absolute;
+  inset: 0; /* stretch to full hero */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* vertical: flex-start | center | flex-end */
+  align-items: flex-start;   /* horizontal: flex-start | center | flex-end */
+  padding-left: 3rem;
+  padding-bottom: 1rem;
+}
+
+.hero__content h1 {
+  margin: 0;
+}
+
+.hero__content-inner {
+  max-width: 580px;
+}
+
+/* Phone pill — bottom right of hero */
+.hero__phone {
+  position: absolute;
+  bottom: var(--space-8);
+  right: var(--space-8);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  color: var(--color-brand-navy);
+}
+
+.hero__phone-label {
+  font-size: var(--text-sm);
+  color: var(--color-brand-navy);
+  margin-bottom: 2px;
+}
+
+.hero__phone-number {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semi);
+}
+
+/* ── Why section ──────────────────────────────────────────── */
+.why__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.why__image {
+  height: 400px;
+  background-image: url('../images/hero/why-bg.jpg');
+  /* Squarespace CDN fallback: */
+  /* background-image: url('https://images.squarespace-cdn.com/content/v1/656e5589477a170db852d0c6/706721f0-be24-4f95-b3ff-766af13776b0/AdobeStock_300346226.jpeg'); */
+  background-size: cover;
+  background-position: center;
+}
+
+.why__points {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.why__section-text {
+  font-size: var(--text-md);
+  color: var(--color-text-mid);
+  margin-bottom: var(--space-6);
+  line-height: var(--leading-loose);
+  max-width: 520px;
+}
+
+/* ── Services preview (home — 3 cards) ───────────────────── */
+.services-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+.services-preview__cta {
+  text-align: center;
+}
+
+/* ── Reviews section ──────────────────────────────────────── */
+.reviews__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .hero__content {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .why__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why__image {
+    height: 280px;
+  }
+
+  .services-preview__grid,
+  .reviews__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero__heading {
+    font-size: var(--text-2xl);
+  }
+
+  .hero__phone {
+    display: none;
+  }
+
+  .services-preview__grid,
+  .reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}
