@@ -1,0 +1,110 @@
+/* =============================================================
+   AIRCARE — SERVICES PAGE
+   Styles specific to services.html only.
+
+   Note: service-card and all its modifiers live in components.css
+   and are reused here unchanged. This file only adds the page
+   header, the full-width service grid layout, the feature list
+   inside expanded cards, and the category grouping.
+   ============================================================= */
+
+/* ── Page header ──────────────────────────────────────────── */
+.services-header {
+  background: var(--color-brand-navy);
+  padding: var(--space-16) var(--section-padding-x) var(--space-12);
+  text-align: center;
+}
+
+.services-header h1 {
+  color: var(--color-white);
+  margin-bottom: var(--space-3);
+}
+
+.services-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-md);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: var(--leading-loose);
+}
+
+/* ── Service group (e.g. "Heat pump cleans", "Filter changes") */
+.service-group {
+  margin-bottom: var(--space-12);
+}
+
+.service-group:last-child {
+  margin-bottom: 0;
+}
+
+.service-group__heading {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-cream-dark);
+}
+
+/* ── Services grid — 2-col on this page, wider cards ─────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+/* Full-width card (used for commercial / callout entries) */
+.service-card--full {
+  grid-column: 1 / -1;
+}
+
+/* ── Feature list inside a service card ───────────────────── */
+.service-card__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.service-card__features li {
+  font-size: var(--text-sm);
+  color: var(--color-text-mid);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  line-height: var(--leading-snug);
+}
+
+.service-card__features li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-brand-sky);
+  flex-shrink: 0;
+  margin-top: 5px; /* optical alignment with first line of text */
+}
+
+/* Featured card feature list — lighter text on navy bg */
+.service-card--featured .service-card__features li {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.service-card--featured .service-card__features li::before {
+  background: var(--color-brand-orange);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Full-width modifier is a no-op on single column but keep it harmless */
+  .service-card--full {
+    grid-column: auto;
+  }
+}
