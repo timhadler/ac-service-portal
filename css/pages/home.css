@@ -79,14 +79,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-12);
-  align-items: center;
 }
 
 .why__image {
   height: 400px;
-  background-image: url('../images/hero/why-bg.jpg');
-  /* Squarespace CDN fallback: */
-  /* background-image: url('https://images.squarespace-cdn.com/content/v1/656e5589477a170db852d0c6/706721f0-be24-4f95-b3ff-766af13776b0/AdobeStock_300346226.jpeg'); */
+  background-image: url('../../images/tech1.webp');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 4rem;
+}
+
+.why__image_2 {
+  height: 400px;
+  background-image: url('../../images/family.webp');
   background-size: cover;
   background-position: center;
 }
