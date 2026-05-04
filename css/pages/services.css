@@ -7,27 +7,7 @@
    header, the full-width service grid layout, the feature list
    inside expanded cards, and the category grouping.
    ============================================================= */
-
-/* ── Page header ──────────────────────────────────────────── */
-.services-header {
-  background: var(--color-brand-navy);
-  padding: var(--space-16) var(--section-padding-x) var(--space-12);
-  text-align: center;
-}
-
-.services-header h1 {
-  color: var(--color-white);
-  margin-bottom: var(--space-3);
-}
-
-.services-header p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: var(--text-md);
-  max-width: 520px;
-  margin: 0 auto;
-  line-height: var(--leading-loose);
-}
-
+   
 /* ── Service group (e.g. "Heat pump cleans", "Filter changes") */
 .service-group {
   margin-bottom: var(--space-12);
