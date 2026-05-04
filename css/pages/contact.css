@@ -1,0 +1,246 @@
+/* =============================================================
+   AIRCARE — CONTACT PAGE
+   Styles specific to contact.html only.
+   ============================================================= */
+
+/* ── Two-column layout ────────────────────────────────────── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+/* ── Info column (left) ───────────────────────────────────── */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.contact-info__heading {
+  font-size: var(--text-xl);
+  color: var(--color-brand-navy);
+  margin-bottom: var(--space-2);
+}
+
+.contact-info__intro {
+  font-size: var(--text-base);
+  color: var(--color-text-mid);
+  line-height: var(--leading-loose);
+}
+
+/* Individual detail row: icon + text */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.contact-detail__icon {
+  width: 38px;
+  height: 38px;
+  background: var(--color-brand-sky-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px; /* optical alignment with first line of text */
+}
+
+.contact-detail__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-brand-sky);
+  margin-bottom: var(--space-1);
+}
+
+.contact-detail__value {
+  font-size: var(--text-base);
+  color: var(--color-text-dark);
+  line-height: var(--leading-snug);
+}
+
+.contact-detail__value a {
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+.contact-detail__value a:hover {
+  color: var(--color-brand-sky);
+  opacity: 1;
+}
+
+/* Partner badges row — reuses existing .footer__partner-badge pattern */
+.contact-partners {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contact-partners__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.contact-partners__badges {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.contact-partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  background: var(--color-green-light);
+  border: 1px solid #b8d9bc;
+  border-radius: var(--radius-pill);
+  padding: 5px var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semi);
+  color: var(--color-green);
+}
+
+/* ── Form card (right column) ─────────────────────────────── */
+.contact-form-wrap {
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-cream-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+}
+
+.contact-form-wrap h2 {
+  font-size: var(--text-xl);
+  color: var(--color-brand-navy);
+  margin-bottom: var(--space-6);
+}
+
+/* ── Form elements ────────────────────────────────────────── */
+.form-group {
+  margin-bottom: var(--space-5);
+}
+
+/* Two form-groups side by side — names, etc. */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.form-label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-mid);
+  margin-bottom: var(--space-2);
+}
+
+/* Shared style for input, select, textarea */
+.form-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px var(--space-4);
+  background: var(--color-cream);
+  border: 1.5px solid var(--color-cream-dark);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-dark);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  appearance: none; /* normalise select on iOS */
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--color-brand-sky);
+  background: var(--color-surface-white);
+}
+
+textarea.form-input {
+  min-height: 110px;
+  resize: vertical;
+  line-height: var(--leading-normal);
+}
+
+/* Error state — toggled by forms.js */
+.form-input--error {
+  border-color: #c0392b;
+  background: #fdf5f5;
+}
+
+/* Inline error message beneath the input */
+.form-error {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--text-xs);
+  color: #c0392b;
+}
+
+/* Submit button — full width inside the form card */
+.form-submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
+/* ── Success state (replaces form after submission) ───────── */
+.form-success {
+  text-align: center;
+  padding: var(--space-12) var(--space-8);
+}
+
+.form-success__icon {
+  width: 56px;
+  height: 56px;
+  background: var(--color-green-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-5);
+}
+
+.form-success h3 {
+  font-size: var(--text-xl);
+  color: var(--color-brand-navy);
+  margin-bottom: var(--space-2);
+}
+
+.form-success p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-loose);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-wrap {
+    padding: var(--space-6);
+  }
+}
