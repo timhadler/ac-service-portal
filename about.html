@@ -1,1 +1,337 @@
-Work in progress, check back later
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet Ros and Max — the Christchurch family behind AirCare. Local heat pump cleaning specialists, PermaSafe certified, passionate about clean air.">
+
+  <title>About Us — AirCare | Christchurch Heat Pump Cleaning</title>
+  <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <!--link rel="stylesheet" href="css/reset.css"-->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <!--link rel="stylesheet" href="css/utils.css"-->
+  <link rel="stylesheet" href="css/pages/about.css">
+</head>
+
+<body>
+<div class="site-wrapper">
+
+  <!-- ══════════════════════════════════════════════════════
+       HEADER 
+  ═══════════════════════════════════════════════════════ -->
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html" class="nav__logo" aria-label="AirCare — home">
+                <img class="nav__logo-img" src="images/icons/aircare.webp" alt="AirCare logo">
+                Air<span>Care</span>
+            </a>
+
+            <ul class="nav__links" role="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                <a href="https://bookings.gettimely.com/AirCareHPC/bb/book"
+                    class="nav__book" target="_blank" rel="noopener">
+                    Book Now &rarr;
+                </a>
+                </li>
+            </ul>
+
+            <button class="nav__hamburger"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="nav-mobile">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <ul class="nav__mobile" id="nav-mobile" role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="https://bookings.gettimely.com/AirCareHPC/bb/book"
+                target="_blank" rel="noopener">Book Now &rarr;</a>
+            </li>
+        </ul>
+    </header>
+  <!-- ── END HEADER ─── -->
+
+  <main class="site-main" id="main-content">
+
+    <!-- ══════════════════════════════════════════════════════
+         PAGE HEADER
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page-header">
+      <span class="label label--light">The people behind it</span>
+      <h1>We&rsquo;re Ros &amp; Max</h1>
+      <p>
+        A Christchurch family team who started AirCare because we saw locals being
+        underserved. We wanted to do it better — and prove you don&rsquo;t need a big
+        corporate brand to deliver a top-shelf result.
+      </p>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         TEAM — portrait + bios
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--cream" aria-labelledby="team-heading">
+      <div class="section-inner">
+        <div class="team-layout">
+
+          <!-- Portrait — sticky while bios scroll past it -->
+          <div class="team-portrait">
+            <!--
+              Drop the shared family photo in here.
+              Portrait orientation works best (3:4 ratio).
+              Suggested path: images/about/ros-and-max.jpg
+            -->
+            <img
+              class="team-portrait__img"
+              src="images/founders.webp"
+              alt="Rosalind and Maxwell, founders of AirCare"
+            >
+            <p class="team-portrait__caption">
+              <strong>Rosalind &amp; Maxwell</strong>
+              Founders of AirCare &mdash; Christchurch
+            </p>
+          </div>
+
+          <!-- Bios — scroll independently of the portrait -->
+          <div class="team-bios" id="team-heading">
+
+            <!-- Ros -->
+            <div class="team-bio">
+              <div class="team-bio__role">Director &middot; Customer Services &middot; Co-Founder</div>
+              <h2>Ros</h2>
+              <p class="team-bio__text">
+                A true Cantabrian, Ros studied Psychology and Sociology at Canterbury University
+                before pursuing a career in public health as a pharmacy technician. A keen advocate
+                for community oriented roles and service, Ros also spent a number of years supporting 
+                St Johns operations as an ambulance dispatch worker. 
+              </p>
+              <p class="team-bio__text">
+                After watching Max grow in the refrigeration industry, a few honest conversations
+                over a beer led to a shared goal: offer a genuinely better clean at a fairer price.
+                AirCare is the result — independent, local, and built around real customer care.
+              </p>
+              <div class="team-bio__tags">
+                <span class="team-bio__tag">Public health background</span>
+                <span class="team-bio__tag">Western riding</span>
+                <span class="team-bio__tag">Off-road motorbikes</span>
+                <span class="team-bio__tag">1969 Vauxhall Viva</span>
+              </div>
+              <blockquote class="team-bio__quote">
+                &ldquo;We&rsquo;re dedicated to building AirCare into a business which respects
+                and values our customers — the best service in town at a price that makes sense.&rdquo;
+              </blockquote>
+            </div>
+
+            <!-- Max -->
+            <div class="team-bio">
+              <div class="team-bio__role">Managing Director &middot; Lead Technician &middot; Co-Founder</div>
+              <h2>Maxwell</h2>
+              <p class="team-bio__text">
+                Max began his journey assisting technicians at large refrigeration firms, quickly
+                progressing to installing and servicing heat pumps across Christchurch. He noticed
+                something: commercial properties got plenty of attention, but domestic homes and
+                rentals were often overlooked.
+              </p>
+              <p class="team-bio__text">
+                So he set out to change that. AirCare was founded on the belief that every home
+                deserves the same level of care — done properly, by someone who takes genuine
+                pride in their work.
+              </p>
+              <div class="team-bio__tags">
+                <span class="team-bio__tag">Refrigeration industry veteran</span>
+                <span class="team-bio__tag">Travel</span>
+                <span class="team-bio__tag">Football</span>
+                <span class="team-bio__tag">Eye for detail</span>
+              </div>
+              <blockquote class="team-bio__quote">
+                &ldquo;AirCare offers the finest heat pump cleaning service in Canterbury.
+                I look forward to showing you what it truly means to &lsquo;Take Care of
+                your Air.&rsquo;&rdquo;
+              </blockquote>
+            </div>
+
+          </div><!-- /.team-bios -->
+        </div><!-- /.team-layout -->
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         OUR VALUES
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--white" aria-labelledby="values-heading">
+      <div class="section-inner">
+
+        <span class="label">How we work</span>
+        <h2 id="values-heading">What we stand for</h2>
+        <p style="color:var(--color-text-mid);max-width:500px;margin:var(--space-3) 0 var(--space-8);line-height:var(--leading-loose);">
+          We started small and we&rsquo;re proud of it. It means every job gets real attention.
+        </p>
+
+        <div class="values-grid">
+
+          <div class="value-card">
+            <div class="value-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 10l4 4 8-8" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Honest pricing</h3>
+            <p>No surprise extras at the end. What we quote is what you pay, every time.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="7" stroke="#1B3A5C" stroke-width="1.8"/>
+                <path d="M10 6v4l2.5 2" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Done properly</h3>
+            <p>We never rush a job. Coils, fan barrel, drip tray. All done the right way.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 3c-4 3-6 5.5-6 8a6 6 0 0012 0c0-2.5-2-5-6-8z" stroke="#1B3A5C" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Family values</h3>
+            <p>We treat your home like our own: with care, respect, and a friendly word.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 3c-4 3-6 5.5-6 8a6 6 0 0012 0c0-2.5-2-5-6-8z" stroke="#1B3A5C" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M7 10h6" stroke="#1B3A5C" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Local knowledge</h3>
+            <p>We know Christchurch homes and the conditions that make mould a real problem here.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 6h12M4 10h12M4 14h7" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Clear communication</h3>
+            <p>We explain what we found, what we did, and what to watch for — no jargon.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 3l1.8 5.6H17l-4.6 3.3 1.8 5.6L10 14.2l-4.2 3.3 1.8-5.6L3 8.6h5.2L10 3z" stroke="#1B3A5C" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>5-star standard</h3>
+            <p>We measure our success by the reviews we earn, not the jobs we rush through.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         BOTTOM CTA — reuses .cta-block from components.css
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--sky-tint" aria-labelledby="cta-heading">
+      <div class="cta-block">
+        <span class="label" style="display:block;text-align:center;">Come and meet us</span>
+        <h2 id="cta-heading">Book your heat pump clean today</h2>
+        <p>We&rsquo;re a small team and we like it that way — every job gets proper attention. Online booking takes two minutes.</p>
+        <div class="cta-block__actions">
+          <a href="https://bookings.gettimely.com/AirCareHPC/bb/book"
+             class="btn btn--primary"
+             target="_blank"
+             rel="noopener">
+            Book Online &rarr;
+          </a>
+          <a href="contact.html" class="btn btn--navy">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER 
+  ═══════════════════════════════════════════════════════ -->
+    <footer class="site-footer">
+            <div class="footer__inner">
+            <div class="footer__top">
+
+                <div class="footer__brand">
+                    <div class="footer__brand-name">AirCare</div>
+                    <p class="footer__brand-desc">Christchurch's local heat pump cleaning specialists. Family-owned, PermaSafe certified, and genuinely passionate about clean air for your whānau.</p>
+                    <div class="footer__contact-item">
+                        <svg class="footer__contact-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                        <path d="M2.5 2h2.5l1.25 2.75-1.25.875A7.5 7.5 0 008.375 9l.875-1.25L12 9V11.5A1 1 0 0111 12.5C5.2 12.5 1.5 8.8 1.5 3A1 1 0 012.5 2z" fill="currentColor"/>
+                        </svg>
+                        <a href="tel:0800247227">0800 247 227</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <svg class="footer__contact-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                        <rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+                        <path d="M1.5 5l5.5 3.5L12.5 5" stroke="currentColor" stroke-width="1.2"/>
+                        </svg>
+                        <a href="mailto:ros@aircare.nz">ros@aircare.nz</a>
+                    </div>
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__col-title">Services</h3>
+                    <ul role="list">
+                        <li><a href="services.html#deep-clean">The Deep Clean</a></li>
+                        <li><a href="services.html#deep-clean-plus">Deep Clean Plus</a></li>
+                        <li><a href="services.html#mould-master">Mould Master</a></li>
+                        <li><a href="services.html#commercial">Commercial Cleans</a></li>
+                        <li><a href="services.html#filters">Filter Replacements</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__col-title">Company</h3>
+                    <ul role="list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="https://bookings.gettimely.com/AirCareHPC/bb/book" target="_blank" rel="noopener">Book Online</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer__bottom">
+                <span>&copy; <span id="footer-year">2025</span> AirCare Heat Pump Cleaning. Christchurch, NZ.</span>
+                <div class="footer__partners">
+                <a href="https://www.4front.co.nz/" class="footer__partner-badge" target="_blank" rel="noopener">4Front Partner</a>
+                <a href="https://www.quinovic.co.nz/riccarton/" class="footer__partner-badge" target="_blank" rel="noopener">Quinovic Preferred</a>
+                </div>
+            </div>
+            </div>
+    </footer>
+  <!-- ── END FOOTER ─── -->
+
+</div><!-- /.site-wrapper -->
+
+<script src="/js/navigation.js" defer></script>
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
