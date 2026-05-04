@@ -1,22 +1,6 @@
 /* =============================================================
    AIRCARE — ABOUT PAGE
    Styles specific to about.html only.
-
-   Reuses from shared files:
-     layout.css    — .section, .section-inner, .section--*, .site-header, .site-footer
-     global.css    — .label, .btn, .btn--primary, .btn--navy
-     components.css — .cta-block, .cta-block__actions
-
-   New here:
-     - .about-header        — navy page header with intro text
-     - .team-layout         — portrait + bios side-by-side grid
-     - .team-portrait       — sticky photo column
-     - .team-bios           — scrolling bios column
-     - .team-bio            — individual bio block
-     - .values-grid         — 3-col what-we-stand-for cards
-     - .value-card          — single value card
-     - .permasafe-grid      — two-col stat callout layout
-     - .permasafe-stat      — individual stat block
    ============================================================= */
 
 /* ── Team layout — portrait left, bios right ──────────────── */
