@@ -10,14 +10,6 @@
   overflow: hidden;
 }
 
-/* Dark navy base + subtle diagonal pattern */
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  /* Prolly remove background */
-  background: linear-gradient(135deg, var(--color-brand-navy) 0%, #1e4d7a 55%, #2a6a9e 100%);
-}
-
 .hero__bg_img {
   position: absolute;
   inset: 0;
@@ -40,10 +32,6 @@
 
 .hero__content h1 {
   margin: 0;
-}
-
-.hero__content-inner {
-  max-width: 580px;
 }
 
 /* Phone pill — bottom right of hero */
@@ -136,12 +124,48 @@
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 960px) {
-  .hero__content {
+  /* Hide the photo, show pattern background instead */
+  .hero__bg_img {
     display: none;
   }
-}
 
-@media (max-width: 900px) {
+  /* Hero height: enough for content, not full-viewport */
+  .hero {
+    height: auto;
+    min-height: 420px;
+  }
+
+  .hero {
+    /* Subtle diagonal line pattern over the navy gradient */
+    background:
+      repeating-linear-gradient(
+        135deg,
+        rgba(74, 155, 201, 0.07) 0px,
+        rgba(74, 155, 201, 0.07) 1px,
+        transparent 1px,
+        transparent 28px
+      ),
+      linear-gradient(135deg, var(--color-brand-navy) 0%, #1e4d7a 55%, #2a6a9e 100%);
+  }
+
+  /* Slightly smaller heading on small screens */
+  .hero__content h1 {
+    font-size: var(--text-2xl);
+  }
+
+  .hero__content p {
+    font-size: var(--text-sm);
+    opacity: 0.85;
+  }
+
+  .hero__content {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-16) var(--space-6) var(--space-12);
+  }
+
   .why__grid {
     grid-template-columns: 1fr;
   }
@@ -154,15 +178,15 @@
   .reviews__grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .hero__phone {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
   .hero__heading {
     font-size: var(--text-2xl);
-  }
-
-  .hero__phone {
-    display: none;
   }
 
   .services-preview__grid,
