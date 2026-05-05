@@ -188,12 +188,16 @@
   top: var(--nav-height);
   left: 0;
   right: 0;
-  background: var(--color-brand-navy);
+  background: var(--color-brand-navy-mid);
   padding: var(--space-4) var(--space-8) var(--space-6);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   list-style: none;
   flex-direction: column;
   gap: 0;
+}
+
+ul.nav__mobile {
+  margin-top: 0;
 }
 
 .nav__mobile.is-open {
