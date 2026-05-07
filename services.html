@@ -102,10 +102,10 @@
                     <li>Indoor and outdoor unit cleaned</li>
                     <li>Coils, fan barrel and drip tray serviced</li>
                     <li>Filters cleaned or replaced</li>
-                    <li>Additional units: $89 each</li>
+                    <li>Additional units: <span data-price="deepCleanAdditional"></span> each</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price">$99</span>
+                    <span class="service-card__price" data-price="deepClean"></span>
                     <span class="service-card__duration">Up to 90 min</span>
                 </div>
             </article>
@@ -130,7 +130,7 @@
                     <li>Covers coils, piping, drain pans, filters, vents</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price">$129</span>
+                    <span class="service-card__price" data-price="deepCleanPlus"></span>
                     <span class="service-card__duration">Up to 90 min</span>
                 </div>
             </article>
@@ -155,7 +155,7 @@
                     <li>Eliminates musty odours at the source</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price">$179</span>
+                    <span class="service-card__price" data-price="mouldMaster"></span>
                     <span class="service-card__duration">Up to 2 hours</span>
                 </div>
             </article>
@@ -178,7 +178,7 @@
                     <li>Suits ducted heat pump systems</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price">$99</span>
+                    <span class="service-card__price" data-price="ductDevil"></span>
                     <span class="service-card__duration">1 hour</span>
                 </div>
             </article>
@@ -203,7 +203,7 @@
                     <li>Call Ros directly for a quote: 0800 247 227</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price">From $119</span>
+                    <span class="service-card__price" data-price="commercial"></span>
                     <span class="service-card__duration">Call for quote</span>
                 </div>
             </article>
@@ -235,11 +235,11 @@
                 <ul class="service-card__features" role="list">
                     <li>Removes dust, mould spores and bacteria</li>
                     <li>Recommended every 2 years</li>
-                    <li>First filter $179 incl. GST</li>
-                    <li>Second and subsequent: $109 each</li>
+                    <li>First filter: <span data-price="HRVFilter"></span> incl. GST</li>
+                    <li>Second and subsequent: <span data-price="HRVAdditional"></span> each</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price">From $109</span>
+                    <span class="service-card__price">From <span data-price="HRVFilter"></span></span>
                     <span class="service-card__duration">Quick visit</span>
                 </div>
             </article>
@@ -259,11 +259,11 @@
                 <ul class="service-card__features" role="list">
                     <li>No roof-space hassle for you</li>
                     <li>Saves energy and keeps you cosy year-round</li>
-                    <li>First filter $119 incl. GST</li>
-                    <li>Second and subsequent: $99 each</li>
+                    <li>First filter: <span data-price="DVSFilter"></span> incl. GST</li>
+                    <li>Second and subsequent: <span data-price="DVSAdditional"></span> each</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price">From $99</span>
+                    <span class="service-card__price">From <span data-price="DVSFilter"></span></span>
                     <span class="service-card__duration">Quick visit</span>
                 </div>
             </article>
@@ -285,8 +285,8 @@
                     <li>Recommended every 1–2 years</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price">$199</span>
-                    <span class="service-card__duration">1 hour</span>
+                    <span class="service-card__price" data-price="smartVentFilter"></span>
+                    <span class="service-card__duration">Quick visit</span>
                 </div>
             </article>
 
@@ -305,11 +305,11 @@
                 </p>
                 <ul class="service-card__features" role="list">
                 <li>Recommended every 2 years</li>
-                <li>First filter $179 incl. GST</li>
-                <li>Second and subsequent: $109 each</li>
+                <li>First filter: <span data-price="betterVentFilter"></span> incl. GST</li>
+                <li>Second and subsequent: <span data-price="betterVentAdditional"></span> each</li>
                 </ul>
                 <div class="service-card__footer">
-                <span class="service-card__price">From $109</span>
+                <span class="service-card__price">From <span data-price="betterVentFilter"></span></span>
                 <span class="service-card__duration">Quick visit</span>
                 </div>
             </article>
@@ -369,7 +369,7 @@
                             <li>No unnecessary upselling</li>
                         </ul>
                         <div class="service-card__footer">
-                            <span class="service-card__price">$65</span>
+                            <span class="service-card__price" data-price="emergency"></span>
                             <span class="service-card__duration">1 hour</span>
                         </div>
                     </article>
@@ -458,6 +458,7 @@
 </div><!-- /.site-wrapper -->
 
 <script src="./js/navigation.js" defer></script>
+<script src="./js/prices.js"></script>
 <script>
     document.getElementById('footer-year').textContent = new Date().getFullYear();
 </script>

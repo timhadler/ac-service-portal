@@ -258,7 +258,7 @@
                 <h3 class="service-card__name">The Deep Clean</h3>
                 <p class="service-card__desc">Inside and outside unit fully refreshed. Coils, fan barrel, drip tray — all done properly.</p>
                 <div class="service-card__footer">
-                <span class="service-card__price">$99</span>
+                <span class="service-card__price" data-price="deepClean"></span>
                 <span class="service-card__duration">Up to 90 min</span>
                 </div>
             </article>
@@ -273,7 +273,7 @@
                 <h3 class="service-card__name">Deep Clean Plus</h3>
                 <p class="service-card__desc">Deep clean plus 3-month PermaSafe antimicrobial barrier — eliminates 99.999% of bacteria and mould.</p>
                 <div class="service-card__footer">
-                <span class="service-card__price">$129</span>
+                <span class="service-card__price" data-price="deepCleanPlus"></span>
                 <span class="service-card__duration">Up to 90 min</span>
                 </div>
             </article>
@@ -289,7 +289,7 @@
                 <h3 class="service-card__name">The Mould Master</h3>
                 <p class="service-card__desc">For when there&rsquo;s a deeper mould problem. Full extraction plus PermaSafe to stop it coming back.</p>
                 <div class="service-card__footer">
-                <span class="service-card__price">$179</span>
+                <span class="service-card__price" data-price="mouldMaster"></span>
                 <span class="service-card__duration">Up to 2 hours</span>
                 </div>
             </article>
@@ -425,6 +425,7 @@
 
     <!-- Scripts — deferred so they don't block render -->
     <script src="./js/navigation.js" defer></script>
+    <script src="./js/prices.js"></script>
 
     <script>
     document.getElementById('footer-year').textContent = new Date().getFullYear();
