@@ -135,6 +135,10 @@
     min-height: 420px;
   }
 
+  .why__image_2 {
+    display: none;
+  }
+
   .hero {
     /* Subtle diagonal line pattern over the navy gradient */
     background:
