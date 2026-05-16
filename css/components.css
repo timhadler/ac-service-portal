@@ -79,6 +79,12 @@
   color: var(--color-brand-orange);
 }
 
+.services-card-header--featured {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .service-card__badge {
   align-self: flex-start;
   background: var(--color-brand-orange);
