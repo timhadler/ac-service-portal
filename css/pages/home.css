@@ -206,6 +206,19 @@
   gap: var(--space-5);
 }
 
+/* ── Partners ─────────────────────────────────────────────── */
+.partners__header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.partners__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+  align-items: center;
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 960px) {
   /* Copy first, photo below it as a card — the side-by-side split has
@@ -247,7 +260,8 @@
   }
 
   .services-preview__grid,
-  .reviews__grid {
+  .reviews__grid,
+  .partners__grid {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -256,5 +270,15 @@
   .services-preview__grid,
   .reviews__grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Logos stay two-up rather than dropping to one — a single
+     column of wordmarks reads as a list, not a partner row. */
+  .partners__grid {
+    gap: var(--space-6);
+  }
+
+  .partners__header {
+    margin-bottom: var(--space-8);
   }
 }

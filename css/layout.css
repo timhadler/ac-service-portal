@@ -317,21 +317,6 @@ ul.nav__mobile {
   gap: var(--space-4);
 }
 
-.footer__partners {
-  display: flex;
-  gap: var(--space-3);
-  align-items: center;
-}
-
-.footer__partner-badge {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 4px var(--space-3);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-xs);
-  color: rgba(255, 255, 255, 0.5);
-}
-
 /* ────────────────────────────────────────────────────────────
    RESPONSIVE
    ──────────────────────────────────────────────────────────── */

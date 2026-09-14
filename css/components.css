@@ -321,3 +321,33 @@
   border-color: var(--color-brand-orange-dim);
   color: var(--color-brand-orange);
 }
+
+/* ── Partner logo ─────────────────────────────────────────
+   Partner logos arrive at wildly different aspect ratios
+   (6:1 wordmarks through to near-square stacked marks), so
+   each one sits in a fixed-height cell and is contained
+   within it rather than sized directly. That caps the tall
+   marks by height and the wide marks by width, which keeps
+   the row optically even without per-logo overrides. */
+.partners__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--space-16);
+}
+
+/* The anchor, not the image, is the cell-filling box, so the logo keeps
+   its contain behaviour and the whole cell is the click target. */
+.partners__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.partners__logo {
+  width: 100%;
+  height: var(--space-12);
+  object-fit: contain;
+  object-position: center;
+}
