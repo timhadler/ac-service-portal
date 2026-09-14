@@ -3,85 +3,151 @@
    Styles specific to index.html only.
    ============================================================= */
 
-/* ── Hero ─────────────────────────────────────────────────── */
+/* ── Hero ─────────────────────────────────────────────────────
+   A navy masthead that runs straight into the navy trust bar below
+   it: copy on the left, and the photo as a panel that runs off the
+   right-hand edge of the screen. Nothing here is pinned to the
+   viewport's height, so the two halves stay in proportion on a large
+   monitor instead of drifting to opposite corners. */
 .hero {
-  position: relative;
-  height: calc(100vh - var(--nav-height));
+  display: grid;
+  grid-template-columns: var(--hero-split) 1fr;
+  align-items: center;
+  min-height: 420px;
+  overflow: hidden;
+  background-color: var(--color-brand-navy);
+  /* Fine diagonal streaks — a quiet echo of the airflow in the photo */
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(74, 155, 201, 0.07) 0px,
+    rgba(74, 155, 201, 0.07) 1px,
+    transparent 1px,
+    transparent 28px
+  );
+}
+
+/* The panel sets its own aspect ratio, and with it the height of the
+   whole band, rather than stretching to fill one — a landscape photo
+   stays landscape at every width instead of being cropped to a portrait
+   slice on narrower monitors. The ratio matches the source photo, so
+   `cover` has nothing to crop off the sides.
+
+   The panel sits inside the same right-hand gutter the rest of the page
+   uses instead of bleeding to the edge of the window, so the right side
+   of the photo is never cut off by the screen — which means all four
+   corners are rounded, not just the two on the left. */
+.hero__figure {
+  aspect-ratio: var(--hero-aspect);
+  max-height: var(--hero-height);
+  margin: var(--space-10) var(--section-padding-x) var(--space-10) 0;
+  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
-.hero__bg_img {
-  position: absolute;
-  inset: 0;
+.hero__photo {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: right;
+  object-position: center;
 }
 
-.hero__content {
-  position: absolute;
-  inset: 0; /* stretch to full hero */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* vertical: flex-start | center | flex-end */
-  align-items: flex-start;   /* horizontal: flex-start | center | flex-end */
-  padding-left: 3rem;
-  padding-bottom: 1rem;
+/* Centred in the navy half rather than pinned to one side, so the copy
+   stays balanced between the screen edge and the photo at any width. */
+.hero__copy {
+  justify-self: center;
+  max-width: clamp(420px, 34vw, 620px);
+  padding: var(--space-10) var(--section-padding-x);
 }
 
-.hero__content h1 {
-  margin: 0;
+.hero__heading {
+  margin: 0 0 var(--space-5);
+  font-size: var(--text-display);
 }
 
-/* Phone pill — bottom right of hero */
-.hero__phone {
-  position: absolute;
-  bottom: var(--space-8);
-  right: var(--space-8);
-  z-index: 2;
+.hero__heading-line {
+  display: block;
+  color: var(--color-white);
+}
+
+.hero__heading-line--accent {
+  color: var(--color-brand-sky-light);
+}
+
+.hero__subtext {
+  margin: 0 0 var(--space-8);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+}
+
+/* Book Online + phone read as one action cluster under the copy */
+.hero__actions {
   display: flex;
   align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* Phone pill — the one white shape in the navy field, so the second
+   way to get in touch reads as clearly as the orange button */
+.hero__phone {
+  display: inline-flex;
+  align-items: center;
   gap: var(--space-3);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(4px);
-  padding: var(--space-3) var(--space-5);
-  border-radius: var(--radius-md);
-  color: var(--color-brand-navy);
+  background: var(--color-white);
+  padding: var(--space-2) var(--space-5) var(--space-2) var(--space-2);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hero__phone:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  opacity: 1;
+}
+
+.hero__phone-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-brand-orange-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero__phone-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
 }
 
 .hero__phone-label {
-  font-size: var(--text-sm);
-  color: var(--color-brand-navy);
-  margin-bottom: 2px;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
 }
 
 .hero__phone-number {
   font-size: var(--text-md);
   font-weight: var(--weight-semi);
+  color: var(--color-brand-navy);
 }
 
 /* ── Why section ──────────────────────────────────────────── */
+.why__section-text {
+  font-size: var(--text-md);
+  color: var(--color-text-mid);
+  margin-bottom: var(--space-8);
+  line-height: var(--leading-loose);
+}
+
 .why__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-12);
-}
-
-.why__image {
-  height: 400px;
-  background-image: url('../../images/tech1.webp');
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 4rem;
-}
-
-.why__image_2 {
-  height: 400px;
-  background-image: url('../../images/family.webp');
-  background-size: cover;
-  background-position: center;
 }
 
 .why__points {
@@ -90,12 +156,30 @@
   gap: var(--space-4);
 }
 
-.why__section-text {
-  font-size: var(--text-md);
-  color: var(--color-text-mid);
-  margin-bottom: var(--space-6);
-  line-height: var(--leading-loose);
-  max-width: 520px;
+/* Grid's default align-items: stretch gives this column the same
+   height as the points column; flex then shares that height evenly
+   between the two images so both columns always end level, regardless
+   of copy length. */
+.why__images {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.why__image {
+  flex: 1;
+  min-height: 200px;
+  background-image: url('../../images/tech1.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.why__image_2 {
+  flex: 1;
+  min-height: 200px;
+  background-image: url('../../images/tech2.jpeg');
+  background-size: cover;
+  background-position: center;
 }
 
 /* ── Services preview (home — 3 cards) ───────────────────── */
@@ -124,50 +208,34 @@
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 960px) {
-  /* Hide the photo, show pattern background instead */
-  .hero__bg_img {
-    display: none;
+  /* Copy first, photo below it as a card — the side-by-side split has
+     no room here, but the photo is still worth showing. */
+  .hero {
+    display: block;
+    min-height: 0;
+    padding: var(--space-12) var(--section-padding-x);
   }
 
-  /* Hero height: enough for content, not full-viewport */
-  .hero {
-    height: auto;
-    min-height: 420px;
+  .hero__figure {
+    margin: var(--space-10) 0 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .hero__copy {
+    max-width: none;
+    padding: 0;
+  }
+
+  .hero__heading {
+    font-size: var(--text-2xl);
+  }
+
+  .hero__subtext {
+    font-size: var(--text-md);
   }
 
   .why__image_2 {
     display: none;
-  }
-
-  .hero {
-    /* Subtle diagonal line pattern over the navy gradient */
-    background:
-      repeating-linear-gradient(
-        135deg,
-        rgba(74, 155, 201, 0.07) 0px,
-        rgba(74, 155, 201, 0.07) 1px,
-        transparent 1px,
-        transparent 28px
-      ),
-      linear-gradient(135deg, var(--color-brand-navy) 0%, #1e4d7a 55%, #2a6a9e 100%);
-  }
-
-  /* Slightly smaller heading on small screens */
-  .hero__content h1 {
-    font-size: var(--text-2xl);
-  }
-
-  .hero__content p {
-    font-size: var(--text-sm);
-    opacity: 0.85;
-  }
-
-  .hero__content {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: var(--space-16) var(--space-6) var(--space-12);
   }
 
   .why__grid {
@@ -182,17 +250,9 @@
   .reviews__grid {
     grid-template-columns: 1fr 1fr;
   }
-
-  .hero__phone {
-    display: none;
-  }
 }
 
 @media (max-width: 600px) {
-  .hero__heading {
-    font-size: var(--text-2xl);
-  }
-
   .services-preview__grid,
   .reviews__grid {
     grid-template-columns: 1fr;

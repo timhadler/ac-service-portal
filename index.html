@@ -61,45 +61,40 @@
     </header>
 
     <main class="site-main" id="main-content">
-        <section class="hero" aria-label="Hero">
-            <picture>
-                <img
-                    class="hero__bg_img"
-                    src="images/hero/hero-bg.webp"
-                    alt=""
-                    aria-hidden="true"
-                >
-            </picture>
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero__copy">
+                <h1 class="hero__heading" id="hero-heading">
+                    <span class="hero__heading-line">Healthy heat pump,</span>
+                    <span class="hero__heading-line hero__heading-line--accent">happy home.</span>
+                </h1>
+                <p class="hero__subtext">Professional heat pump cleaning from a local Kiwi family.</p>
 
-            <div class="hero__content">
-                <h1> <span style="color: white;">Happy heat pump, </span><br> <span style="color: var(--color-brand-sky-light);"> healthy home. </span></h1>
-                <p style="color: var(--color-white)"> Professional heat pump cleaning from a local Christchurch family. <br>
-                    We keep your air clean, your power bills down, and your whānau
-                    breathing <br> easy.</p>
-            </div>
+                <div class="hero__actions">
+                    <a href="https://bookings.gettimely.com/AirCareHPC/bb/book"
+                        class="btn btn--primary"
+                        target="_blank"
+                        rel="noopener">
+                        Book Online &rarr;
+                    </a>
 
-            <!-- Phone pill -->
-            <div class="hero__phone">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 2h3l1.5 3.5-1.5 1A9 9 0 009.5 10.5l1-1.5L14 10.5V13a1 1 0 01-1 1C6.268 14 2 9.732 2 3a1 1 0 011-1z" fill="var(--color-brand-navy)"/>
-                </svg>
-                <div>
-                    <div class="hero__phone-label">Call us free</div>
-                    <div class="hero__phone-number">
-                        <a href="tel:0800247227" style="color:inherit;">0800 247 227</a>
-                    </div>
+                    <a href="tel:0800247227" class="hero__phone">
+                        <span class="hero__phone-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 2h3l1.5 3.5-1.5 1A9 9 0 009.5 10.5l1-1.5L14 10.5V13a1 1 0 01-1 1C6.268 14 2 9.732 2 3a1 1 0 011-1z" fill="var(--color-brand-orange)"/>
+                            </svg>
+                        </span>
+                        <span class="hero__phone-text">
+                            <span class="hero__phone-label">Call us free</span>
+                            <span class="hero__phone-number">0800 247 227</span>
+                        </span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Mobile only -->
-            <div class="cta-block__actions">
-                <a href="https://bookings.gettimely.com/AirCareHPC/bb/book"
-                    class="btn btn--primary"
-                    target="_blank"
-                    rel="noopener">
-                    Book Online &rarr;
-                </a>
-                <a href="contact.html" class="btn btn--navy">Get in touch</a>
+            <div class="hero__figure">
+                <img class="hero__photo"
+                    src="images/hero/hero-bg.jpg"
+                    alt="A wall-mounted heat pump circulating clean air through a living room">
             </div>
         </section>
 
@@ -115,7 +110,7 @@
                         <path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
                     </svg>
                 </div>
-                Local Christchurch family
+                Local Kiwi Family
                 </div>
 
                 <div class="trust-item">
@@ -124,7 +119,7 @@
                         <path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
                     </svg>
                 </div>
-                PermaSafe antimicrobial certified
+                Thorough Clean, Every Time
                 </div>
 
                 <div class="trust-item">
@@ -133,7 +128,7 @@
                         <path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
                     </svg>
                 </div>
-                Transparent, competitive pricing
+                Transparent, Competitive Pricing
                 </div>
 
                 <div class="trust-item">
@@ -142,7 +137,7 @@
                         <path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
                     </svg>
                 </div>
-                    5-star Google reviews
+                    5-star Average Google Reviews
                 </div>
             </div>
         </div>
@@ -152,77 +147,76 @@
         ═══════════════════════════════════════════════════════ -->
         <section class="section section--cream" aria-labelledby="why-heading">
             <div class="section-inner">
+
+                <span class="label">Why it matters</span>
+                <h2 id="why-heading">
+                    Why don't you just clean the filters?
+                </h2>
+                <p class="why__section-text">
+                    <em>Because the filter was never designed to protect your unit</em>. It was designed to protect your air; catching lint, hair, and larger debris.
+                    Even spotless, a standard heat pump filter only reliably catches particles down to about 10 microns. Most household dust is finer than that.
+                    It sails right past the filter, and clogs up the thing that actually matters: the coils. Read more below.
+                </p>
+
                 <div class="why__grid">
 
                     <!-- Points -->
-                    <div>
-                        <span class="label">Why it matters</span>
-                        <h2 id="why-heading">
-                            Your heat pump works hard.  So does the mould inside it.
-                        </h2>
-                        <p class="why__section-text">
-                            A dirty heat pump doesn&rsquo;t just cost more to run — it blows
-                            allergens, bacteria and mould spores into the air your family
-                            breathes every day.
-                        </p>
-
-                        <div class="why__points">
-                            <div class="why-point">
-                                <div class="why-point__icon" aria-hidden="true">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8l3 3 6-6" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                                </div>
-                                <div>
-                                <h3 class="why-point__title">Lower power bills</h3>
-                                <p class="why-point__text">Dust on coils forces the motor to work harder, burning more power and shortening the unit&rsquo;s life.</p>
-                                </div>
+                    <div class="why__points">
+                        <div class="why-point">
+                            <div class="why-point__icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8l3 3 6-6" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
                             </div>
-
-                            <div class="why-point">
-                                <div class="why-point__icon" aria-hidden="true">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8l3 3 6-6" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                                </div>
-                                <div>
-                                <h3 class="why-point__title">Cleaner air for the whole whānau</h3>
-                                <p class="why-point__text">Especially important for allergy and asthma sufferers — kids and kaumātua included.</p>
-                                </div>
+                            <div>
+                            <h3 class="why-point__title"> Lower Power Bills</h3>
+                            <p class="why-point__text">Over time, dust and debris build up in the coils, even with clean filters. This restricts airflow, forcing your heat pump to work harder, and increasing energy consumption. A clean system runs more efficiently and helps keep bills down.</p>
                             </div>
+                        </div>
 
-                            <div class="why-point">
-                                <div class="why-point__icon" aria-hidden="true">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8l3 3 6-6" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                                </div>
-                                <div>
-                                <h3 class="why-point__title">Avoid costly breakdowns</h3>
-                                <p class="why-point__text">Regular professional cleans prevent component failure and add years to your unit&rsquo;s lifespan.</p>
-                                </div>
+                        <div class="why-point">
+                            <div class="why-point__icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8l3 3 6-6" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
                             </div>
+                            <div>
+                            <h3 class="why-point__title">Cleaner Air for the Whole Whānau</h3>
+                            <p class="why-point__text">Especially important for allergy and asthma sufferers. Heat pumps can accumulate mould, bacteria, and dust over time. Without regular cleaning, these contaminants are circulated throughout your home.</p>
+                            </div>
+                        </div>
 
-                            <div class="why-point">
-                                <div class="why-point__icon" aria-hidden="true">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8l3 3 6-6" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                                </div>
-                                <div>
-                                <h3 class="why-point__title">Eliminate musty odours</h3>
-                                <p class="why-point__text">Only a professional deep clean can remove mould-caused smells from inside the unit.</p>
-                                </div>
+                        <div class="why-point">
+                            <div class="why-point__icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8l3 3 6-6" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            </div>
+                            <div>
+                            <h3 class="why-point__title">Avoid Costly Breakdowns & Extend Lifespan</h3>
+                            <p class="why-point__text">Regular professional cleaning clears blockages and reduces strain on key components, like the fan-motor. Repairing or replacing these components can be costly, getting your unit regularly cleaned can add years to its life.</p>
+                            </div>
+                        </div>
+
+                        <div class="why-point">
+                            <div class="why-point__icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8l3 3 6-6" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            </div>
+                            <div>
+                            <h3 class="why-point__title">Eliminate Musty Odours</h3>
+                            <p class="why-point__text">A dirty or mouldy heat pump can produce musty, unpleasant smells. These odours won&rsquo;t disappear on their own, only a thorough professional clean can fully remove them.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div>
+                    <div class="why__images">
                         <!-- Image with badge -->
                         <div class="image-card why__image">
                             <div class="image-card__overlay-badge">
-                                <strong>Annual</strong>
-                                recommended clean &mdash; Consumer NZ
+                                <strong>Annual cleans</strong>
+                                Recommended by <i> Healthy Homes NZ </i>
                             </div>
                         </div>
 
@@ -241,7 +235,7 @@
             <span class="label">What we do</span>
             <h2 id="services-heading">Our most popular services</h2>
             <p style="color:var(--color-text-mid);margin:var(--space-3) 0 var(--space-8);max-width:500px;line-height:var(--leading-loose);">
-            Honest pricing, no hidden extras. Every clean is done properly — not rushed.
+            Honest pricing, no hidden extras. Every clean is done properly, not rushed.
             </p>
 
             <div class="services-preview__grid">
@@ -258,7 +252,7 @@
                     <div class="service-card__badge">Most Popular</div>
                 </div>
                 <h3 class="service-card__name">The Deep Clean</h3>
-                <p class="service-card__desc">Inside and outside unit fully refreshed. Coils, fan barrel, drip tray — all done properly.</p>
+                <p class="service-card__desc">A thorough clean of both the inside and outside units to keep your heat pump performing at its best.</p>
                 <div class="service-card__footer">
                 <span class="service-card__price" data-price="deepClean"></span>
                 <span class="service-card__duration">Up to 90 min</span>
@@ -273,7 +267,7 @@
                 </svg>
                 </div>
                 <h3 class="service-card__name">Deep Clean Plus</h3>
-                <p class="service-card__desc">Deep clean plus 3-month PermaSafe antimicrobial barrier — eliminates 99.999% of bacteria and mould.</p>
+                <p class="service-card__desc">Everything included in our Deep Clean, plus a PermaSafe mould prevention treatment for ongoing protection.</p>
                 <div class="service-card__footer">
                 <span class="service-card__price" data-price="deepCleanPlus"></span>
                 <span class="service-card__duration">Up to 90 min</span>
@@ -289,7 +283,7 @@
                 </svg>
                 </div>
                 <h3 class="service-card__name">The Mould Master</h3>
-                <p class="service-card__desc">For when there&rsquo;s a deeper mould problem. Full extraction plus PermaSafe to stop it coming back.</p>
+                <p class="service-card__desc">Only  deployed when significant mould growth is found inside the unit. We remove it at the source. </p>
                 <div class="service-card__footer">
                 <span class="service-card__price" data-price="mouldMaster"></span>
                 <span class="service-card__duration">Up to 2 hours</span>
@@ -312,7 +306,7 @@
         <div class="reviews__inner">
 
             <div class="reviews-header">
-            <h2 id="reviews-heading">What Cantabrians are saying</h2>
+            <h2 id="reviews-heading">What AirCare customers have to say</h2>
             <div class="reviews-rating">
                 <span aria-hidden="true">★★★★★</span>
                 <span>5.0 average</span>

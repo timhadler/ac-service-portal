@@ -46,6 +46,9 @@
   --text-2xl:  1.75rem;    /* 28px */
   --text-3xl:  2.2rem;
   --text-hero: 3rem;
+  /* Home hero headline — grows with the viewport so the hero keeps its
+     proportions on large monitors instead of staying laptop-sized. */
+  --text-display: clamp(2.25rem, 1.43vw + 1.71rem, 3.75rem);
 
   --weight-regular: 400;
   --weight-medium:  500;
@@ -88,6 +91,9 @@
   /* ── Layout ─────────────────────────────────────────────── */
   --max-width:         960px;
   --nav-height:        4rem;
+  --hero-height:       700px;    /* height cap for the home hero photo */
+  --hero-split:        52%;      /* where the hero photo panel starts */
+  --hero-aspect:       16 / 9;   /* matches the source photo, so it never crops */
   --section-padding-y: var(--space-20);
   --section-padding-x: var(--space-8);
 
