@@ -1,51 +1,70 @@
 /* =============================================================
    AIRCARE — VARIABLES
    All colours, spacing, typography and breakpoints live here.
+   Nothing else in the codebase should hardcode a design value.
    ============================================================= */
 
 :root {
-  /* ── Brand (logo) colours ───────────────────────────────── */
-  --color-brand-navy:       #1B3A5C;
-  --color-brand-navy-mid:   #254F7E;
-  --color-brand-sky:        #4A9BC9;
-  --color-brand-sky-light:  #D6EAF5;
-  --color-brand-orange:     #E8782A;
-  --color-brand-orange-dim: #F4A96A;        /* lighter tint for hover states */
-  --color-brand-orange-bg:  #FDF1E8;        /* very pale tint for backgrounds */
+  /* ── Brand (sampled straight from images/logo.webp) ─────── */
+  --color-brand-blue:        #27538E;  /* primary — the logo blue      */
+  --color-brand-orange:      #EE7326;  /* secondary — the logo orange  */
 
-  /* ── Supporting palette ─────────────────────────────────── */
-  --color-cream:            #F7F3EC;
-  --color-cream-dark:       #EDE7DA;
-  --color-stone:            #C8B89A;
-  --color-stone-dark:       #9E8B70;
-  --color-green:            #3D6B45;
-  --color-green-light:      #EBF2EC;
-  --color-footer-bg:        #111B26;
+  /* Blue family — darker steps for hero/footer, lighter for accents */
+  --color-brand-blue-deep:   #132B4C;  /* footer, deepest ground       */
+  --color-brand-blue-dark:   #1D3F6D;  /* hero gradient end            */
+  --color-brand-blue-mid:    #3568A8;  /* hover fill for blue buttons  */
+
+  /* Sky — the third brand colour, light blue */
+  --color-brand-sky:         #3D8CC4;
+  --color-brand-sky-light:   #DCEAF7;  /* tinted section backgrounds   */
+  --color-brand-sky-pale:    #EEF5FB;  /* icon wells, subtle surfaces  */
+
+  /* Orange family */
+  --color-brand-orange-dark: #D25E14;  /* hover / pressed              */
+  --color-brand-orange-dim:  #F5A96E;  /* lighter tint for borders     */
+  --color-brand-orange-bg:   #FDF0E6;  /* very pale tint for fills     */
+
+  /* ── Neutrals ───────────────────────────────────────────────
+     Cooled towards the brand blue rather than a warm beige, so
+     white cards read as crisp and the orange stays the only
+     warm note on the page. */
+  --color-bg:               #F4F8FC;  /* page + soft section ground   */
+  --color-bg-sunken:        #E7EFF7;  /* pull-quotes, inset panels    */
+  --color-border:           #DCE6F0;  /* hairlines, card outlines     */
+
+  /* ── Supporting accents ─────────────────────────────────── */
+  --color-green:            #2F7D54;  /* success, area tags           */
+  --color-green-light:      #E6F4EC;
+  --color-star:             #F0B429;  /* review stars                 */
+  --color-error:            #C0392B;  /* form validation              */
+  --color-error-bg:         #FDF3F2;
+  --color-footer-bg:        var(--color-brand-blue-deep);
 
   /* ── Semantic text colours ──────────────────────────────── */
-  --color-text-dark:        #1A1A1A;
-  --color-text-mid:         #4A4540;
-  --color-text-muted:       #7A7268;
+  --color-text-dark:        #16273D;
+  --color-text-mid:         #4A5C72;
+  --color-text-muted:       #6E8098;
   --color-white:            #FFFFFF;
 
   /* ── Semantic surface colours ───────────────────────────── */
   --color-surface-white:    #FFFFFF;
-  --color-surface-cream:    var(--color-cream);
-  --color-surface-navy:     var(--color-brand-navy);
 
-  /* ── Typography ─────────────────────────────────────────── */
-  --font-display:  "Arial Rounded MT Bold", "Trebuchet MS", Verdana, sans-serif;
-  --font-body:     'DM Sans', system-ui, sans-serif;
+  /* ── Typography ─────────────────────────────────────────────
+     Poppins is the closest widely-available match to the
+     geometric letterforms in the logo wordmark; DM Sans carries
+     the body copy. */
+  --font-display:  'Poppins', 'Trebuchet MS', Verdana, sans-serif;
+  --font-body:     'DM Sans', system-ui, -apple-system, sans-serif;
 
-  --text-xs:   0.75rem;    /* 12px */
-  --text-sm:   0.8125rem;  /* 13px */
-  --text-base: 0.9375rem;  /* 15px */
-  --text-md:   1rem;       /* 16px */
-  --text-lg:   1.125rem;   /* 18px */
-  --text-xl:   1.375rem;   /* 22px */
-  --text-2xl:  1.75rem;    /* 28px */
-  --text-3xl:  2.2rem;
-  --text-hero: 3rem;
+  --text-xs:   0.75rem;     /* 12px */
+  --text-sm:   0.875rem;    /* 14px */
+  --text-base: 1rem;        /* 16px */
+  --text-md:   1.0625rem;   /* 17px */
+  --text-lg:   1.25rem;     /* 20px */
+  --text-xl:   1.5rem;      /* 24px */
+  --text-2xl:  1.875rem;    /* 30px */
+  --text-3xl:  clamp(1.75rem, 0.85vw + 1.5rem, 2.375rem);
+  --text-hero: clamp(2rem, 1.6vw + 1.55rem, 3rem);
   /* Home hero headline — grows with the viewport so the hero keeps its
      proportions on large monitors instead of staying laptop-sized. */
   --text-display: clamp(2.25rem, 1.43vw + 1.71rem, 3.75rem);
@@ -55,10 +74,13 @@
   --weight-semi:    600;
   --weight-bold:    700;
 
-  --leading-tight:  1.2;
-  --leading-snug:   1.4;
-  --leading-normal: 1.65;
+  --leading-tight:  1.18;
+  --leading-snug:   1.45;
+  --leading-normal: 1.6;
   --leading-loose:  1.75;
+
+  --tracking-wide:  0.03em;
+  --tracking-label: 0.12em;   /* uppercase eyebrows and labels */
 
   /* ── Spacing scale ──────────────────────────────────────── */
   --space-1:  0.25rem;   /* 4px  */
@@ -74,28 +96,39 @@
   --space-20: 5rem;      /* 80px */
 
   /* ── Border radius ──────────────────────────────────────── */
-  --radius-sm:  6px;
-  --radius-md:  10px;
-  --radius-lg:  18px;
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
   --radius-pill: 9999px;
 
-  /* ── Shadows ────────────────────────────────────────────── */
-  --shadow-sm:  0 2px 8px rgba(27, 58, 92, 0.08);
-  --shadow-md:  0 6px 20px rgba(27, 58, 92, 0.12);
-  --shadow-lg:  0 12px 40px rgba(27, 58, 92, 0.16);
+  /* ── Shadows — tinted with the brand blue, never neutral grey */
+  --shadow-xs:  0 1px 2px rgba(19, 43, 76, 0.06);
+  --shadow-sm:  0 2px 10px rgba(19, 43, 76, 0.07);
+  --shadow-md:  0 8px 24px rgba(19, 43, 76, 0.10);
+  --shadow-lg:  0 18px 46px rgba(19, 43, 76, 0.16);
+  --shadow-nav: 0 1px 0 var(--color-border), 0 4px 18px rgba(19, 43, 76, 0.05);
+
+  /* ── Focus ring (keyboard navigation) ───────────────────── */
+  --focus-ring: 0 0 0 3px rgba(61, 140, 196, 0.45);
 
   /* ── Transitions ────────────────────────────────────────── */
   --transition-fast:   0.15s ease;
   --transition-normal: 0.25s ease;
 
   /* ── Layout ─────────────────────────────────────────────── */
-  --max-width:         960px;
-  --nav-height:        4rem;
+  --max-width:         1200px;   /* shared container — nav, sections, footer */
+  --measure:           62ch;     /* readable cap for long-form paragraphs    */
+  --gutter:            clamp(1.25rem, 4vw, 2.5rem);
+  --nav-height:        4.5rem;
+  /* One height for every button-sized control, so a button and the
+     hero's phone pill line up as a matched pair rather than one
+     sitting taller than the other. */
+  --control-height:    3rem;
   --hero-height:       700px;    /* height cap for the home hero photo */
   --hero-split:        52%;      /* where the hero photo panel starts */
   --hero-aspect:       16 / 9;   /* matches the source photo, so it never crops */
-  --section-padding-y: var(--space-20);
-  --section-padding-x: var(--space-8);
+  --section-padding-y: clamp(3.5rem, 5.5vw, 6rem);
+  --section-padding-x: var(--gutter);
 
   /* ── Breakpoints (for reference in JS / media queries) ─── */
   /* --bp-sm: 480px  */

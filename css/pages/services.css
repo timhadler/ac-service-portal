@@ -7,7 +7,7 @@
    header, the full-width service grid layout, the feature list
    inside expanded cards, and the category grouping.
    ============================================================= */
-   
+
 /* ── Service group (e.g. "Heat pump cleans", "Filter changes") */
 .service-group {
   margin-bottom: var(--space-12);
@@ -18,26 +18,52 @@
 }
 
 .service-group__heading {
+  font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: var(--weight-bold);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-5);
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--color-cream-dark);
+  color: var(--color-brand-sky);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
 }
 
-/* ── Services grid — 2-col on this page, wider cards ─────── */
+/* ── Services grid — 2-col on this page, wider cards ──────
+   Two columns rather than the home page's three: these cards carry a
+   feature list as well as a description, and it also means the
+   --full modifier below always spans a whole row cleanly. */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-5);
 }
 
-/* Full-width card (used for commercial / callout entries) */
+/* Full-width card (used for commercial / callout entries).
+   Across the full grid width a single stack would leave the copy
+   marooned on the left and the price on the far right, so the card
+   splits internally: heading and copy on the left, the feature list
+   beside it, and the price footer spanning both. */
 .service-card--full {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--space-12);
+}
+
+.service-card--full .service-card__icon  { grid-area: 1 / 1; }
+.service-card--full .service-card__name  { grid-area: 2 / 1; }
+.service-card--full .service-card__desc  { grid-area: 3 / 1; }
+
+.service-card--full .service-card__features {
+  grid-area: 1 / 2 / 4 / 3;
+  align-self: center;
+  margin-bottom: 0;
+}
+
+.service-card--full .service-card__footer {
+  grid-area: 4 / 1 / 5 / -1;
+  margin-top: var(--space-2);
 }
 
 /* ── Feature list inside a service card ───────────────────── */
@@ -46,31 +72,35 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  margin-bottom: var(--space-4);
+  margin: 0 0 var(--space-5);
+  padding: 0;
 }
 
+/* The bullet is positioned rather than a flex item: several of these
+   items mix text with a price <span>, and a flex row would insert a
+   gap around every one of those inline pieces. */
 .service-card__features li {
+  position: relative;
+  padding-left: var(--space-5);
   font-size: var(--text-sm);
   color: var(--color-text-mid);
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-2);
   line-height: var(--leading-snug);
 }
 
 .service-card__features li::before {
   content: '';
+  position: absolute;
+  left: 0;
+  top: 7px; /* optical alignment with first line of text */
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: var(--color-brand-sky);
-  flex-shrink: 0;
-  margin-top: 5px; /* optical alignment with first line of text */
 }
 
-/* Featured card feature list — lighter text on navy bg */
+/* Featured card feature list — lighter text on the blue ground */
 .service-card--featured .service-card__features li {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .service-card--featured .service-card__features li::before {
@@ -83,8 +113,18 @@
     grid-template-columns: 1fr;
   }
 
-  /* Full-width modifier is a no-op on single column but keep it harmless */
+  /* With one column there is no room for the internal split — fall
+     back to the same plain stack as every other card. */
   .service-card--full {
     grid-column: auto;
+    display: flex;
+  }
+
+  .service-card--full .service-card__features {
+    margin-bottom: var(--space-5);
+  }
+
+  .service-card--full .service-card__footer {
+    margin-top: auto;
   }
 }

@@ -4,44 +4,52 @@
    ============================================================= */
 
 /* ── Hero ─────────────────────────────────────────────────────
-   A navy masthead that runs straight into the navy trust bar below
-   it: copy on the left, and the photo as a panel that runs off the
-   right-hand edge of the screen. Nothing here is pinned to the
-   viewport's height, so the two halves stay in proportion on a large
-   monitor instead of drifting to opposite corners. */
+   A deep-blue masthead that runs straight into the trust bar below
+   it: copy on the left, and the photo as a panel on the right.
+   Nothing here is pinned to the viewport's height, so the two halves
+   stay in proportion on a large monitor instead of drifting to
+   opposite corners.
+
+   The inner grid is capped at the shared container width and centred,
+   so the hero copy starts on the same vertical line as the nav logo
+   and every section heading further down the page. */
 .hero {
+  background-color: var(--color-brand-blue);
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(220, 234, 247, 0.07) 0px,
+      rgba(220, 234, 247, 0.07) 1px,
+      transparent 1px,
+      transparent 28px
+    ),
+    linear-gradient(160deg, var(--color-brand-blue) 0%, var(--color-brand-blue-dark) 100%);
+  padding: 0 var(--gutter);
+  overflow: hidden;
+}
+
+.hero__inner {
   display: grid;
   grid-template-columns: var(--hero-split) 1fr;
   align-items: center;
+  gap: var(--space-12);
+  max-width: var(--max-width);
+  margin: 0 auto;
   min-height: 420px;
-  overflow: hidden;
-  background-color: var(--color-brand-navy);
-  /* Fine diagonal streaks — a quiet echo of the airflow in the photo */
-  background-image: repeating-linear-gradient(
-    135deg,
-    rgba(74, 155, 201, 0.07) 0px,
-    rgba(74, 155, 201, 0.07) 1px,
-    transparent 1px,
-    transparent 28px
-  );
 }
 
 /* The panel sets its own aspect ratio, and with it the height of the
    whole band, rather than stretching to fill one — a landscape photo
    stays landscape at every width instead of being cropped to a portrait
    slice on narrower monitors. The ratio matches the source photo, so
-   `cover` has nothing to crop off the sides.
-
-   The panel sits inside the same right-hand gutter the rest of the page
-   uses instead of bleeding to the edge of the window, so the right side
-   of the photo is never cut off by the screen — which means all four
-   corners are rounded, not just the two on the left. */
+   `cover` has nothing to crop off the sides. */
 .hero__figure {
   aspect-ratio: var(--hero-aspect);
   max-height: var(--hero-height);
-  margin: var(--space-10) var(--section-padding-x) var(--space-10) 0;
+  margin: var(--space-12) 0;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
 .hero__photo {
@@ -52,17 +60,14 @@
   object-position: center;
 }
 
-/* Centred in the navy half rather than pinned to one side, so the copy
-   stays balanced between the screen edge and the photo at any width. */
 .hero__copy {
-  justify-self: center;
-  max-width: clamp(420px, 34vw, 620px);
-  padding: var(--space-10) var(--section-padding-x);
+  padding: var(--space-12) 0;
 }
 
 .hero__heading {
   margin: 0 0 var(--space-5);
   font-size: var(--text-display);
+  font-weight: var(--weight-semi);
 }
 
 .hero__heading-line {
@@ -76,9 +81,10 @@
 
 .hero__subtext {
   margin: 0 0 var(--space-8);
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.78);
   font-size: var(--text-lg);
   line-height: var(--leading-normal);
+  max-width: 30rem;
 }
 
 /* Book Online + phone read as one action cluster under the copy */
@@ -89,17 +95,20 @@
   flex-wrap: wrap;
 }
 
-/* Phone pill — the one white shape in the navy field, so the second
-   way to get in touch reads as clearly as the orange button */
+/* Phone pill — the one white shape in the blue field, so the second
+   way to get in touch reads as clearly as the orange button. It takes
+   the same --control-height as .btn so the two sit as a matched pair;
+   the icon is sized off that height rather than set independently. */
 .hero__phone {
   display: inline-flex;
   align-items: center;
   gap: var(--space-3);
+  height: var(--control-height);
   background: var(--color-white);
-  padding: var(--space-2) var(--space-5) var(--space-2) var(--space-2);
+  padding: 0 var(--space-5) 0 var(--space-2);
   border-radius: var(--radius-pill);
   box-shadow: var(--shadow-md);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .hero__phone:hover {
@@ -109,10 +118,11 @@
 }
 
 .hero__phone-icon {
-  width: 36px;
-  height: 36px;
+  width: calc(var(--control-height) - var(--space-2));
+  height: calc(var(--control-height) - var(--space-2));
   border-radius: 50%;
   background: var(--color-brand-orange-bg);
+  color: var(--color-brand-orange);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,21 +143,28 @@
 .hero__phone-number {
   font-size: var(--text-md);
   font-weight: var(--weight-semi);
-  color: var(--color-brand-navy);
+  color: var(--color-brand-blue);
 }
 
 /* ── Why section ──────────────────────────────────────────── */
 .why__section-text {
   font-size: var(--text-md);
   color: var(--color-text-mid);
-  margin-bottom: var(--space-8);
+  margin: var(--space-4) 0 var(--space-10);
+  max-width: var(--measure);
   line-height: var(--leading-loose);
+}
+
+.why__section-text em {
+  color: var(--color-brand-blue);
+  font-weight: var(--weight-medium);
+  font-style: italic;
 }
 
 .why__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-12);
+  gap: var(--space-10);
 }
 
 .why__points {
@@ -163,23 +180,24 @@
 .why__images {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-5);
 }
 
-.why__image {
-  flex: 1;
-  min-height: 200px;
-  background-image: url('../../images/tech1.png');
-  background-size: cover;
-  background-position: center;
-}
-
+.why__image,
 .why__image_2 {
   flex: 1;
   min-height: 200px;
-  background-image: url('../../images/tech2.jpeg');
   background-size: cover;
   background-position: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.why__image {
+  background-image: url('../../images/tech1.png');
+}
+
+.why__image_2 {
+  background-image: url('../../images/tech2.jpeg');
 }
 
 /* ── Services preview (home — 3 cards) ───────────────────── */
@@ -187,7 +205,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-10);
 }
 
 .services-preview__cta {
@@ -204,6 +222,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
+  align-items: stretch;
 }
 
 /* ── Partners ─────────────────────────────────────────────── */
@@ -212,35 +231,35 @@
   margin-bottom: var(--space-10);
 }
 
+.partners__header h2 {
+  margin: 0;
+}
+
 .partners__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-8);
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 960px) {
   /* Copy first, photo below it as a card — the side-by-side split has
      no room here, but the photo is still worth showing. */
-  .hero {
+  .hero__inner {
     display: block;
     min-height: 0;
-    padding: var(--space-12) var(--section-padding-x);
+    padding: var(--space-12) 0;
   }
 
   .hero__figure {
-    margin: var(--space-10) 0 0;
-    border-radius: var(--radius-lg);
+    margin: var(--space-8) 0 0;
   }
 
   .hero__copy {
-    max-width: none;
     padding: 0;
-  }
-
-  .hero__heading {
-    font-size: var(--text-2xl);
   }
 
   .hero__subtext {
@@ -253,10 +272,11 @@
 
   .why__grid {
     grid-template-columns: 1fr;
+    gap: var(--space-8);
   }
 
   .why__image {
-    height: 280px;
+    min-height: 300px;
   }
 
   .services-preview__grid,
@@ -267,6 +287,10 @@
 }
 
 @media (max-width: 600px) {
+  .hero__heading {
+    font-size: var(--text-hero);
+  }
+
   .services-preview__grid,
   .reviews__grid {
     grid-template-columns: 1fr;

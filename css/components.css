@@ -5,34 +5,34 @@
 
 /* ── Trust bar (below hero) ───────────────────────────────── */
 .trust-bar {
-  background: var(--color-brand-navy);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: var(--space-4) var(--section-padding-x);
+  background: var(--color-brand-blue-deep);
+  padding: var(--space-5) var(--section-padding-x);
 }
 
 .trust-bar__inner {
   max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: var(--space-8);
+  gap: var(--space-5) var(--space-8);
 }
 
 .trust-item {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  color: rgba(255, 255, 255, 0.7);
+  gap: var(--space-3);
+  color: rgba(255, 255, 255, 0.82);
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
 }
 
 .trust-item__icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background: var(--color-brand-orange);
   border-radius: 50%;
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,48 +41,62 @@
 
 /* ── Service cards ────────────────────────────────────────── */
 .service-card {
-  background: var(--color-cream);
-  border: 1px solid var(--color-cream-dark);
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
-  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal),
+              border-color var(--transition-fast);
 }
 
 .service-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
+  border-color: var(--color-brand-sky-light);
 }
 
 /* Featured/highlighted card variant */
 .service-card--featured {
-  background: var(--color-brand-navy);
-  border-color: var(--color-brand-navy);
+  background: linear-gradient(160deg, var(--color-brand-blue) 0%, var(--color-brand-blue-dark) 100%);
+  border-color: var(--color-brand-blue);
 }
 
-.service-card--featured .service-card__name,
-.service-card--featured .service-card__price {
+.service-card--featured:hover {
+  border-color: var(--color-brand-blue-mid);
+}
+
+.service-card--featured .service-card__name {
   color: var(--color-white);
 }
 
 .service-card--featured .service-card__desc,
 .service-card--featured .service-card__duration {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .service-card--featured .service-card__footer {
-  border-top-color: rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.16);
 }
 
 .service-card--featured .service-card__price {
   color: var(--color-brand-orange);
 }
 
+/* Header row — icon on the left, badge on the right */
 .services-card-header--featured {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+/* Inside the header row the two items are aligned by the row itself */
+.services-card-header--featured .service-card__icon,
+.services-card-header--featured .service-card__badge {
+  margin-bottom: 0;
 }
 
 .service-card__badge {
@@ -91,50 +105,55 @@
   color: var(--color-white);
   font-size: var(--text-xs);
   font-weight: var(--weight-bold);
-  padding: 3px var(--space-2);
-  border-radius: 4px;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: var(--space-4);
+  white-space: nowrap;
 }
 
 .service-card__icon {
-  width: 44px;
-  height: 44px;
-  background: var(--color-brand-sky-light);
+  width: 46px;
+  height: 46px;
+  background: var(--color-brand-sky-pale);
+  color: var(--color-brand-blue);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-5);
   flex-shrink: 0;
 }
 
 .service-card--featured .service-card__icon {
-  background: rgba(74, 155, 201, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-brand-sky-light);
 }
 
 .service-card__name {
   font-family: var(--font-display);
   font-size: var(--text-lg);
-  color: var(--color-brand-navy);
+  color: var(--color-brand-blue);
   margin-bottom: var(--space-2);
 }
 
 .service-card__desc {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: var(--color-text-mid);
   line-height: var(--leading-normal);
-  margin-bottom: var(--space-4);
-  flex: 1;
+  margin: 0 0 var(--space-5);
 }
 
+/* Pushes the footer to the bottom so a row of cards keeps its prices
+   on one line regardless of how long each description runs. */
 .service-card__footer {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  padding-top: var(--space-3);
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
   margin-top: auto;
 }
 
@@ -142,12 +161,14 @@
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: var(--weight-bold);
-  color: var(--color-brand-navy);
+  color: var(--color-brand-blue);
+  letter-spacing: -0.02em;
 }
 
 .service-card__duration {
   font-size: var(--text-xs);
   color: var(--color-text-muted);
+  text-align: right;
 }
 
 /* ── Why-us point cards ───────────────────────────────────── */
@@ -158,13 +179,20 @@
   padding: var(--space-5);
   background: var(--color-surface-white);
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-cream-dark);
+  border: 1px solid var(--color-border);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-fast);
+}
+
+.why-point:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-brand-sky-light);
 }
 
 .why-point__icon {
-  width: 36px;
-  height: 36px;
-  background: var(--color-brand-sky-light);
+  width: 38px;
+  height: 38px;
+  background: var(--color-brand-sky-pale);
+  color: var(--color-brand-blue);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -174,64 +202,72 @@
 }
 
 .why-point__title {
-  font-size: var(--text-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
   font-weight: var(--weight-semi);
-  color: var(--color-brand-navy);
-  margin-bottom: var(--space-1);
+  color: var(--color-brand-blue);
+  margin-bottom: var(--space-2);
 }
 
 .why-point__text {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  line-height: var(--leading-snug);
+  color: var(--color-text-mid);
+  line-height: var(--leading-normal);
+  margin: 0;
 }
 
 /* ── Review cards ─────────────────────────────────────────── */
 .review-card {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
 }
 
 .review-card__stars {
-  color: #F5C842;
+  color: var(--color-star);
   font-size: var(--text-sm);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
   letter-spacing: 2px;
 }
 
 .review-card__text {
   font-size: var(--text-sm);
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.82);
   line-height: var(--leading-loose);
-  margin-bottom: var(--space-4);
+  margin: 0 0 var(--space-5);
   font-style: italic;
 }
 
+/* Attribution pinned to the bottom so a row of cards of differing
+   lengths still ends on one line. */
 .review-card__author {
   font-size: var(--text-sm);
   font-weight: var(--weight-semi);
-  color: var(--color-brand-sky);
+  color: var(--color-brand-sky-light);
+  margin-top: auto;
 }
 
 /* ── CTA section ──────────────────────────────────────────── */
 .cta-block {
   text-align: center;
-  max-width: 620px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
 .cta-block h2 {
-  font-size: var(--text-3xl);
-  color: var(--color-brand-navy);
+  color: var(--color-brand-blue);
   margin-bottom: var(--space-4);
 }
 
 .cta-block p {
   color: var(--color-text-mid);
   font-size: var(--text-md);
-  margin-bottom: var(--space-8);
+  line-height: var(--leading-loose);
+  margin: 0 auto var(--space-8);
+  max-width: 48ch;
 }
 
 .cta-block__actions {
@@ -245,28 +281,34 @@
 .reviews-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: var(--space-8);
+  align-items: center;
+  margin-bottom: var(--space-10);
   flex-wrap: wrap;
   gap: var(--space-4);
 }
 
 .reviews-header h2 {
-  font-size: var(--text-2xl);
   color: var(--color-white);
+  margin: 0;
 }
 
+/* Rating reads as a badge rather than loose text beside the heading */
 .reviews-rating {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  color: #F5C842;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--color-star);
   font-size: var(--text-sm);
   font-weight: var(--weight-semi);
+  white-space: nowrap;
 }
 
 .reviews-rating span {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: var(--weight-regular);
 }
 
@@ -277,23 +319,27 @@
   position: relative;
 }
 
+/* The caption carries its own scrim rather than sitting in an opaque
+   box, so it never blocks the part of the photo it sits on. The
+   gradient belongs to the caption (not the card) so image cards with
+   no caption stay completely clear. */
 .image-card__overlay-badge {
   position: absolute;
-  bottom: var(--space-6);
-  left: var(--space-6);
-  background: var(--color-brand-navy);
-  color: var(--color-white);
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-md);
+  inset: auto 0 0 0;
+  padding: var(--space-10) var(--space-5) var(--space-5);
+  background: linear-gradient(to top, rgba(19, 43, 76, 0.85), rgba(19, 43, 76, 0));
+  color: rgba(255, 255, 255, 0.85);
   font-size: var(--text-sm);
-  line-height: 1.4;
+  line-height: var(--leading-snug);
 }
 
 .image-card__overlay-badge strong {
   display: block;
-  font-size: var(--text-2xl);
-  color: var(--color-brand-orange);
+  font-size: var(--text-xl);
+  color: var(--color-white);
   font-family: var(--font-display);
+  font-weight: var(--weight-semi);
+  margin-bottom: var(--space-1);
 }
 
 /* ── Area / tag badges ────────────────────────────────────── */
@@ -302,9 +348,9 @@
   align-items: center;
   gap: var(--space-1);
   background: var(--color-green-light);
-  border: 1px solid #b8d9bc;
+  border: 1px solid var(--color-green);
   border-radius: var(--radius-pill);
-  padding: 5px var(--space-4);
+  padding: var(--space-1) var(--space-4);
   font-size: var(--text-xs);
   font-weight: var(--weight-semi);
   color: var(--color-green);
@@ -313,13 +359,13 @@
 .tag--sky {
   background: var(--color-brand-sky-light);
   border-color: var(--color-brand-sky);
-  color: var(--color-brand-navy);
+  color: var(--color-brand-blue);
 }
 
 .tag--orange {
   background: var(--color-brand-orange-bg);
   border-color: var(--color-brand-orange-dim);
-  color: var(--color-brand-orange);
+  color: var(--color-brand-orange-dark);
 }
 
 /* ── Partner logo ─────────────────────────────────────────
@@ -338,11 +384,20 @@
 
 /* The anchor, not the image, is the cell-filling box, so the logo keeps
    its contain behaviour and the whole cell is the click target. */
+/* Partner logos always show in their own brand colours — these are
+   other people's marks and they stay as they were supplied. Hover is
+   a light fade only, enough to signal the link without the row ever
+   looking greyed out or disabled. */
 .partners__link {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  transition: opacity var(--transition-normal);
+}
+
+.partners__link:hover {
+  opacity: 0.75;
 }
 
 .partners__logo {

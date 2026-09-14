@@ -22,11 +22,22 @@
 
     // Close nav when a link inside it is clicked
     mobileNav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        mobileNav.classList.remove('is-open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeNav);
     });
+
+    // Escape closes the drawer and returns focus to the toggle, so a
+    // keyboard user is never trapped behind an open menu.
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+        closeNav();
+        hamburger.focus();
+      }
+    });
+  }
+
+  function closeNav() {
+    mobileNav.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded', 'false');
   }
 
   // ── Active link highlighting ──────────────────────────────
