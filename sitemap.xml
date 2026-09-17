@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AirCare sitemap.
+
+  Lives only on `main` and lists every URL in the site, including the B2B
+  pages that currently exist only on the b2b-pm and b2b-comm branches. The
+  site is not deployed yet, so naming them early costs nothing and keeps
+  this file off the merge surface entirely — exactly one branch ever edits
+  it, so there is nothing to resolve when the branches come together.
+
+  DO NOT DEPLOY this file before the b2b branches are merged, or trim the
+  four B2B entries below for that deploy. A sitemap naming URLs that 404 is
+  reported as an error in Search Console.
+
+  URLs are extensionless because the host serves foo.html at /foo. They must
+  match each page's own <link rel="canonical"> exactly.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.aircare.nz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aircare.nz/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aircare.nz/about</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aircare.nz/contact</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ── Currently on branch b2b-pm ─────────────────────────────── -->
+  <url>
+    <loc>https://www.aircare.nz/property-managers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ── Currently on branch b2b-comm ───────────────────────────── -->
+  <url>
+    <loc>https://www.aircare.nz/commercial</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aircare.nz/commercial-clinical</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aircare.nz/commercial-hospitality</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aircare.nz/commercial-personal-care</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,7 @@
+# AirCare — https://www.aircare.nz
+# Everything here is public marketing content; nothing to hide from crawlers.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.aircare.nz/sitemap.xml
