@@ -10,6 +10,27 @@
    wordmark. DM Sans carries body copy. */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
+/* ── Logo wordmark face ───────────────────────────────────────
+   Hero (Fontfabric) is the typeface the AirCare logo is actually
+   set in. It is not on Google Fonts, so it is self-hosted from
+   fonts/ rather than fetched from a third party — one less
+   external dependency for the one word that has to look right.
+   Only Bold ships, because the wordmark is the only thing that
+   uses it and it is only ever bold.
+
+   font-display: swap is the fallback the brief asked for: the
+   wordmark paints immediately in Poppins and swaps to Hero the
+   moment it arrives, so a slow or failed font request leaves the
+   logo looking exactly as it does today rather than invisible. */
+@font-face {
+  font-family: 'Hero';
+  src: url('../fonts/hero-bold.woff2') format('woff2'),
+       url('../fonts/hero-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ── Base ─────────────────────────────────────────────────── */
 *,
 *::before,
