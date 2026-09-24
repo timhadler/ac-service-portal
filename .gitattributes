@@ -1,4 +1,8 @@
 # The root .html files and sitemap.xml are written by tools/build.py.
 # Collapse them in review by default; the sources are what to read.
-*.html linguist-generated=true
-sitemap.xml linguist-generated=true
+#
+# Both patterns are anchored with a leading slash. Without it, *.html
+# matches at every depth and would collapse src/pages/ and src/partials/
+# too — the exact files this comment says to read.
+/*.html linguist-generated=true
+/sitemap.xml linguist-generated=true
