@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ description }}">
+
+  <!-- ── Canonical and social ─────────────────────────────────────
+       Canonical is absolute and extensionless — the host serves
+       foo.html at /foo. One per page, pointing at itself.
+       TODO: images/og/og-default.jpg (1200x630) does not exist yet.
+       The cards work the moment it is added; no markup change needed. -->
+  <link rel="canonical" href="{{ canonical }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AirCare">
+  <meta property="og:locale" content="en_NZ">
+  <meta property="og:title" content="{{ og_title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ og_title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ og_image }}">
+{{ structured_data }}
+  <title>{{ title }}</title>
+  <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/{{ page_css }}.css">
+</head>
+
+<body>
+<div class="{{ wrapper_classes }}">
+

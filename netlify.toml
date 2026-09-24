@@ -1,0 +1,8 @@
+# The build does not generate anything: the .html files are committed.
+# This command only refuses to publish a tree whose output is stale.
+#
+# If it ever fails for a reason you cannot fix, delete this file — the
+# site deploys fine without it, because the HTML is already in the repo.
+[build]
+  publish = "."
+  command = "python3 tools/build.py --check"

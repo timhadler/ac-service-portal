@@ -187,14 +187,19 @@
   opacity: 1;
 }
 
-/* Current page marked with an orange rule rather than an underline —
-   it reads as a deliberate state instead of a stray link decoration. */
-.nav__links a[aria-current="page"] {
+/* Current page marked with an orange rule rather than an underline — it reads
+   as a deliberate state instead of a stray link decoration.
+
+   Matches any aria-current value, so the exact page (aria-current="page") and
+   the section a sub-page sits under (aria-current="true") get the same
+   treatment. js/navigation.js never writes aria-current="false", which is the
+   only value this would wrongly match. */
+.nav__links a[aria-current] {
   color: var(--color-brand-blue);
   font-weight: var(--weight-semi);
 }
 
-.nav__links a[aria-current="page"]::after {
+.nav__links a[aria-current]::after {
   content: '';
   position: absolute;
   left: 0;
@@ -225,7 +230,7 @@
   opacity: 1;
 }
 
-.nav__links .nav__book[aria-current="page"]::after {
+.nav__links .nav__book[aria-current]::after {
   content: none;
 }
 
@@ -259,7 +264,7 @@
   flex-shrink: 0;
 }
 
-.nav__links .nav__phone[aria-current="page"]::after {
+.nav__links .nav__phone[aria-current]::after {
   content: none;
 }
 
@@ -332,7 +337,7 @@
 }
 
 .nav__mobile li a:hover,
-.nav__mobile li a[aria-current="page"] {
+.nav__mobile li a[aria-current] {
   color: var(--color-brand-blue);
   opacity: 1;
 }

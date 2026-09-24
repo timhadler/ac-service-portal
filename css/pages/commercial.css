@@ -174,13 +174,6 @@
   letter-spacing: -0.01em;
 }
 
-.comm-call__hint {
-  display: block;
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  margin-top: var(--space-1);
-}
-
 /* ── Quote form card ──────────────────────────────────────── */
 .comm-form-card {
   background: var(--color-surface-white);
@@ -652,6 +645,17 @@ a.premises-card:hover {
   letter-spacing: -0.02em;
   margin-bottom: var(--space-2);
 }
+
+/* A [PLACEHOLDER] token is far longer than the figure it stands in for, and
+   this element is display-sized — at 360px the untouched pill overflows the
+   grid. Let the scaffolding shrink and wrap; the real numbers are short and
+   never hit either rule. */
+.proof-stat__num .placeholder {
+  font-size: var(--text-sm);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 
 .proof-stat__label {
   font-size: var(--text-sm);

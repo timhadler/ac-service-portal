@@ -1,0 +1,220 @@
+    <section class="comm-hero" aria-labelledby="{{ hero_section_id }}">
+      <div class="comm-hero__inner">
+
+        <div class="comm-hero__copy">
+          <span class="label comm-hero__eyebrow">{{ hero_eyebrow }}</span>
+
+{{ hero_heading }}
+
+{{ hero_sub }}
+
+          <ul class="comm-promise" role="list">
+            <li>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6l2.5 2.5L10 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              In and out
+            </li>
+            <li>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6l2.5 2.5L10 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              No mess
+            </li>
+            <li>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6l2.5 2.5L10 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              One invoice
+            </li>
+          </ul>
+
+          <p class="comm-hero__coverage">
+            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M9 2a5.5 5.5 0 015.5 5.5C14.5 12 9 16.5 9 16.5S3.5 12 3.5 7.5A5.5 5.5 0 019 2z" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="9" cy="7.5" r="2" fill="currentColor"/>
+            </svg>
+            <span>Christchurch, Rangiora, Rolleston, Amberley and the surrounding areas.</span>
+          </p>
+        </div>
+
+        <div>
+          <a href="tel:0800247227" class="comm-call" data-track="phone-commercial">
+            <span class="comm-call__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M3.5 2.5h3.5l1.75 4-1.75 1.25A10.5 10.5 0 0011 12l1.25-1.75 4 1.75V15.5A1.5 1.5 0 0114.75 17C7.7 17 2 11.3 2 4.25A1.5 1.5 0 013.5 2.75z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span>
+              <span class="comm-call__label">Talk to us now</span>
+              <span class="comm-call__number">0800 247 227</span>
+            </span>
+          </a>
+        <div class="comm-form-card" id="quote">
+
+          <!-- STEP ONE — the capture -->
+          <div id="comm-step-1">
+            <h2 class="comm-form-card__title">Request a quote</h2>
+            <p class="comm-form-card__intro">
+{{ form_intro }}
+              Typical response: <span class="placeholder">[RESPONSE_TIME]</span>.
+            </p>
+
+            <form id="comm-form-lead"
+                  name="commercial-quote"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  data-track="quote-commercial"
+                  novalidate>
+
+              <!-- Required by Netlify when submitting via fetch instead of a full page POST -->
+              <input type="hidden" name="form-name" value="commercial-quote">
+
+              <!-- Spam trap: a bot fills this, a person never sees it -->
+              <p class="comm-form__hp" aria-hidden="true">
+                <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+              </p>
+
+{{ premises_field }}
+
+              <div class="form-group">
+                <label class="form-label" for="comm-suburb">Suburb</label>
+                <input class="form-input" type="text" id="comm-suburb" name="suburb"
+                       autocomplete="address-level2" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="comm-email">Email</label>
+                <input class="form-input" type="email" id="comm-email" name="email"
+                       autocomplete="email" required>
+              </div>
+
+              <button type="submit" class="btn btn--primary form-submit">
+                Request a quote &rarr;
+              </button>
+
+              <p class="comm-form__footnote">
+                No obligation, and we won&rsquo;t add you to a mailing list.
+              </p>
+            </form>
+          </div>
+
+          <!-- STEP TWO — the qualifying answers, revealed by js/commercial-form.js -->
+          <div id="comm-step-2" hidden>
+            <div class="comm-form__confirm">
+              <svg class="comm-form__confirm-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M4 9.5l3.5 3.5L14 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>
+                <strong>Got it &mdash; that&rsquo;s with us.</strong>
+                We&rsquo;ll come back to you shortly.
+              </span>
+            </div>
+
+            <p class="comm-form__step-label">
+              A few more answers and we can quote properly rather than
+              ballpark it. The number of units is the one that matters most.
+            </p>
+
+            <form id="comm-form-detail"
+                  name="commercial-quote-details"
+                  method="POST"
+                  data-netlify="true"
+                  data-track="quote-commercial-details"
+                  novalidate>
+
+              <input type="hidden" name="form-name" value="commercial-quote-details">
+              <!-- Carried from step one so the two submissions can be matched up -->
+              <input type="hidden" name="email" id="comm-detail-email">
+              <input type="hidden" name="suburb" id="comm-detail-suburb">
+              <input type="hidden" name="premises" id="comm-detail-premises">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="comm-units">Units on site</label>
+                  <select class="form-input" id="comm-units" name="units">
+                    <option value="">Select&hellip;</option>
+                    <option value="1-2">1&ndash;2</option>
+                    <option value="3-5">3&ndash;5</option>
+                    <option value="6-10">6&ndash;10</option>
+                    <option value="11-20">11&ndash;20</option>
+                    <option value="20+">20+</option>
+                    <option value="unsure">Not sure</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="comm-sites">Number of sites</label>
+                  <select class="form-input" id="comm-sites" name="sites">
+                    <option value="">Select&hellip;</option>
+                    <option value="1">1</option>
+                    <option value="2-3">2&ndash;3</option>
+                    <option value="4+">4+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="comm-unit-types">Unit types <span class="form-label__optional">(if you know)</span></label>
+                <select class="form-input" id="comm-unit-types" name="unit-types">
+                  <option value="">Select&hellip;</option>
+                  <option value="high-wall">High-wall</option>
+                  <option value="cassette">Ceiling cassette</option>
+                  <option value="ducted">Ducted</option>
+                  <option value="floor">Floor console</option>
+                  <option value="mixed">A mix</option>
+                  <option value="unsure">Not sure</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="comm-hours">Preferred working hours</label>
+                <select class="form-input" id="comm-hours" name="hours">
+                  <option value="">Select&hellip;</option>
+                  <option value="trading">During trading hours is fine</option>
+                  <option value="before-open">Before we open</option>
+                  <option value="after-close">After we close</option>
+                  <option value="closed-day">Our closed day</option>
+                  <option value="saturday">Saturday</option>
+                  <option value="discuss">Let&rsquo;s discuss</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="comm-faults">Anything currently faulty? <span class="form-label__optional">(optional)</span></label>
+                <textarea class="form-input" id="comm-faults" name="faults" rows="2"
+                          placeholder="Not cooling, smell on start-up, dripping&hellip;"></textarea>
+              </div>
+
+              <!-- Optional, and deliberately neutral. AirCare does not
+                   interpret leases or say whose obligation the unit is;
+                   this only tells us who to talk to. See the FAQ. -->
+              <div class="form-group">
+                <label class="form-label" for="comm-landlord">If you lease, who manages the building? <span class="form-label__optional">(optional)</span></label>
+                <input class="form-input" type="text" id="comm-landlord" name="building-manager">
+              </div>
+
+              <button type="submit" class="btn btn--blue form-submit">
+                Send these too &rarr;
+              </button>
+
+              <button type="button" class="comm-form__skip" id="comm-form-skip">
+                No thanks, I&rsquo;m done
+              </button>
+            </form>
+          </div>
+
+          <!-- FINAL STATE — after step two, or after skipping it -->
+          <div class="form-success" id="comm-form-success" hidden>
+            <div class="form-success__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Thanks &mdash; we&rsquo;ll be in touch</h3>
+            <p>
+              We&rsquo;ll come back to you shortly.<br>
+              Sooner is fine too. Call us on <a class="form-success__link" href="tel:0800247227">0800 247 227</a>.
+            </p>
+          </div>
+
+        </div><!-- /.comm-form-card -->
+        </div>
+
+      </div>
+    </section>
+

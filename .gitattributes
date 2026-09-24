@@ -1,0 +1,4 @@
+# The root .html files and sitemap.xml are written by tools/build.py.
+# Collapse them in review by default; the sources are what to read.
+*.html linguist-generated=true
+sitemap.xml linguist-generated=true

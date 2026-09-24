@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-A static marketing/booking website for AirCare, a Christchurch heat pump cleaning company. Plain HTML, CSS and vanilla JavaScript — no build tooling, no package manager, no framework. Every page is a hand-authored `.html` file loaded directly by the browser.
+A static marketing/booking website for AirCare, a Christchurch heat pump cleaning company. Plain HTML, CSS and vanilla JavaScript — no package manager, no framework. There is one small build step: `tools/build.py` (standard-library Python, no dependencies) assembles the `.html` files at the repo root from sources in `src/`. The generated HTML is committed, so a fresh clone opens in a browser and the host needs no build command.
 
 Key product decisions (from README.md):
 - Multi-page site (not an SPA) to mirror a real business site.
@@ -13,25 +13,67 @@ Key product decisions (from README.md):
 
 ## Running / previewing locally
 
-There is no dev server or build step. Open the HTML files directly in a browser, or serve the directory with any static file server, e.g.:
+Open the HTML files directly in a browser, or serve the directory with any static file server, e.g.:
 
 ```
 python3 -m http.server 8000
 ```
 
-There are no lint, test, or build commands in this repo.
+**If you changed anything under `src/`, run `python3 tools/build.py` first.** There are no lint or test commands in this repo.
+
+## The root `.html` files are generated — do not edit them
+
+Every `.html` at the repo root, and `sitemap.xml`, is written by `tools/build.py` from
+`src/`. Editing one directly works until the next build and is then silently lost.
+
+- **Page copy and page-specific markup** → `src/pages/<page>.html`
+- **Nav, footer, quote form, head/SEO block, sticky CTA** → `src/partials/`
+- **Phone number, booking URL, nav variants, to-be-confirmed values** → `src/site.vars`
+
+Then run `python3 tools/build.py` and commit both the source and the regenerated HTML.
+
+`python3 tools/build.py --check` rebuilds in memory and fails with a diff if anything at
+the root is out of date. It runs in the pre-commit hook (enable once per clone with
+`git config core.hooksPath tools/hooks`) and as the Netlify build command, so a stale
+commit fails the deploy rather than shipping.
+
+### Three constructs, and no more. Do not add a fourth.
+
+1. `<!--@ ... @-->` front matter at the top of a page source. `key: value`, or
+   `key: <<` … `<<` for a multi-line value.
+2. `<!-- include: name.html -->` on a line by itself. Partials carry their own
+   indentation, so an include contributes none.
+3. `{{ key }}` — page scope over site scope. **Defined → the value, even if empty.
+   Undefined → `<span class="placeholder">[KEY]</span>`**, which is how a
+   to-be-confirmed value renders on the page.
+
+There are no loops, no conditionals and no slots, deliberately — that constraint is why
+the build is ~190 lines. If you need a conditional, add a second partial or a variable
+group in `src/site.vars` (the three nav variants work this way). A value that must
+disappear without leaving a blank line carries its own leading newline and is appended
+to the end of the previous line; `nav_pm_item` is the worked example.
+
+### When to share a block, and when not to
+
+**Share a block only if every page using it emits the same *number* of repeated
+children, and the per-page differences are a handful of scalar values. A difference may
+be a leaf, never a shape.**
+
+`commercial-personal-care.html` has three cards in the "why these load faster" section
+where the other two verticals have four, so that section stays hand-authored in each
+page source even though most of its lines are identical. Near-duplication is the right
+outcome there; a partial with a hole for "maybe a fourth card" is not, because that is
+the first crack through which a template language grows forever.
+
+The ~230 inline SVGs are deliberately *not* de-duplicated. Nobody hand-edits an SVG
+path, so there is no drift risk — it is diff noise, not a hazard.
 
 ## Architecture
 
 ### Pages
-Four top-level pages: `index.html`, `services.html`, `about.html`, `contact.html`. Each is a fully self-contained HTML document (own `<head>`, header, footer, and inline `<script>` at the bottom).
+Nine pages: `index.html`, `services.html`, `about.html`, `contact.html`, `property-managers.html`, `commercial.html` and three commercial verticals (`commercial-clinical`, `commercial-hospitality`, `commercial-personal-care`). Each is a complete, self-contained HTML document — but it is generated; see above.
 
-### Shared header/footer are NOT templated — copy-paste only
-`_includes/nav-bar.html` and `_includes/footer.html` exist purely as reference source for the shared header and footer markup. There is no static site generator or build step that includes them — each page has that markup pasted directly into its `<body>`. Comments in the pages confirm this convention (e.g. `contact.html` has `HEADER — paste from _includes/header.html`, `index.html` has `Paste contents of _includes/footer.html here.`).
-
-**When editing the nav bar or footer, update `_includes/nav-bar.html` or `_includes/footer.html` AND manually copy the change into all four page files** — index, services, about, contact. There is no mechanism that keeps them in sync automatically.
-
-Each page also sets the current year via an inline script at the bottom: `document.getElementById('footer-year').textContent = new Date().getFullYear();`.
+Each page sets the current year via an inline script at the bottom, which lives once in `src/partials/tail.html`: `document.getElementById('footer-year').textContent = new Date().getFullYear();`.
 
 ### CSS structure and load order
 Stylesheets are linked in a specific cascade order in every page's `<head>` — preserve this order when adding new pages or stylesheets:
@@ -47,8 +89,8 @@ Prefer adding shared styles to `global.css`/`layout.css`/`components.css` and on
 ### JavaScript — one file per concern
 Scripts are separated by feature, each an IIFE, and only included on the pages that need them:
 
-- `js/navigation.js` — mobile hamburger toggle and active-nav-link highlighting (matches current filename against nav `href`s). Included on every page.
-- `js/prices.js` — single source of truth for displayed prices. Holds a `PRICES` object keyed by service, and on load fills in every element with a `data-price="<key>"` attribute. Included on `index.html` and `services.html`. **To change a displayed price, edit the `PRICES` object in `js/prices.js`, not the HTML** — price spans in HTML are empty (`<span data-price="deepClean"></span>`) and populated at runtime.
+- `js/navigation.js` — mobile hamburger toggle and active-nav-link highlighting. Included on every page. The active-link match strips a trailing `.html` from both the path and the `href`, because the host serves `foo.html` at `/foo` — comparing them raw matches nothing but the home page on the live site, while still looking correct under `python3 -m http.server`.
+- `js/prices.js` — single source of truth for displayed prices. Holds a `PRICES` object keyed by service, and on load fills in every element with a `data-price="<key>"` attribute. Included on `index.html` and `services.html`. **To change a displayed price, edit the `PRICES` object in `js/prices.js`, not the HTML** — price spans in HTML are empty (`<span data-price="deepClean"></span>`) and populated at runtime. This is the *runtime* sibling of `src/site.vars`, which is *build-time*: consumer prices go in `prices.js`, everything the build substitutes goes in `site.vars`. Do not add a value to the wrong one.
 - `js/forms.js` — contact form validation and submission for `contact.html` only. Validates required fields client-side, then POSTs URL-encoded form data to Netlify Forms (`fetch('/', ...)`). Netlify Forms only works on Netlify's infrastructure — locally, the real fetch path never runs because there's an early `showSuccess(); return;` at the top of `submitForm()` for local testing, with the real fetch code below it (currently dead code while that early return is in place). See the comment block at the top of the file for how to toggle between local-testing and real-submission behavior, and what markup Netlify Forms requires (`data-netlify="true"`, hidden `form-name` input, matching `name="contact"`).
 
 ### The shared container — everything measures from one column
@@ -86,7 +128,24 @@ Headings are Poppins (`--font-display`), body copy is DM Sans (`--font-body`); b
 
 **Section/page structure:** new page sections should be built from the existing layout primitives in `layout.css` rather than new one-off wrappers — `<section class="section section--{white|soft|blue|sky}">` containing a `.section-inner` (or `.page-header` for the top-of-page banner), with `.grid-2`/`.grid-3` for column layouts. Only add page-specific rules in `css/pages/{page}.css` when nothing in `layout.css`/`components.css` already covers it.
 
+**Regulated claims — state the boundary positively.** AirCare cleans heat pumps and is
+not a qualified certifier, so no page may say or imply that a service makes a property
+compliant, that AirCare certifies or assesses anything, or that any outcome is
+guaranteed. The way that limit is expressed changed in `dc93202`: **say what the service
+does and what the record *does* count for, rather than listing what it is not.** Prefer
+"a dated record of when each unit was cleaned and the condition we found it in, for your
+file" over "this is not a Food Control Plan compliance document". Do not reintroduce
+"what this is not" panels because an older revision of a page had one. The sentence to
+watch is the positive one: the record must stay *our* maintenance record, never something
+that "counts towards" a regulated standard.
+
 **Modals/popups:** none exist in the codebase yet. If one is added, follow the same conventions above (BEM naming, design tokens, explicit transition properties, `role="dialog"`/`aria-modal="true"`/focus handling consistent with the `role="alert"` pattern already used for form errors in `js/forms.js`), and give it a z-index above `.site-header`'s `z-index: 100`.
 
 ### Adding a new page
-Follow the pattern of an existing page: copy the `<head>` stylesheet block (same order as above, plus a new `css/pages/{name}.css` if it needs page-specific styles), paste in the current header/footer markup from `_includes/`, add `js/navigation.js` (and `js/prices.js` if it shows prices, `js/forms.js` if it has the contact form), and add the page to the nav links in both `_includes/nav-bar.html` and every page's pasted-in copy.
+Copy an existing file in `src/pages/` and edit its front matter. A page needs `out`,
+`slug`, `sitemap`, `title`, `description`, `og_title`, `page_css`, `page_scripts`, and a
+`use:` line naming its nav group (`nav.consumer`, `nav.commercial` or `nav.property`).
+Add `css/pages/{name}.css` if it needs page-specific styles. Then add the page to the nav
+by editing `src/partials/header.html` — **once**, for every page at the same time — and
+run `python3 tools/build.py`. The canonical URL, Open Graph tags, breadcrumb and the
+`sitemap.xml` entry are all derived from `slug`; do not write them by hand.

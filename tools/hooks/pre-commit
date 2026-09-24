@@ -1,0 +1,13 @@
+#!/bin/sh
+# Refuses a commit whose generated HTML does not match src/.
+# Enable once per clone:  git config core.hooksPath tools/hooks
+#
+# This fails loudly rather than rebuilding and staging for you: an
+# auto-fixing hook that quietly rewrites your staged tree is a worse
+# surprise than a failed commit.
+if ! python3 tools/build.py --check; then
+    echo
+    echo "  The .html files at the repo root are out of date with src/."
+    echo "  Run:  python3 tools/build.py    then stage the result."
+    exit 1
+fi

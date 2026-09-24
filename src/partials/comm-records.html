@@ -1,0 +1,55 @@
+    <!-- ══════════════════════════════════════════════════════
+         3. THE AUDIT / FILE ANGLE
+
+         The central hook for this page set. These premises do not
+         audit AirCare — they are themselves audited, and need
+         something for their own file.
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--white" aria-labelledby="sub-file-heading">
+      <div class="section-inner">
+        <span class="label">Your records</span>
+        <h2 id="sub-file-heading">{{ records_heading }}</h2>
+        <p class="section-intro">{{ records_intro }}</p>
+
+        <div class="comm-split comm-split--single">
+          <div class="comm-panel">
+            <h3 class="comm-panel__title">What the record gives you</h3>
+            <ul class="check-list" role="list">
+              <li class="check-list__item">
+            <span class="check-list__icon" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+                <span>{{ records_date }}</span>
+              </li>
+              <li class="check-list__item">
+            <span class="check-list__icon" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+                <span>{{ records_naming }}</span>
+              </li>
+              <li class="check-list__item">
+            <span class="check-list__icon" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+                <span>{{ records_condition }}</span>
+              </li>
+              <li class="check-list__item">
+            <span class="check-list__icon" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+                <span>{{ records_invoice }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
