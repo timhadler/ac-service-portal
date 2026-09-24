@@ -229,6 +229,40 @@
   content: none;
 }
 
+/* Phone pill in nav — property-managers.html only, where it stands in
+   for the Book Now button. That page's visitors are not booking a
+   single clean, and the enquiry converts on the phone, so the nav
+   slot carries the number instead. Outlined rather than filled: it is
+   a second way in, not the page's primary action. */
+.nav__links .nav__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-brand-blue);
+  color: var(--color-brand-blue);
+  font-weight: var(--weight-semi);
+  white-space: nowrap;
+  transition: background var(--transition-fast), color var(--transition-fast),
+              transform var(--transition-normal);
+}
+
+.nav__links .nav__phone:hover {
+  background: var(--color-brand-blue);
+  color: var(--color-white);
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.nav__links .nav__phone svg {
+  flex-shrink: 0;
+}
+
+.nav__links .nav__phone[aria-current="page"]::after {
+  content: none;
+}
+
 /* Hamburger (mobile) */
 .nav__hamburger {
   display: none;

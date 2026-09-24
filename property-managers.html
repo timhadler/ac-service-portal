@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Annual heat pump servicing for rental portfolios in Christchurch, Rangiora, Rolleston and Amberley. We arrange tenant access and document every unit.">
+
+  <!-- ── Canonical and social ─────────────────────────────────────
+       Canonical is absolute and extensionless — the host serves
+       foo.html at /foo. One per page, pointing at itself.
+       TODO: images/og/og-default.jpg (1200x630) does not exist yet.
+       The cards work the moment it is added; no markup change needed. -->
+  <link rel="canonical" href="https://www.aircare.nz/property-managers">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AirCare">
+  <meta property="og:locale" content="en_NZ">
+  <meta property="og:title" content="Portfolio heat pump servicing for property managers">
+  <meta property="og:description" content="Annual heat pump servicing for rental portfolios in Christchurch, Rangiora, Rolleston and Amberley. We arrange tenant access and document every unit.">
+  <meta property="og:url" content="https://www.aircare.nz/property-managers">
+  <meta property="og:image" content="https://www.aircare.nz/images/og/og-default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfolio heat pump servicing for property managers">
+  <meta name="twitter:description" content="Annual heat pump servicing for rental portfolios in Christchurch, Rangiora, Rolleston and Amberley. We arrange tenant access and document every unit.">
+  <meta name="twitter:image" content="https://www.aircare.nz/images/og/og-default.jpg">
+
+
+  <!-- Declares the page's place in the site hierarchy for search results.
+       This, not the URL path, is what produces a breadcrumb trail in a
+       SERP — which is why flat filenames lose nothing here. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",
+        "item": "https://www.aircare.nz/" },
+      { "@type": "ListItem", "position": 2, "name": "Property managers",
+        "item": "https://www.aircare.nz/property-managers" }
+    ]
+  }
+  </script>
+
+  <title>Property Managers — AirCare | Portfolio Heat Pump Servicing, Christchurch</title>
+  <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/property-managers.css">
+</head>
+
+<body>
+<div class="site-wrapper pm-page">
+
+  <!-- ══════════════════════════════════════════════════════
+       HEADER — paste from _includes/nav-bar.html
+
+       ONE DELIBERATE DIVERGENCE from the shared markup: the orange
+       "Book Now" item is replaced by a phone pill on this page only.
+       Property managers are not buying a single clean, so the consumer
+       booking CTA is wrong for them — and Ros converts these enquiries
+       on the phone. Keep the rest of this block in sync with
+       _includes/nav-bar.html as usual.
+  ═══════════════════════════════════════════════════════ -->
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html" class="nav__logo" aria-label="AirCare — home">
+                <img class="nav__logo-img" src="images/icons/aircare.webp" alt="" width="64" height="64" aria-hidden="true">
+                <span class="nav__logo-text">Air<span>Care</span></span>
+            </a>
+
+            <ul class="nav__links" role="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="property-managers.html">Property managers</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                <!-- TODO: swap to Ros's direct line once confirmed -->
+                <a href="tel:0800247227" class="nav__phone">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                        <path d="M2.5 2h2.5l1.25 2.75-1.25.875A7.5 7.5 0 008.375 9l.875-1.25L12 9V11.5A1 1 0 0111 12.5C5.2 12.5 1.5 8.8 1.5 3A1 1 0 012.5 2z" fill="currentColor"/>
+                    </svg>
+                    0800 247 227
+                </a>
+                </li>
+            </ul>
+
+            <button class="nav__hamburger"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="nav-mobile">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <ul class="nav__mobile" id="nav-mobile" role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="property-managers.html">Property managers</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <!-- TODO: swap to Ros's direct line once confirmed -->
+                <a href="tel:0800247227">Call us — 0800 247 227</a>
+            </li>
+        </ul>
+    </header>
+  <!-- ── END HEADER ─── -->
+
+  <main class="site-main" id="main-content">
+
+    <!-- ══════════════════════════════════════════════════════
+         HERO — the buyer's problem, not our capability.
+         Copy left, lead form right so the form is above the fold
+         on desktop; on mobile it stacks and the sticky bar carries
+         the CTA instead.
+    ═══════════════════════════════════════════════════════ -->
+    <section class="pm-hero" aria-labelledby="pm-hero-heading">
+      <div class="pm-hero__inner">
+
+        <div class="pm-hero__copy">
+          <span class="label pm-hero__eyebrow">For property managers</span>
+
+          <h1 class="pm-hero__heading" id="pm-hero-heading">
+            <!-- The dash is bound to "portfolio" with a non-breaking space so
+                 it can never wrap onto a line of its own between the two
+                 halves of the headline. -->
+            Heat pump servicing across your portfolio&nbsp;&mdash;
+            <em>scheduled, documented, off your desk.</em>
+          </h1>
+
+          <p class="pm-hero__sub">
+            An annual servicing programme built around your inspection cycle,
+            not a job at a time. <strong>We arrange access with every tenant
+            ourselves</strong>. A written service record comes back on every unit
+            the same day it&rsquo;s done.
+          </p>
+
+          <p class="pm-hero__coverage">
+            <svg class="pm-hero__coverage-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M9 2a5.5 5.5 0 015.5 5.5C14.5 12 9 16.5 9 16.5S3.5 12 3.5 7.5A5.5 5.5 0 019 2z" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="9" cy="7.5" r="2" fill="currentColor"/>
+            </svg>
+            <span>
+              <strong>Christchurch, Rangiora, Rolleston, Amberley</strong> and
+              the surrounding areas.
+            </span>
+          </p>
+
+          <div class="pm-hero__actions">
+            <!-- TODO: swap to Ros's direct line once confirmed -->
+            <a href="tel:0800247227" class="pm-hero__phone">
+              <span class="pm-hero__phone-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 2h3l1.5 3.5-1.5 1A9 9 0 009.5 10.5l1-1.5L14 10.5V13a1 1 0 01-1 1C6.268 14 2 9.732 2 3a1 1 0 011-1z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="pm-hero__phone-text">
+                <span class="pm-hero__phone-label">Prefer to talk? Call Ros</span>
+                <span class="pm-hero__phone-number">0800 247 227</span>
+              </span>
+            </a>
+          </div>
+
+          <p class="pm-hero__aside">
+            Over 5 years servicing Canterbury homes and rentals.
+          </p>
+        </div>
+
+        <!-- ── Two-step lead form ─────────────────────────────
+             Step one is email + company only. It submits as a real
+             lead on its own, so an abandoned step two still leaves
+             us with someone to call. Step two then asks the
+             qualifying questions in the same card.
+        ────────────────────────────────────────────────────── -->
+        <div class="pm-form-card" id="pm-form">
+
+          <!-- STEP ONE — the capture -->
+          <div id="pm-step-1">
+            <h2 class="pm-form-card__title">Request a portfolio programme</h2>
+            <p class="pm-form-card__intro">
+              Two fields. We&rsquo;ll come back to you within one business day
+              with a schedule and a per-unit rate for your portfolio.
+            </p>
+
+            <form id="pm-form-lead"
+                  name="property-managers"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  novalidate>
+
+              <!-- Required by Netlify when submitting via fetch instead of a full page POST -->
+              <input type="hidden" name="form-name" value="property-managers">
+
+              <!-- Spam trap: a bot fills this, a person never sees it -->
+              <p class="pm-form__hp" aria-hidden="true">
+                <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+              </p>
+
+              <div class="form-group">
+                <label class="form-label" for="pm-email">Work email</label>
+                <input class="form-input"
+                       type="email"
+                       id="pm-email"
+                       name="email"
+                       autocomplete="email"
+                       required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pm-company">Company</label>
+                <input class="form-input"
+                       type="text"
+                       id="pm-company"
+                       name="company"
+                       autocomplete="organization"
+                       required>
+              </div>
+
+              <button type="submit" class="btn btn--primary form-submit">
+                Request a portfolio programme &rarr;
+              </button>
+
+              <p class="pm-form__footnote">
+                No obligation, and we won&rsquo;t add you to a mailing list.
+              </p>
+            </form>
+          </div>
+
+          <!-- STEP TWO — the qualification, revealed by js/pm-form.js -->
+          <div id="pm-step-2" hidden>
+            <div class="pm-form__confirm">
+              <svg class="pm-form__confirm-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M4 9.5l3.5 3.5L14 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>
+                <strong>Got it — that&rsquo;s with us.</strong>
+                Ros will be in touch within one business day.
+              </span>
+            </div>
+
+            <p class="pm-form__step-label">
+              While you&rsquo;re here, three optional questions. They help us come
+              back with a real rate for your portfolio, not a generic quote.
+            </p>
+
+            <form id="pm-form-detail"
+                  name="property-managers-details"
+                  method="POST"
+                  data-netlify="true"
+                  novalidate>
+
+              <input type="hidden" name="form-name" value="property-managers-details">
+              <!-- Carried from step one so the two submissions can be matched up -->
+              <input type="hidden" name="email" id="pm-detail-email">
+              <input type="hidden" name="company" id="pm-detail-company">
+
+              <div class="form-group">
+                <label class="form-label" for="pm-size">Roughly how many units in the portfolio?</label>
+                <select class="form-input" id="pm-size" name="portfolio-size">
+                  <option value="">Please select&hellip;</option>
+                  <option value="1-10">1&ndash;10</option>
+                  <option value="11-25">11&ndash;25</option>
+                  <option value="26-50">26&ndash;50</option>
+                  <option value="51-100">51&ndash;100</option>
+                  <option value="100+">100+</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pm-software">What do you manage work orders in?</label>
+                <select class="form-input" id="pm-software" name="software">
+                  <option value="">Please select&hellip;</option>
+                  <option value="tapi">Tapi</option>
+                  <option value="email">Email only</option>
+                  <option value="palace">Palace</option>
+                  <option value="propertytree">PropertyTree</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pm-region">Where are most of the properties?</label>
+                <select class="form-input" id="pm-region" name="region">
+                  <option value="">Please select&hellip;</option>
+                  <option value="christchurch">Christchurch</option>
+                  <option value="rangiora">Rangiora, Amberley / North Canterbury</option>
+                  <option value="rolleston">Rolleston / Selwyn</option>
+                  <option value="mixed">Spread across the region</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn--blue form-submit">
+                Send these too &rarr;
+              </button>
+
+              <button type="button" class="pm-form__skip" id="pm-form-skip">
+                No thanks, I&rsquo;m done
+              </button>
+            </form>
+          </div>
+
+          <!-- FINAL STATE — after step two, or after skipping it -->
+          <div class="form-success" id="pm-form-success" hidden>
+            <div class="form-success__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Thanks — we&rsquo;ll be in touch</h3>
+            <p>
+              Ros will come back to you within one business day.<br>
+              <!-- TODO: swap to Ros's direct line once confirmed -->
+              Sooner is fine too. Call us on <a class="form-success__link" href="tel:0800247227">0800 247 227</a>.
+            </p>
+          </div>
+
+        </div><!-- /.pm-form-card -->
+
+      </div><!-- /.pm-hero__inner -->
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         TRUST STRIP — small, immediately below the hero
+    ═══════════════════════════════════════════════════════ -->
+    <div class="trust-bar" aria-label="Key trust signals">
+      <div class="trust-bar__inner">
+
+        <div class="trust-item">
+          <div class="trust-item__icon" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 10 10">
+              <path d="M2 5l2.5 2.5L8 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          Over 5 years trading
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-item__icon" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 10 10">
+              <path d="M2 5l2.5 2.5L8 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          Public liability insured
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-item__icon" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 10 10">
+              <path d="M2 5l2.5 2.5L8 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <!-- TODO: replace with the real NZBN -->
+          NZBN 9429000000000
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-item__icon" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 10 10">
+              <path d="M2 5l2.5 2.5L8 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          3 technicians, 4 vehicles
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         THEIR PROBLEM — in their language, not ours
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--soft" aria-labelledby="pm-problem-heading">
+      <div class="section-inner">
+
+        <span class="label">Why this page exists</span>
+        <h2 id="pm-problem-heading">The clean isn&rsquo;t the hard part</h2>
+        <p class="section-intro">
+          An hour on site. Two weeks of texts, calls and rebooking to get
+          someone home for it. Portfolio maintenance rarely costs you money
+          &mdash; it costs you afternoons. That&rsquo;s the part we take on.
+        </p>
+
+        <div class="pm-problem__grid">
+
+          <div class="why-point">
+            <div class="why-point__icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 3h4l1.5 3-1.5 1a7 7 0 003 3l1-1.5 3 1.5V13a1 1 0 01-1 1c-5.5 0-10-4.5-10-10a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="why-point__title">Chasing tenants for access</h3>
+              <p class="why-point__text">
+                Three texts, two voicemails and a reschedule. Per unit.
+                Multiply that across a portfolio and chasing access becomes a
+                job in itself. It always lands on your desk.
+              </p>
+            </div>
+          </div>
+
+          <div class="why-point">
+            <div class="why-point__icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M2 4.5h12M2 8h12M2 11.5h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="why-point__title">Work orders that bounce back</h3>
+              <p class="why-point__text">
+                A no-show means re-issuing the order, re-contacting the tenant
+                and explaining the delay to the owner. The job was never the
+                problem. The loop around it was.
+              </p>
+            </div>
+          </div>
+
+          <div class="why-point">
+            <div class="why-point__icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect x="3" y="2" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M5.5 6h5M5.5 8.5h5M5.5 11h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="why-point__title">Paperwork that never arrives</h3>
+              <p class="why-point__text">
+                When an owner asks what was done to their unit, a line on a
+                lump-sum invoice isn&rsquo;t an answer. You need a record per
+                unit, and you need it without asking twice.
+              </p>
+            </div>
+          </div>
+
+          <div class="why-point">
+            <div class="why-point__icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="why-point__title">Suppliers who need managing</h3>
+              <p class="why-point__text">
+                You wanted a contractor and got another thing to follow up.
+                A supplier who needs chasing hasn&rsquo;t saved you anything.
+                They&rsquo;ve just moved the admin around.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         HOW IT WORKS — the centrepiece.
+         Short blocks and iconography, not prose: most visitors
+         will skim this and never read a paragraph.
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--white" aria-labelledby="pm-process-heading">
+      <div class="section-inner">
+
+        <span class="label">How it works</span>
+        <h2 id="pm-process-heading">Five steps, and four of them are ours</h2>
+        <p class="section-intro">
+          You send the work order. We take it from there: tenant contact,
+          access, the service itself, and the paperwork back to you.
+        </p>
+
+        <div class="pm-steps">
+
+          <article class="pm-step">
+            <div class="pm-step__head">
+              <div class="pm-step__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M2 7l7 4.5L16 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="pm-step__num" aria-hidden="true">01</span>
+            </div>
+            <h3 class="pm-step__title">You send the work order</h3>
+            <p class="pm-step__text">
+              By email, or however your system issues them. We already work in
+              <strong>Tapi</strong>, and we&rsquo;ll fit around your process.
+              No portal for your team to learn, no fuss.
+            </p>
+          </article>
+
+          <article class="pm-step">
+            <div class="pm-step__head">
+              <div class="pm-step__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M3 4h12a1 1 0 011 1v6a1 1 0 01-1 1H7l-4 3V5a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="pm-step__num" aria-hidden="true">02</span>
+            </div>
+            <h3 class="pm-step__title">We book the tenant</h3>
+            <p class="pm-step__text">
+              We contact them directly by text and call, with repeated attempts
+              for the hard-to-reach ones. You are not in this loop.
+            </p>
+          </article>
+
+          <article class="pm-step">
+            <div class="pm-step__head">
+              <div class="pm-step__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <circle cx="6.5" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M9.5 8.5L15 14M13 12l-1.5 1.5M15 10l-1.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="pm-step__num" aria-hidden="true">03</span>
+            </div>
+            <h3 class="pm-step__title">We get in</h3>
+            <p class="pm-step__text">
+              Tenant present or lockbox works best. If it&rsquo;s easier, we
+              collect keys from your office. A reminder text goes out before
+              every booked clean.
+            </p>
+          </article>
+
+          <article class="pm-step">
+            <div class="pm-step__head">
+              <div class="pm-step__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 9.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="pm-step__num" aria-hidden="true">04</span>
+            </div>
+            <h3 class="pm-step__title">We service and check the unit</h3>
+            <p class="pm-step__text">
+              Our full Deep Clean on every heat pump, plus a check for faults,
+              poor performance and unit condition. Anything that needs more than
+              a standard clean, we can handle.
+            </p>
+          </article>
+
+          <article class="pm-step">
+            <div class="pm-step__head">
+              <div class="pm-step__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M4 2.5h10v13l-2-1.5-1.5 1.5L9 14l-1.5 1.5L6 14l-2 1.5V2.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M6.5 6h5M6.5 9h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="pm-step__num" aria-hidden="true">05</span>
+            </div>
+            <h3 class="pm-step__title">Same day: invoice and record</h3>
+            <p class="pm-step__text">
+              A written service record for every unit, plus the invoice, sent
+              the day the job is finished. Nothing to chase at month end.
+            </p>
+          </article>
+
+        </div><!-- /.pm-steps -->
+
+        <!-- The three things a manager needs an actual number or name for -->
+        <div class="pm-facts">
+
+          <div class="pm-fact">
+            <div class="pm-fact__label">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 4.5V8l2.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Turnaround
+            </div>
+            <p class="pm-fact__text">
+              <strong>Within 1 week</strong> from work order, September to March.
+              <strong>Within 2 weeks</strong> April to August, when winter demand
+              peaks. Book the portfolio off-peak and you get both: the faster
+              turnaround and the lower rate.
+            </p>
+          </div>
+
+          <div class="pm-fact">
+            <div class="pm-fact__label">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <rect x="2" y="3" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M6 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Your systems
+            </div>
+            <p class="pm-fact__text">
+              Work orders by email, and we&rsquo;re familiar with <strong>Tapi</strong>:
+              the system most of the agencies we work with run on. If yours works
+              differently, we fit around it. We won&rsquo;t ask your team to change
+              how they work.
+            </p>
+          </div>
+
+          <div class="pm-fact">
+            <div class="pm-fact__label">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M5.5 6h5M5.5 9h5M5.5 11.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              Invoicing
+            </div>
+            <p class="pm-fact__text">
+              <strong>However you prefer.</strong> Per job or consolidated, to the
+              agency or direct to the owner, through Tapi, by email or wherever it
+              needs to land. Tell us once and we&rsquo;ll set it up that way.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         HEALTHY HOMES
+
+         Placed straight after the process, where a manager has just
+         understood what happens and is asking what it does for them.
+         The sky band is the only tinted section in the upper half of
+         the page, which gives a compliance topic its own beat.
+
+         IMPORTANT — do not strengthen this copy. AirCare cleans heat
+         pumps; it does not assess or certify Healthy Homes compliance.
+         Any wording that implies a property "passes", or that a service
+         makes it compliant, is both misleading and a legal exposure.
+         The claim ceiling is: we clean it, we check it, we report it,
+         and we organise the fix.
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--sky" aria-labelledby="pm-hhs-heading">
+      <div class="section-inner">
+
+        <span class="label">For your rentals</span>
+        <h2 id="pm-hhs-heading">Healthy Homes and the heating standard</h2>
+        <p class="section-intro">
+          The heating standard turns on one thing: whether the main living
+          room can actually be heated to 18&deg;C. A heat pump packed with dust
+          doesn&rsquo;t put out the heat it should, and a unit quietly
+          underperforming is the sort of thing you hear about from the tenant
+          first. Servicing buys time as well. A unit cleaned every year can
+          last years longer, which puts off a replacement the owner has to
+          fund and you have to explain.
+        </p>
+
+        <div class="grid-3">
+
+          <div class="why-point">
+            <div class="why-point__icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 1.5l1.8 3.7 4 .6-2.9 2.8.7 4L8 10.7l-3.6 1.9.7-4L2.2 5.8l4-.6L8 1.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="why-point__title">Performing at its best</h3>
+              <p class="why-point__text">
+                Dust and a blocked coil restrict airflow, so the unit works
+                harder and delivers less heat. A proper clean gets it back to
+                the best it can do. On an older or damaged unit that may still
+                fall short, and we&rsquo;ll tell you if it does.
+              </p>
+            </div>
+          </div>
+
+          <div class="why-point">
+            <div class="why-point__icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="why-point__title">Checked, not just cleaned</h3>
+              <p class="why-point__text">
+                Every unit gets a condition check as part of the service.
+                We&rsquo;re looking for faults, weak performance and units that
+                aren&rsquo;t up to standard, not just dirt.
+              </p>
+            </div>
+          </div>
+
+          <div class="why-point">
+            <div class="why-point__icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect x="3" y="2" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M5.5 6h5M5.5 8.5h5M5.5 11h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="why-point__title">Told, then sorted</h3>
+              <p class="why-point__text">
+                If a unit isn&rsquo;t performing as it should, you hear it from
+                us in writing, the same day. Then we organise the trade to put
+                it right, rather than leaving it on your desk.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Kept deliberately short. The page makes no assessor claim, so a
+             long disclaimer would be protesting too much. But this section is
+             now headed "Healthy Homes" in large type, which invites the
+             inference on its own, so one plain line stays. The full answer
+             lives in the FAQ for anyone who wants it. -->
+        <p class="pm-note">
+          <span class="pm-note__icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M9 5.5v.5M9 8v4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>
+            We&rsquo;re cleaners, not Healthy Homes assessors. We&rsquo;ll tell
+            you what we find and organise the fix, but the compliance sign-off
+            stays with you.
+          </span>
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         TESTIMONIALS
+
+         TODO: replace the three cards below with the real property
+         manager quotes. Keep the attribution format "Name — Role,
+         Agency". Nothing here is a real quote yet, so this section
+         must not go live as-is.
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--blue" aria-labelledby="pm-reviews-heading">
+      <div class="section-inner">
+
+        <div class="reviews-header">
+          <h2 id="pm-reviews-heading">What the agencies we work with say</h2>
+          <!-- Attributed to Google explicitly: this rating comes from
+               homeowner reviews, and sitting unlabelled under an
+               agency-testimonial heading it would read as 40 agency
+               reviews, which would not be true. -->
+          <div class="reviews-rating">
+            <span aria-hidden="true">★★★★★</span>
+            <span>5.0 across 40+ Google reviews</span>
+          </div>
+        </div>
+
+        <div class="grid-3">
+
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+            <p class="review-card__text">&ldquo;PLACEHOLDER — property manager quote about access coordination and not having to chase tenants.&rdquo;</p>
+            <div class="review-card__author">— Name, Role, Agency</div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+            <p class="review-card__text">&ldquo;PLACEHOLDER — property manager quote about turnaround times and reliability across a portfolio.&rdquo;</p>
+            <div class="review-card__author">— Name, Role, Agency</div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+            <p class="review-card__text">&ldquo;PLACEHOLDER — property manager quote about the paperwork coming back without being asked.&rdquo;</p>
+            <div class="review-card__author">— Name, Role, Agency</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         SCOPE AND PRICING MODEL
+         The structure is published; the rates are not.
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--soft" aria-labelledby="pm-scope-heading">
+      <div class="section-inner">
+
+        <span class="label">Scope and pricing</span>
+        <h2 id="pm-scope-heading">What&rsquo;s covered, and how it&rsquo;s priced</h2>
+        <p class="section-intro">
+          We publish the pricing structure rather than a rate card, because the
+          number depends on your portfolio. The structure doesn&rsquo;t.
+        </p>
+
+        <div class="pm-scope__grid">
+
+          <!-- Scope -->
+          <div class="pm-panel">
+            <h3 class="pm-panel__title">In scope</h3>
+            <ul class="pm-list" role="list">
+
+              <li class="pm-list__item">
+                <span class="pm-list__icon" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>
+                  <strong>The Deep Clean as the base service</strong> on every heat
+                  pump: a thorough clean of both the inside and outside units.
+                </span>
+              </li>
+
+              <li class="pm-list__item">
+                <span class="pm-list__icon" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>
+                  <strong>A condition check on every unit.</strong> While we&rsquo;re
+                  in there we look for faults, poor performance and units that
+                  aren&rsquo;t up to standard. It all goes on the service record.
+                </span>
+              </li>
+
+              <li class="pm-list__item">
+                <span class="pm-list__icon" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>
+                  <strong>Units that need more than a clean.</strong> Heavy mould,
+                  a unit in poor condition, a fault we can put right on the day:
+                  we deal with it rather than handing it back to you.
+                </span>
+              </li>
+
+              <li class="pm-list__item">
+                <span class="pm-list__icon" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>
+                  <strong>Upgrades and add-ons per unit, as needed.</strong> Mould
+                  treatment and the like, recommended only where a unit actually
+                  calls for it. Never applied as a matter of course.
+                </span>
+              </li>
+
+              <li class="pm-list__item">
+                <span class="pm-list__icon" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>
+                  <strong>Fresh air and ventilation filter systems:</strong>
+                  HRV, DVS, SmartVent and others. If it moves air through the
+                  house, it&rsquo;s in scope.
+                </span>
+              </li>
+
+              <li class="pm-list__item">
+                <span class="pm-list__icon" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>
+                  <strong>All tenant contact and access coordination</strong>, with
+                  a written service record on every unit the same day.
+                </span>
+              </li>
+
+              <li class="pm-list__item">
+                <span class="pm-list__icon" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>
+                  <strong>Christchurch, Rangiora, Rolleston, Amberley</strong> and
+                  the surrounding areas.
+                </span>
+              </li>
+
+            </ul>
+          </div>
+
+          <!-- Pricing structure -->
+          <div class="pm-panel pm-panel--accent">
+            <h3 class="pm-panel__title">How pricing works</h3>
+            <ul class="pm-price" role="list">
+
+              <li class="pm-price__item">
+                <h4 class="pm-price__term">Fixed per unit</h4>
+                <p class="pm-price__desc">
+                  One agreed rate per heat pump, set at the start of the
+                  programme. No per-job quoting, no surprises on the invoice.
+                </p>
+              </li>
+
+              <li class="pm-price__item">
+                <h4 class="pm-price__term">Volume tiers by portfolio size</h4>
+                <p class="pm-price__desc">
+                  The per-unit rate steps down as the portfolio grows. Multiple
+                  units at the same address are discounted again, since
+                  they&rsquo;re one visit.
+                </p>
+              </li>
+
+              <li class="pm-price__item">
+                <h4 class="pm-price__term">Off-peak scheduling, lower rate</h4>
+                <p class="pm-price__desc">
+                  Programmes scheduled September to March attract a lower rate
+                  than the April&ndash;August winter peak. You get the faster
+                  turnaround with it.
+                </p>
+              </li>
+
+              <li class="pm-price__item">
+                <h4 class="pm-price__term">Add-ons, your call</h4>
+                <p class="pm-price__desc">
+                  Most agencies have us apply recommended upgrades automatically
+                  and bill them with the job. It cuts down the back-and-forth. If
+                  you&rsquo;d rather approve each one, we&rsquo;ll quote and wait for
+                  your word.
+                </p>
+              </li>
+
+            </ul>
+
+            <p class="pm-panel__foot">
+              No minimum portfolio size. For a rate against your specific
+              portfolio, <a href="#pm-form">send us two fields</a> or call Ros
+              on <a href="tel:0800247227">0800 247 227</a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         WHAT WE DON'T DO
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--white" aria-labelledby="pm-exclusions-heading">
+      <div class="section-inner">
+
+        <span class="label">Being straight with you</span>
+        <h2 id="pm-exclusions-heading">What we don&rsquo;t do &mdash; and what we do about it</h2>
+        <p class="section-intro">
+          We clean and service units, including the ones that need a good deal
+          more than a standard clean. What we don&rsquo;t do is refrigeration or
+          electrical work. When we find a fault in that territory, we don&rsquo;t
+          just note it and leave it with you. We organise the trade and coordinate
+          the tenant. You still have one point of contact.
+        </p>
+
+        <div class="pm-exclusions__grid">
+
+          <div class="pm-exclusion">
+            <div class="pm-exclusion__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M11.5 2.5a3.5 3.5 0 00-4.2 4.6L2.6 11.8a1.4 1.4 0 001.9 1.9l4.7-4.7a3.5 3.5 0 004.6-4.2l-2 2-1.6-1.6 2-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="pm-exclusion__title">Refrigeration work</h3>
+              <p class="pm-exclusion__text">
+                Gas, regassing and mechanical repairs are a different trade and
+                we don&rsquo;t take them on. We arrange them for you through
+                <a href="https://mjr.co.nz/" target="_blank" rel="noopener">MJR Plumbing &amp; Gas</a>
+                and the other Canterbury trades we work with. We handle the
+                booking and the tenant.
+              </p>
+            </div>
+          </div>
+
+          <div class="pm-exclusion">
+            <div class="pm-exclusion__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M10 2L5 9.5h3.5L8 16l5-7.5H9.5L10 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="pm-exclusion__title">Electrical work</h3>
+              <p class="pm-exclusion__text">
+                Anything that needs a registered electrician goes to
+                <a href="https://www.insightelectrical.co.nz/" target="_blank" rel="noopener">Insight Electrical</a>.
+                Same arrangement &mdash; we make the referral, book the job and
+                organise access, so it never comes back to your desk as a new
+                work order.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         FAQ
+
+         TODO: the answers marked PLACEHOLDER need Ros's wording
+         before this page goes live. Everything else here is
+         confirmed and can stand as written.
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--soft" aria-labelledby="pm-faq-heading">
+      <div class="section-inner">
+
+        <span class="label">Common questions</span>
+        <h2 id="pm-faq-heading">What managers usually ask first</h2>
+        <p class="section-intro">
+          If yours isn&rsquo;t here, call Ros. She can talk you through how a
+          programme would work across your portfolio, and what it would cost.
+        </p>
+
+        <div class="pm-faq">
+
+          <details class="pm-faq__item">
+            <summary class="pm-faq__q">
+              Who chases the tenant for access?
+              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p class="pm-faq__a">
+              We do, entirely. Once the work order is with us, we contact the
+              tenant directly by text and call, book a time that suits them, and
+              send a reminder text beforehand. You don&rsquo;t hear from us again
+              until the job is done. The one exception &mdash; a tenant who goes
+              genuinely unreachable, and then we come back to you rather than
+              let it sit.
+            </p>
+          </details>
+
+          <details class="pm-faq__item">
+            <summary class="pm-faq__q">
+              What happens if the tenant isn&rsquo;t home?
+              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p class="pm-faq__a">
+              PLACEHOLDER &mdash; Ros to confirm the no-show policy. Needs to
+              cover whether we re-attend at no charge, whether a call-out is
+              charged, and at what point the property manager is notified.
+            </p>
+          </details>
+
+          <details class="pm-faq__item">
+            <summary class="pm-faq__q">
+              How long from work order to job?
+              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p class="pm-faq__a">
+              Within a week from September to March. Within two weeks from April
+              to August, when everyone remembers their heat pump at once. Schedule
+              the programme in the quiet season and you get both: the faster
+              turnaround and the lower rate.
+            </p>
+          </details>
+
+          <details class="pm-faq__item">
+            <summary class="pm-faq__q">
+              Do we have to use a new portal or system?
+              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p class="pm-faq__a">
+              No. Most of our agencies email work orders through and manage them
+              in Tapi, which we&rsquo;re familiar with. If your office runs on
+              something else, we&rsquo;ll work to your process. Taking on a new
+              supplier shouldn&rsquo;t mean changing how your team works.
+            </p>
+          </details>
+
+          <details class="pm-faq__item">
+            <summary class="pm-faq__q">
+              Do you invoice us or the owner?
+              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p class="pm-faq__a">
+              Whichever you prefer, and we can split it by property if that suits
+              your trust accounting. Per job or consolidated, through Tapi or by
+              email. You tell us once and we set it up that way for the whole
+              portfolio.
+            </p>
+          </details>
+
+          <details class="pm-faq__item">
+            <summary class="pm-faq__q">
+              What if a unit needs a repair you don&rsquo;t cover?
+              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p class="pm-faq__a">
+              If the unit simply needs more than a standard clean, heavy mould or
+              poor condition, we deal with it on the day. If it&rsquo;s genuinely
+              another trade, it goes on the service record and we organise it:
+              refrigeration through MJR Plumbing &amp; Gas, electrical through
+              Insight Electrical. We make the referral, book the job and coordinate
+              access. No fresh work order for you to raise.
+            </p>
+          </details>
+
+          <details class="pm-faq__item">
+            <summary class="pm-faq__q">
+              Does a service make the property Healthy Homes compliant?
+              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p class="pm-faq__a">
+              No, and be wary of anyone in our trade who tells you it does.
+              We&rsquo;re cleaners, not assessors: we don&rsquo;t carry out
+              Healthy Homes assessments and we can&rsquo;t certify compliance.
+              What a service does is make sure the heat pump is clean, working
+              and putting out the best heat it can, which is the part of the
+              heating standard that quietly slips as units age. An older or
+              damaged unit may still fall short of what the room needs. If it
+              does, you&rsquo;ll have it in writing the same day, and
+              we&rsquo;ll organise the fix. The compliance call
+              itself stays with you and your assessor.
+            </p>
+          </details>
+
+          <details class="pm-faq__item">
+            <summary class="pm-faq__q">
+              Who decides on upgrades and add-ons?
+              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p class="pm-faq__a">
+              You do, once, at the start. Most agencies have us apply recommended
+              upgrades automatically and bill them with the job, because
+              approving each one individually is exactly the admin they came to
+              us to avoid. If you&rsquo;d rather keep a closer eye on costs,
+              we&rsquo;ll quote and wait for your approval every time.
+            </p>
+          </details>
+
+          <details class="pm-faq__item">
+            <summary class="pm-faq__q">
+              Can we trial you on a few properties first?
+              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p class="pm-faq__a">
+              Yes, and we&rsquo;d rather you did. There&rsquo;s no minimum
+              portfolio size and no contract to sign before you&rsquo;ve seen how
+              we handle a tenant. Send us a handful of units, see what comes
+              back, and scale it up from there.
+            </p>
+          </details>
+
+          <details class="pm-faq__item">
+            <summary class="pm-faq__q">
+              Are you insured, and what areas do you cover?
+              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p class="pm-faq__a">
+              We carry public liability insurance and we&rsquo;ve been trading for
+              over five years. Three technicians, four vehicles. We cover
+              Christchurch, Rangiora, Rolleston, Amberley and the surrounding areas.
+            </p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CLOSING CTA
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--sky" aria-labelledby="pm-cta-heading">
+      <div class="cta-block">
+        <span class="label label--center">Next step</span>
+        <h2 id="pm-cta-heading">Put your portfolio on a programme</h2>
+        <p>
+          Two fields to start. We&rsquo;ll come back within one business day with
+          a schedule built around your inspection cycle and a per-unit rate for
+          your portfolio.
+        </p>
+        <div class="cta-block__actions">
+          <a href="#pm-form" class="btn btn--primary">Request a portfolio programme</a>
+          <!-- TODO: swap to Ros's direct line once confirmed -->
+          <a href="tel:0800247227" class="btn btn--blue">Call Ros &mdash; 0800 247 227</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER — paste from _includes/footer.html
+  ═══════════════════════════════════════════════════════ -->
+    <footer class="site-footer">
+        <div class="footer__inner">
+        <div class="footer__top">
+
+            <div class="footer__brand">
+                <div class="footer__brand-name">Air<span>Care</span></div>
+                <p class="footer__brand-desc">Christchurch's local heat pump cleaning specialists. Family-owned and genuinely passionate about clean air for your whānau.</p>
+                <div class="footer__contact-item">
+                    <svg class="footer__contact-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M2.5 2h2.5l1.25 2.75-1.25.875A7.5 7.5 0 008.375 9l.875-1.25L12 9V11.5A1 1 0 0111 12.5C5.2 12.5 1.5 8.8 1.5 3A1 1 0 012.5 2z" fill="currentColor"/>
+                    </svg>
+                    <a href="tel:0800247227">0800 247 227</a>
+                </div>
+                <div class="footer__contact-item">
+                    <svg class="footer__contact-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+                    <path d="M1.5 5l5.5 3.5L12.5 5" stroke="currentColor" stroke-width="1.2"/>
+                    </svg>
+                    <a href="mailto:ros@aircare.nz">ros@aircare.nz</a>
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <h3 class="footer__col-title">Services</h3>
+                <ul role="list">
+                    <li><a href="services.html#deep-clean">The Deep Clean</a></li>
+                    <li><a href="services.html#deep-clean-plus">Deep Clean Plus</a></li>
+                    <li><a href="services.html#mould-master">Mould Master</a></li>
+                    <li><a href="services.html#commercial">Commercial Cleans</a></li>
+                    <li><a href="services.html#filters">Filter Replacements</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h3 class="footer__col-title">Company</h3>
+                <ul role="list">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="property-managers.html">Property Managers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://bookings.gettimely.com/AirCareHPC/bb/book" target="_blank" rel="noopener">Book Online</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer__bottom">
+            <span>&copy; <span id="footer-year">2025</span> AirCare Heat Pump Cleaning. Christchurch, NZ.</span>
+        </div>
+        </div>
+    </footer>
+  <!-- ── END FOOTER ─── -->
+
+</div><!-- /.site-wrapper -->
+
+<!-- ══════════════════════════════════════════════════════
+     STICKY MOBILE CTA — hidden at desktop widths, where the
+     form already sits above the fold. Managers check things on
+     a phone between inspections; the serious evaluation happens
+     on a desktop.
+═══════════════════════════════════════════════════════ -->
+<div class="pm-sticky-cta">
+  <a href="#pm-form" class="btn btn--primary">Request a programme</a>
+  <!-- TODO: swap to Ros's direct line once confirmed -->
+  <a href="tel:0800247227" class="btn btn--blue">Call Ros</a>
+</div>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/pm-form.js" defer></script>
+
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
