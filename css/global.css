@@ -60,6 +60,18 @@ img {
   max-width: 100%;
 }
 
+/* The `hidden` attribute must actually hide, whatever a component sets.
+   The UA stylesheet gives [hidden] display:none, but any display in
+   author CSS beats it on specificity — so a flex or grid component
+   carrying `hidden` stays visible. That silently exposed the H&S
+   prequalification badge on commercial.html, which must not appear
+   until the prequalification is held. Anything toggled via the
+   attribute (form steps, success states, credential badges) depends
+   on this rule. */
+[hidden] {
+  display: none !important;
+}
+
 /* ── Headings ─────────────────────────────────────────────── */
 h1,
 h2,

@@ -1,0 +1,708 @@
+/* =============================================================
+   AIRCARE — COMMERCIAL PAGES
+   Shared by commercial.html (hub) and the three vertical
+   sub-pages: clinical, hospitality, personal-care.
+
+   This buyer is an owner-operator deciding fast, not a portfolio
+   manager running a process. So the page leans harder on the
+   phone than the property manager page does, and the quote form
+   sits beside it rather than dominating.
+   ============================================================= */
+
+/* ── Hero ─────────────────────────────────────────────────────
+   Outer pads, inner caps — the same pairing as .section and
+   .site-header, so the headline lands on the site's vertical line. */
+.comm-hero {
+  position: relative;
+  background-color: var(--color-brand-blue);
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(220, 234, 247, 0.07) 0px,
+      rgba(220, 234, 247, 0.07) 1px,
+      transparent 1px,
+      transparent 28px
+    ),
+    linear-gradient(160deg, var(--color-brand-blue) 0%, var(--color-brand-blue-dark) 100%);
+  padding: clamp(2.5rem, 4vw, 4rem) var(--gutter) clamp(3rem, 5vw, 4.5rem);
+  overflow: hidden;
+}
+
+.comm-hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.comm-hero__eyebrow {
+  color: var(--color-brand-sky-light);
+  opacity: 0.85;
+}
+
+.comm-hero__heading {
+  margin: 0 0 var(--space-5);
+  font-size: var(--text-hero);
+  font-weight: var(--weight-semi);
+  color: var(--color-white);
+  max-width: 22ch;
+}
+
+.comm-hero__heading em {
+  display: block;
+  font-style: normal;
+  color: var(--color-brand-sky-light);
+}
+
+.comm-hero__sub {
+  margin: 0 0 var(--space-6);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: var(--text-md);
+  line-height: var(--leading-loose);
+  max-width: 46ch;
+}
+
+.comm-hero__sub strong {
+  color: var(--color-white);
+  font-weight: var(--weight-semi);
+}
+
+/* The promise, carried as three short chips rather than a sentence —
+   this buyer scans. */
+.comm-promise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.comm-promise li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+.comm-promise svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  color: var(--color-brand-sky-light);
+}
+
+.comm-hero__coverage {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+  max-width: 44ch;
+}
+
+.comm-hero__coverage svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--color-brand-sky-light);
+  margin-top: 2px;
+}
+
+/* ── The phone block ──────────────────────────────────────────
+   Deliberately louder than the property manager page's phone pill.
+   Owner-operators decide on the call, so the number is a full-width
+   white block with the number set at display size, not a chip
+   tucked beside a button. */
+.comm-call {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.comm-call:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  opacity: 1;
+}
+
+.comm-call__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-brand-orange);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.comm-call__label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-brand-sky);
+  margin-bottom: var(--space-1);
+}
+
+.comm-call__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-brand-blue);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.comm-call__hint {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+/* ── Quote form card ──────────────────────────────────────── */
+.comm-form-card {
+  background: var(--color-surface-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-lg);
+}
+
+.comm-form-card__title {
+  font-size: var(--text-xl);
+  color: var(--color-brand-blue);
+  margin-bottom: var(--space-2);
+}
+
+.comm-form-card__intro {
+  font-size: var(--text-sm);
+  color: var(--color-text-mid);
+  line-height: var(--leading-normal);
+  margin: 0 0 var(--space-6);
+}
+
+.comm-form__confirm {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  margin-bottom: var(--space-6);
+  border-radius: var(--radius-sm);
+  background: var(--color-green-light);
+  color: var(--color-green);
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+}
+
+.comm-form__confirm-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.comm-form__confirm strong {
+  display: block;
+  font-weight: var(--weight-semi);
+  margin-bottom: var(--space-1);
+}
+
+.comm-form__step-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-mid);
+  line-height: var(--leading-normal);
+  margin: 0 0 var(--space-5);
+}
+
+.comm-form__footnote {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: var(--leading-snug);
+  margin: var(--space-4) 0 0;
+  text-align: center;
+}
+
+.comm-form__skip {
+  display: block;
+  width: 100%;
+  margin-top: var(--space-3);
+  padding: var(--space-2);
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.comm-form__skip:hover {
+  color: var(--color-brand-blue);
+}
+
+/* A bot fills this, a person never sees it. Not display:none —
+   some bots skip fields that are hidden that way. */
+.comm-form__hp {
+  position: absolute;
+  left: -5000px;
+  opacity: 0;
+}
+
+/* ── Premises type selector ───────────────────────────────── */
+.premises-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--space-5);
+}
+
+.premises-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal),
+              border-color var(--transition-fast);
+}
+
+a.premises-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-brand-sky-light);
+  opacity: 1;
+}
+
+.premises-card__icon {
+  width: 46px;
+  height: 46px;
+  background: var(--color-brand-sky-pale);
+  color: var(--color-brand-blue);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+  flex-shrink: 0;
+}
+
+.premises-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-brand-blue);
+  margin-bottom: var(--space-2);
+}
+
+.premises-card__types {
+  font-size: var(--text-sm);
+  color: var(--color-text-mid);
+  line-height: var(--leading-normal);
+  margin: 0 0 var(--space-5);
+}
+
+.premises-card__go {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semi);
+  color: var(--color-brand-sky);
+}
+
+/* Small retail expands in place instead of linking out — it is the
+   one route that ends at online booking rather than a quote. */
+.premises-card--retail {
+  background: var(--color-bg-sunken);
+  border-style: dashed;
+}
+
+.premises-card--retail summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.premises-card--retail summary::-webkit-details-marker {
+  display: none;
+}
+
+.premises-card__reveal {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  color: var(--color-text-mid);
+  line-height: var(--leading-normal);
+}
+
+.premises-card__reveal p {
+  margin: 0 0 var(--space-4);
+}
+
+/* ── Two-column band (used by several sections) ───────────── */
+.comm-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+/* Single-card variant. Capped at the readable measure plus the panel's own
+   padding so a lone card does not stretch its check-list across the full
+   1200px column. */
+.comm-split--single {
+  grid-template-columns: minmax(0, calc(var(--measure) + var(--space-8) * 2));
+}
+
+.comm-panel {
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  height: 100%;
+}
+
+.comm-panel--accent {
+  background: linear-gradient(160deg, var(--color-brand-blue) 0%, var(--color-brand-blue-dark) 100%);
+  border-color: var(--color-brand-blue);
+}
+
+.comm-panel__title {
+  font-size: var(--text-lg);
+  color: var(--color-brand-blue);
+  margin-bottom: var(--space-5);
+}
+
+.comm-panel--accent .comm-panel__title {
+  color: var(--color-white);
+}
+
+/* ── Checklist ────────────────────────────────────────────── */
+.check-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.check-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-mid);
+  line-height: var(--leading-normal);
+}
+
+.check-list__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-green-light);
+  color: var(--color-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Optical nudge onto the cap-height of the first line */
+  margin-top: 2px;
+}
+
+.check-list__icon--no {
+  background: var(--color-brand-orange-bg);
+  color: var(--color-brand-orange-dark);
+}
+
+.check-list__item strong {
+  color: var(--color-text-dark);
+  font-weight: var(--weight-semi);
+}
+
+.comm-panel--accent .check-list__item {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.comm-panel--accent .check-list__item strong {
+  color: var(--color-white);
+}
+
+/* ── Disruption steps ─────────────────────────────────────── */
+.comm-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+  gap: var(--space-4);
+}
+
+.comm-step {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-5);
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-fast);
+}
+
+.comm-step:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-brand-sky-light);
+}
+
+/* The one step in the row that is the reader's job rather than ours, so it
+   carries the brand orange to lift it out of the four blue-iconed cards. */
+.comm-step--accent {
+  background: var(--color-brand-orange-bg);
+  border-color: var(--color-brand-orange-dim);
+}
+
+.comm-step--accent:hover {
+  border-color: var(--color-brand-orange);
+}
+
+.comm-step--accent .comm-step__icon {
+  background: var(--color-brand-orange);
+  color: var(--color-white);
+}
+
+.comm-step--accent .comm-step__title {
+  color: var(--color-brand-orange-dark);
+}
+
+.comm-step__icon {
+  width: 38px;
+  height: 38px;
+  background: var(--color-brand-sky-pale);
+  color: var(--color-brand-blue);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: var(--space-4);
+}
+
+.comm-step__title {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semi);
+  color: var(--color-brand-blue);
+  margin-bottom: var(--space-2);
+}
+
+.comm-step__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-mid);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+/* ── Frequency table ──────────────────────────────────────── */
+.freq-table-wrap {
+  overflow-x: auto;
+}
+
+.freq-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 34rem;
+  font-size: var(--text-sm);
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.freq-table th {
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-brand-sky);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-brand-sky-pale);
+}
+
+.freq-table td {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-mid);
+  line-height: var(--leading-normal);
+  vertical-align: top;
+}
+
+.freq-table tr:last-child td {
+  border-bottom: none;
+}
+
+.freq-table td:first-child {
+  font-weight: var(--weight-semi);
+  color: var(--color-text-dark);
+  white-space: nowrap;
+}
+
+.freq-table__freq {
+  font-weight: var(--weight-semi);
+  color: var(--color-brand-blue);
+  white-space: nowrap;
+}
+
+/* ── Pricing / placeholder values ─────────────────────────── */
+.comm-price {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.comm-price__item {
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.comm-price__item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.comm-price__term {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semi);
+  color: var(--color-white);
+  margin-bottom: var(--space-2);
+}
+
+.comm-price__desc {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+/* Unset values are marked, not hidden — so nothing ships looking
+   like a real figure. */
+.placeholder {
+  display: inline-block;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-brand-orange-bg);
+  border: 1px dashed var(--color-brand-orange-dim);
+  color: var(--color-brand-orange-dark);
+  font-family: var(--font-body);
+  font-size: 0.9em;
+  font-weight: var(--weight-semi);
+  white-space: nowrap;
+}
+
+.comm-panel--accent .placeholder {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-white);
+}
+
+/* ── Proof strip ──────────────────────────────────────────── */
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-5);
+}
+
+.proof-stat {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.proof-stat__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-brand-blue);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-2);
+}
+
+.proof-stat__label {
+  font-size: var(--text-sm);
+  color: var(--color-text-mid);
+  line-height: var(--leading-snug);
+}
+
+/* ── Back-to-hub link (sub-pages) ─────────────────────────── */
+.cta-block__back {
+  margin: var(--space-6) 0 0;
+}
+
+.comm-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semi);
+  color: var(--color-brand-sky);
+}
+
+.comm-back svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .comm-hero__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .comm-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .comm-form-card,
+  .comm-panel {
+    padding: var(--space-6);
+  }
+
+  .comm-call {
+    padding: var(--space-4);
+  }
+
+  .comm-call__number {
+    font-size: var(--text-lg);
+  }
+}

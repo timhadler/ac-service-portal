@@ -55,7 +55,7 @@
 </head>
 
 <body>
-<div class="site-wrapper pm-page">
+<div class="site-wrapper has-sticky-cta">
 
   <!-- ══════════════════════════════════════════════════════
        HEADER — paste from _includes/nav-bar.html
@@ -78,6 +78,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="property-managers.html">Property managers</a></li>
+                <li><a href="commercial.html">Commercial</a></li>
                 <li><a href="about.html">About us</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li>
@@ -103,6 +104,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="property-managers.html">Property managers</a></li>
+            <li><a href="commercial.html">Commercial</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li>
@@ -371,6 +373,33 @@
         </div>
 
       </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         WRONG-PAGE REDIRECT
+
+         Placed high on purpose. Someone who manages commercial
+         premises should be sent across before they spend attention on
+         a page about rental portfolios — further down and they have
+         either bounced or read the wrong thing. Kept to one quiet
+         line on a sunken band so it reads as a signpost rather than a
+         section, and does not interrupt the rental manager it is not
+         aimed at.
+
+         One-way by design: the commercial pages carry no link back
+         here, because a business owner who follows a "for property
+         managers" link mid-consideration is a lost lead.
+    ═══════════════════════════════════════════════════════ -->
+    <div class="pm-redirect">
+      <p class="pm-redirect__inner">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M3 15.5V5l5-2.5V15.5M8 15.5V7.5l7 2.5v5.5M1.5 15.5h15" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+        <span>
+          Managing <strong>business premises</strong> rather than rentals?
+          <a href="commercial.html">We look after clinics, kitchens and salons too &rarr;</a>
+        </span>
+      </p>
     </div>
 
     <!-- ══════════════════════════════════════════════════════
@@ -709,8 +738,8 @@
              now headed "Healthy Homes" in large type, which invites the
              inference on its own, so one plain line stays. The full answer
              lives in the FAQ for anyone who wants it. -->
-        <p class="pm-note">
-          <span class="pm-note__icon" aria-hidden="true">
+        <p class="note">
+          <span class="note__icon" aria-hidden="true">
             <svg width="15" height="15" viewBox="0 0 18 18" fill="none">
               <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.6"/>
               <path d="M9 5.5v.5M9 8v4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
@@ -1004,26 +1033,26 @@
          before this page goes live. Everything else here is
          confirmed and can stand as written.
     ═══════════════════════════════════════════════════════ -->
-    <section class="section section--soft" aria-labelledby="pm-faq-heading">
+    <section class="section section--soft" aria-labelledby="faq-heading">
       <div class="section-inner">
 
         <span class="label">Common questions</span>
-        <h2 id="pm-faq-heading">What managers usually ask first</h2>
+        <h2 id="faq-heading">What managers usually ask first</h2>
         <p class="section-intro">
           If yours isn&rsquo;t here, call Ros. She can talk you through how a
           programme would work across your portfolio, and what it would cost.
         </p>
 
-        <div class="pm-faq">
+        <div class="faq">
 
-          <details class="pm-faq__item">
-            <summary class="pm-faq__q">
+          <details class="faq__item">
+            <summary class="faq__q">
               Who chases the tenant for access?
-              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <svg class="faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </summary>
-            <p class="pm-faq__a">
+            <p class="faq__a">
               We do, entirely. Once the work order is with us, we contact the
               tenant directly by text and call, book a time that suits them, and
               send a reminder text beforehand. You don&rsquo;t hear from us again
@@ -1033,28 +1062,28 @@
             </p>
           </details>
 
-          <details class="pm-faq__item">
-            <summary class="pm-faq__q">
+          <details class="faq__item">
+            <summary class="faq__q">
               What happens if the tenant isn&rsquo;t home?
-              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <svg class="faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </summary>
-            <p class="pm-faq__a">
+            <p class="faq__a">
               PLACEHOLDER &mdash; Ros to confirm the no-show policy. Needs to
               cover whether we re-attend at no charge, whether a call-out is
               charged, and at what point the property manager is notified.
             </p>
           </details>
 
-          <details class="pm-faq__item">
-            <summary class="pm-faq__q">
+          <details class="faq__item">
+            <summary class="faq__q">
               How long from work order to job?
-              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <svg class="faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </summary>
-            <p class="pm-faq__a">
+            <p class="faq__a">
               Within a week from September to March. Within two weeks from April
               to August, when everyone remembers their heat pump at once. Schedule
               the programme in the quiet season and you get both: the faster
@@ -1062,14 +1091,14 @@
             </p>
           </details>
 
-          <details class="pm-faq__item">
-            <summary class="pm-faq__q">
+          <details class="faq__item">
+            <summary class="faq__q">
               Do we have to use a new portal or system?
-              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <svg class="faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </summary>
-            <p class="pm-faq__a">
+            <p class="faq__a">
               No. Most of our agencies email work orders through and manage them
               in Tapi, which we&rsquo;re familiar with. If your office runs on
               something else, we&rsquo;ll work to your process. Taking on a new
@@ -1077,14 +1106,14 @@
             </p>
           </details>
 
-          <details class="pm-faq__item">
-            <summary class="pm-faq__q">
+          <details class="faq__item">
+            <summary class="faq__q">
               Do you invoice us or the owner?
-              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <svg class="faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </summary>
-            <p class="pm-faq__a">
+            <p class="faq__a">
               Whichever you prefer, and we can split it by property if that suits
               your trust accounting. Per job or consolidated, through Tapi or by
               email. You tell us once and we set it up that way for the whole
@@ -1092,14 +1121,14 @@
             </p>
           </details>
 
-          <details class="pm-faq__item">
-            <summary class="pm-faq__q">
+          <details class="faq__item">
+            <summary class="faq__q">
               What if a unit needs a repair you don&rsquo;t cover?
-              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <svg class="faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </summary>
-            <p class="pm-faq__a">
+            <p class="faq__a">
               If the unit simply needs more than a standard clean, heavy mould or
               poor condition, we deal with it on the day. If it&rsquo;s genuinely
               another trade, it goes on the service record and we organise it:
@@ -1109,14 +1138,14 @@
             </p>
           </details>
 
-          <details class="pm-faq__item">
-            <summary class="pm-faq__q">
+          <details class="faq__item">
+            <summary class="faq__q">
               Does a service make the property Healthy Homes compliant?
-              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <svg class="faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </summary>
-            <p class="pm-faq__a">
+            <p class="faq__a">
               No, and be wary of anyone in our trade who tells you it does.
               We&rsquo;re cleaners, not assessors: we don&rsquo;t carry out
               Healthy Homes assessments and we can&rsquo;t certify compliance.
@@ -1130,14 +1159,14 @@
             </p>
           </details>
 
-          <details class="pm-faq__item">
-            <summary class="pm-faq__q">
+          <details class="faq__item">
+            <summary class="faq__q">
               Who decides on upgrades and add-ons?
-              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <svg class="faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </summary>
-            <p class="pm-faq__a">
+            <p class="faq__a">
               You do, once, at the start. Most agencies have us apply recommended
               upgrades automatically and bill them with the job, because
               approving each one individually is exactly the admin they came to
@@ -1146,14 +1175,14 @@
             </p>
           </details>
 
-          <details class="pm-faq__item">
-            <summary class="pm-faq__q">
+          <details class="faq__item">
+            <summary class="faq__q">
               Can we trial you on a few properties first?
-              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <svg class="faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </summary>
-            <p class="pm-faq__a">
+            <p class="faq__a">
               Yes, and we&rsquo;d rather you did. There&rsquo;s no minimum
               portfolio size and no contract to sign before you&rsquo;ve seen how
               we handle a tenant. Send us a handful of units, see what comes
@@ -1161,14 +1190,14 @@
             </p>
           </details>
 
-          <details class="pm-faq__item">
-            <summary class="pm-faq__q">
+          <details class="faq__item">
+            <summary class="faq__q">
               Are you insured, and what areas do you cover?
-              <svg class="pm-faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <svg class="faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </summary>
-            <p class="pm-faq__a">
+            <p class="faq__a">
               We carry public liability insurance and we&rsquo;ve been trading for
               over five years. Three technicians, four vehicles. We cover
               Christchurch, Rangiora, Rolleston, Amberley and the surrounding areas.
@@ -1242,6 +1271,7 @@
                 <ul role="list">
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="property-managers.html">Property Managers</a></li>
+                    <li><a href="commercial.html">Business Premises</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="https://bookings.gettimely.com/AirCareHPC/bb/book" target="_blank" rel="noopener">Book Online</a></li>
                 </ul>
@@ -1263,7 +1293,7 @@
      a phone between inspections; the serious evaluation happens
      on a desktop.
 ═══════════════════════════════════════════════════════ -->
-<div class="pm-sticky-cta">
+<div class="sticky-cta">
   <a href="#pm-form" class="btn btn--primary">Request a programme</a>
   <!-- TODO: swap to Ros's direct line once confirmed -->
   <a href="tel:0800247227" class="btn btn--blue">Call Ros</a>

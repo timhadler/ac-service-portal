@@ -536,3 +536,183 @@ textarea.form-input {
     gap: 0;
   }
 }
+
+/* ── Honest-limit note ────────────────────────────────────────
+   One plain line stating what AirCare is not, used wherever a page
+   has to be explicit about a boundary — the Healthy Homes limit on
+   the property manager page, the scope and claim limits on the
+   commercial pages. Deliberately slim: these pages make no such
+   claim anywhere, so a heavy disclaimer card would read as
+   protesting too much. It stays visible rather than becoming grey
+   fine print, because to a business buyer a stated limit is a trust
+   signal, not a liability footnote. */
+.note {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  /* Hugs its own text rather than trailing empty white to the right:
+     the measure, plus the icon, the gap and the horizontal padding. */
+  max-width: calc(var(--measure) + 26px + var(--space-3) + var(--space-5) * 2);
+  margin: var(--space-8) 0 0;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-brand-sky);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text-mid);
+  line-height: var(--leading-normal);
+}
+
+/* Sits on a white ground rather than a tinted band */
+.note--sunken {
+  background: var(--color-bg-sunken);
+}
+
+.note__icon {
+  width: 26px;
+  height: 26px;
+  background: var(--color-brand-sky-pale);
+  color: var(--color-brand-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── FAQ ──────────────────────────────────────────────────────
+   Native <details>/<summary> — the disclosure behaviour, keyboard
+   handling and screen-reader state all come for free, so there is
+   no JS on this component. */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.faq__item {
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-normal);
+}
+
+.faq__item[open] {
+  border-color: var(--color-brand-sky-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semi);
+  color: var(--color-brand-blue);
+  line-height: var(--leading-snug);
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--transition-fast);
+}
+
+/* The default disclosure triangle is replaced by the chevron below */
+.faq__q::-webkit-details-marker {
+  display: none;
+}
+
+.faq__q:hover {
+  color: var(--color-brand-sky);
+}
+
+.faq__chevron {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--color-brand-sky);
+  transition: transform var(--transition-normal);
+}
+
+.faq__item[open] .faq__chevron {
+  transform: rotate(180deg);
+}
+
+/* Answers fill the width of their disclosure card rather than being
+   capped at --measure. An answer sits directly under its question
+   inside a bordered card, so a narrower paragraph read as indented
+   rather than as a deliberate text column. Section leads elsewhere
+   keep the measure cap — they are free-standing prose, not the
+   second half of a question-and-answer pair. */
+.faq__a {
+  padding: 0 var(--space-6) var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-mid);
+  line-height: var(--leading-loose);
+  margin: 0;
+}
+
+/* ── Sticky mobile CTA bar ────────────────────────────────────
+   Hidden on desktop, where the form is already above the fold. On
+   small screens the page's two conversion points follow the visitor
+   down the page. Sits below the header's z-index: 100.
+
+   Any page using this must put .has-sticky-cta on its .site-wrapper
+   so the footer clears the fixed bar. */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  gap: var(--space-3);
+  /* The bottom padding carries the safe-area inset so the buttons are
+     not sat under the home indicator on a notched phone. The fallback
+     0px keeps it identical on every device that has no inset. */
+  padding: var(--space-3) var(--gutter)
+           calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+  background: var(--color-surface-white);
+  border-top: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+
+.sticky-cta .btn {
+  flex: 1;
+  font-size: var(--text-sm);
+  padding: var(--space-3) var(--space-4);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .sticky-cta {
+    display: flex;
+  }
+
+  /* Clears the fixed bar so it never covers the end of the footer.
+     The padding goes on the footer rather than on .site-wrapper: the
+     wrapper's ground is the pale page background, so padding there
+     would open a light strip between the dark footer and the white
+     bar. On the footer, its own dark ground runs under the bar. */
+  .has-sticky-cta .site-footer {
+    padding-bottom: calc(var(--space-8) + var(--control-height) + var(--space-4)
+                         + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 480px) {
+  .note {
+    align-items: flex-start;
+  }
+
+  .faq__q {
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-base);
+  }
+
+  .faq__a {
+    padding: 0 var(--space-5) var(--space-5);
+  }
+}

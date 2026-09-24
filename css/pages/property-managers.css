@@ -392,42 +392,6 @@
   font-weight: var(--weight-semi);
 }
 
-/* ── Honest-limit note ────────────────────────────────────────
-   One plain line stating what AirCare is not. Deliberately slim: the
-   page makes no assessor claim, so a heavy disclaimer card would read
-   as protesting too much. It stays visible rather than becoming grey
-   fine print, because for property managers the limit is a trust
-   signal, not a liability footnote. The full answer is in the FAQ. */
-.pm-note {
-  display: flex;
-  gap: var(--space-3);
-  align-items: center;
-  /* Hugs its own text rather than trailing empty white to the right:
-     the measure, plus the icon, the gap and the horizontal padding. */
-  max-width: calc(var(--measure) + 26px + var(--space-3) + var(--space-5) * 2);
-  margin: var(--space-8) 0 0;
-  padding: var(--space-4) var(--space-5);
-  background: var(--color-surface-white);
-  border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-brand-sky);
-  border-radius: var(--radius-md);
-  font-size: var(--text-sm);
-  color: var(--color-text-mid);
-  line-height: var(--leading-normal);
-}
-
-.pm-note__icon {
-  width: 26px;
-  height: 26px;
-  background: var(--color-brand-sky-pale);
-  color: var(--color-brand-blue);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
 /* ── Scope & pricing ──────────────────────────────────────── */
 .pm-scope__grid {
   display: grid;
@@ -597,99 +561,6 @@
   color: var(--color-brand-sky);
 }
 
-/* ── FAQ ──────────────────────────────────────────────────────
-   Native <details>/<summary> — the disclosure behaviour, keyboard
-   handling and screen-reader state all come for free, so there is
-   no JS on this section. */
-.pm-faq {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.pm-faq__item {
-  background: var(--color-surface-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-normal);
-}
-
-.pm-faq__item[open] {
-  border-color: var(--color-brand-sky-light);
-  box-shadow: var(--shadow-sm);
-}
-
-.pm-faq__q {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  padding: var(--space-5) var(--space-6);
-  font-family: var(--font-body);
-  font-size: var(--text-md);
-  font-weight: var(--weight-semi);
-  color: var(--color-brand-blue);
-  line-height: var(--leading-snug);
-  cursor: pointer;
-  list-style: none;
-  transition: color var(--transition-fast);
-}
-
-/* The default disclosure triangle is replaced by the chevron below */
-.pm-faq__q::-webkit-details-marker {
-  display: none;
-}
-
-.pm-faq__q:hover {
-  color: var(--color-brand-sky);
-}
-
-.pm-faq__chevron {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-  color: var(--color-brand-sky);
-  transition: transform var(--transition-normal);
-}
-
-.pm-faq__item[open] .pm-faq__chevron {
-  transform: rotate(180deg);
-}
-
-.pm-faq__a {
-  padding: 0 var(--space-6) var(--space-5);
-  font-size: var(--text-sm);
-  color: var(--color-text-mid);
-  line-height: var(--leading-loose);
-  margin: 0;
-  max-width: var(--measure);
-}
-
-/* ── Sticky mobile CTA bar ────────────────────────────────────
-   Hidden on desktop, where the form is already above the fold.
-   Managers check things on a phone between inspections, so on
-   small screens the two conversion points follow them down the
-   page. Sits below the header's z-index: 100. */
-.pm-sticky-cta {
-  display: none;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 90;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--gutter);
-  background: var(--color-surface-white);
-  border-top: 1px solid var(--color-border);
-  box-shadow: var(--shadow-lg);
-}
-
-.pm-sticky-cta .btn {
-  flex: 1;
-  font-size: var(--text-sm);
-  padding: var(--space-3) var(--space-4);
-}
-
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .pm-hero__inner {
@@ -713,18 +584,6 @@
     grid-template-columns: 1fr;
   }
 
-  .pm-sticky-cta {
-    display: flex;
-  }
-
-  /* Clears the fixed bar so it never covers the end of the footer.
-     The padding goes on the footer rather than on .site-wrapper: the
-     wrapper's ground is the pale page background, so padding there
-     would open a light strip between the dark footer and the white
-     bar. On the footer, its own dark ground runs under the bar. */
-  .pm-page .site-footer {
-    padding-bottom: calc(var(--space-8) + var(--control-height) + var(--space-4));
-  }
 }
 
 @media (max-width: 480px) {
@@ -733,16 +592,57 @@
     padding: var(--space-6);
   }
 
-  .pm-note {
+  /* The line wraps to two or three rows at phone width; centring would
+     float the icon against the middle of the block rather than the
+     first line. */
+  .pm-redirect__inner {
     align-items: flex-start;
   }
 
-  .pm-faq__q {
-    padding: var(--space-4) var(--space-5);
-    font-size: var(--text-base);
+  .pm-redirect__inner svg {
+    margin-top: 2px;
   }
+}
 
-  .pm-faq__a {
-    padding: 0 var(--space-5) var(--space-5);
-  }
+/* ── Wrong-page redirect band ──────────────────────────────────
+   Sits high on the page to route a commercial-premises manager away
+   early. Deliberately quiet: one line of --text-sm on the sunken
+   ground, no button, no colour block. It has to be findable by the
+   person it is for without pulling the eye of the rental manager it
+   is not for.
+
+   Outer pads, inner caps — the same pairing as .section and
+   .trust-bar, so the line starts on the page's vertical rule. */
+.pm-redirect {
+  background: var(--color-bg-sunken);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3) var(--gutter);
+}
+
+.pm-redirect__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-snug);
+}
+
+.pm-redirect__inner svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--color-brand-sky);
+}
+
+.pm-redirect strong {
+  color: var(--color-text-dark);
+  font-weight: var(--weight-semi);
+}
+
+.pm-redirect a {
+  font-weight: var(--weight-semi);
+  color: var(--color-brand-blue);
 }
