@@ -293,21 +293,27 @@
 }
 
 /* Rating reads as a badge rather than loose text beside the heading */
+/* Stays on one line, so at the narrowest phones it steps its text and
+   padding down with the viewport instead of wrapping inside a pill —
+   at 320px the full-size badge ran 14px off the screen. Fluid rather
+   than a breakpoint: it reaches full size by ~390px. */
 .reviews-rating {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
+  max-width: 100%;
+  padding: var(--space-2) clamp(var(--space-3), 4vw, var(--space-4));
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: var(--color-star);
-  font-size: var(--text-sm);
+  font-size: clamp(var(--text-xs), 3.6vw, var(--text-sm));
   font-weight: var(--weight-semi);
   white-space: nowrap;
 }
 
-.reviews-rating span {
+/* The text only — the first span is the stars, which keep the gold */
+.reviews-rating span:last-child {
   color: rgba(255, 255, 255, 0.7);
   font-weight: var(--weight-regular);
 }
@@ -453,15 +459,33 @@
   font-family: var(--font-body);
   font-size: var(--text-base);
   color: var(--color-text-dark);
-  transition: border-color var(--transition-fast), background var(--transition-fast),
+  transition: border-color var(--transition-fast), background-color var(--transition-fast),
               box-shadow var(--transition-fast);
   appearance: none; /* normalise select on iOS */
   outline: none;
 }
 
+/* appearance: none also strips the select's native arrow, which left
+   every dropdown looking like an empty text box. The chevron is two
+   token-coloured triangles rather than an SVG, so it follows the
+   palette. The states below set background-color, not the background
+   shorthand, so focus and error do not wipe it. */
+select.form-input {
+  padding-right: var(--space-10);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--color-text-mid) 50%),
+    linear-gradient(135deg, var(--color-text-mid) 50%, transparent 50%);
+  background-position:
+    calc(100% - var(--space-5)) 50%,
+    calc(100% - var(--space-5) + 5px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
 .form-input:focus {
   border-color: var(--color-brand-sky);
-  background: var(--color-surface-white);
+  background-color: var(--color-surface-white);
   box-shadow: var(--focus-ring);
 }
 
@@ -474,7 +498,7 @@ textarea.form-input {
 /* Error state — toggled by forms.js */
 .form-input--error {
   border-color: var(--color-error);
-  background: var(--color-error-bg);
+  background-color: var(--color-error-bg);
 }
 
 /* Inline error message beneath the input */
@@ -677,12 +701,28 @@ textarea.form-input {
   background: var(--color-surface-white);
   border-top: 1px solid var(--color-border);
   box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-normal), visibility var(--transition-normal);
 }
 
+/* Slid away while the form it points at is on screen (js/sticky-cta.js).
+   There it is redundant, and on a phone a fixed bottom bar rides up on
+   top of the keyboard and covers the field being typed into.
+   visibility, not just the transform, takes its links out of the tab
+   order; it flips at the end of the slide, so the bar stays visible
+   while it moves. */
+.sticky-cta.is-hidden {
+  transform: translateY(100%);
+  visibility: hidden;
+}
+
+/* Sized from their labels, then sharing what is left: the longer label
+   gets the wider button, so neither one wraps onto a second line at
+   phone widths — equal halves broke "Request a programme" in two. */
 .sticky-cta .btn {
-  flex: 1;
+  flex: 1 1 auto;
   font-size: var(--text-sm);
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-3) clamp(var(--space-3), 4vw, var(--space-4));
+  white-space: nowrap;
 }
 
 /* ── Responsive ───────────────────────────────────────────── */

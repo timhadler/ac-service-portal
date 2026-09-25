@@ -4,7 +4,7 @@
  * Handles:
  *  1. Mobile hamburger toggle
  *  2. Active link highlighting based on current page
- *  3. Closes mobile nav on link click
+ *  3. Closes mobile nav on link click, on a tap outside it, and on Escape
  */
 
 (function () {
@@ -23,6 +23,16 @@
     // Close nav when a link inside it is clicked
     mobileNav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', closeNav);
+    });
+
+    // A tap anywhere outside the header closes the drawer. On a phone
+    // that is the natural way to dismiss it; without this the drawer
+    // stayed open over the page until a link or the toggle was hit.
+    document.addEventListener('click', function (e) {
+      if (mobileNav.classList.contains('is-open') &&
+          !e.target.closest('.site-header')) {
+        closeNav();
+      }
     });
 
     // Escape closes the drawer and returns focus to the toggle, so a

@@ -587,6 +587,13 @@
 }
 
 @media (max-width: 480px) {
+  /* At --text-hero the headline ran to eight lines on a 390px phone and
+     filled the first screen on its own. One step down, the same step
+     the home hero takes on small screens. */
+  .pm-hero__heading {
+    font-size: var(--text-3xl);
+  }
+
   .pm-form-card,
   .pm-panel {
     padding: var(--space-6);

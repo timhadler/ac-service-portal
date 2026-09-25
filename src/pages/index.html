@@ -83,9 +83,17 @@ page_scripts:    <<
                 </div>
             </div>
 
+            <!-- Served in three widths so a phone downloads ~15-30 KB rather
+                 than the 2.8 MB original (images/hero/hero-bg.jpg, kept as the
+                 master). Below 960px the photo spans the column; above it,
+                 it is the right-hand half of a 1200px container. -->
             <div class="hero__figure">
                 <img class="hero__photo"
-                    src="images/hero/hero-bg.jpg"
+                    src="images/hero/hero-bg-1200.webp"
+                    srcset="images/hero/hero-bg-800.webp 800w,
+                            images/hero/hero-bg-1200.webp 1200w,
+                            images/hero/hero-bg-1600.webp 1600w"
+                    sizes="(max-width: 960px) 100vw, 600px"
                     alt="A wall-mounted heat pump circulating clean air through a living room"
                     width="1600" height="900" fetchpriority="high">
             </div>
@@ -245,7 +253,7 @@ page_scripts:    <<
             </div>
 
             <div class="services-preview__cta">
-            <a href="services.html" class="btn btn--blue">See all services &rarr;</a>
+            <a href="services.html" class="btn btn--blue">See all services&nbsp;&rarr;</a>
             </div>
 
         </div>
@@ -307,9 +315,9 @@ page_scripts:    <<
                 <!-- TODO: add href once a working URL is confirmed -->
                 <a class="partners__link">
                     <img class="partners__logo"
-                        src="images/partners/david-robertson-decorators.png"
+                        src="images/partners/david-robertson-decorators.webp"
                         alt="David Robertson Decorators"
-                        width="5144" height="1584" loading="lazy" decoding="async">
+                        width="800" height="246" loading="lazy" decoding="async">
                 </a>
             </li>
 
