@@ -182,8 +182,8 @@ form_intro:      <<
         <span class="label">The bit you actually want to know</span>
         <h2 id="comm-disruption-heading">What this looks like in your space</h2>
         <p class="section-intro">
-          We know organising trades around your business hours can be tricky. 
-          Heres how we simplify the process. 
+          We know organising trades around your business hours can be tricky.
+          Here&rsquo;s how we simplify the process.
         </p>
 
         <div class="comm-steps">
@@ -462,7 +462,7 @@ form_intro:      <<
                 <path d="M2.5 5.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
-                <span><strong>A full clean of every indoor unit on site.</strong> Anything needing extra work brought to your attention</span>
+                <span><strong>A full clean of every indoor unit on site.</strong> Anything needing extra work is brought to your attention.</span>
               </li>
               <li class="check-list__item">
             <span class="check-list__icon" aria-hidden="true">
@@ -503,14 +503,14 @@ form_intro:      <<
                 </p>
               </li>
               <li class="comm-price__item">
-                <h4 class="comm-price__term">From <span class="placeholder">[MIN_UNITS]</span> units on site</h4>
+                <h4 class="comm-price__term">From {{ min_units }} units on site</h4>
                 <p class="comm-price__desc">
                   Below that, a standard online booking is cheaper for you than
                   anything we could quote. See the small retail card above.
                 </p>
               </li>
               <li class="comm-price__item">
-                <h4 class="comm-price__term">Minimum <span class="placeholder">[MIN_PRICE]</span> per visit</h4>
+                <h4 class="comm-price__term">Minimum {{ min_price }} per visit</h4>
                 <p class="comm-price__desc">
                   Ask and we will tell you the minimum before you spend any
                   more time on it.
@@ -556,7 +556,7 @@ form_intro:      <<
           </div>
           <div class="proof-stat">
             <span class="proof-stat__num">3</span>
-            <span class="proof-stat__label">Technicians, four vehicles</span>
+            <span class="proof-stat__label">Technicians, 4 vehicles</span>
           </div>
         </div>
 
@@ -575,7 +575,7 @@ form_intro:      <<
               <path d="M6.5 9l1.8 1.8L11.5 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
-          <span><strong><span class="placeholder">[SITEWISE]</span></strong> health and safety prequalification held.</span>
+          <span><strong>{{ sitewise }}</strong> health and safety prequalification held.</span>
         </div>
 
       </div>
@@ -690,8 +690,8 @@ form_intro:      <<
               </svg>
             </summary>
             <p class="faq__a">
-              Roughly 45 minutes per unit, although some units naturally require more time than others. 
-              For large premises we may send more than technician. The
+              Roughly 45 minutes per unit, although some units naturally require more time than others.
+              For large premises we may send more than one technician. The
               unit is usable again as soon as we are finished with it &mdash;
               there is no drying-out period to wait through.
             </p>
@@ -790,11 +790,11 @@ form_intro:      <<
               Commercial premises are quoted rather than list-priced, because
               the number of units, the mounting height and the access make more
               difference than anything else. Minimum is
-              <span class="placeholder">[MIN_PRICE]</span> per visit, and we
-              quote sites from <span class="placeholder">[MIN_UNITS]</span>
+              {{ min_price }} per visit, and we
+              quote sites from {{ min_units }}
               units. Below that you are better off booking a standard clean
               online. Send the quote form and you will have a number back
-              in <span class="placeholder">[RESPONSE_TIME]</span>.
+              in {{ response_time }}.
             </p>
           </details>
 
@@ -811,7 +811,7 @@ form_intro:      <<
         <h2 id="comm-cta-heading">Tell us how many units and where</h2>
         <p>
           That is genuinely most of what we need. Three fields to start, and
-          a quote back in <span class="placeholder">[RESPONSE_TIME]</span>
+          a quote back in {{ response_time }}
           &mdash; or ring us and we will talk it through now.
         </p>
         <div class="cta-block__actions">
