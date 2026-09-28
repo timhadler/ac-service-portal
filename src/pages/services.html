@@ -11,6 +11,7 @@ why_now_ground: white
 
 page_scripts: <<
 <script src="./js/navigation.js" defer></script>
+<script src="./js/callback-form.js" defer></script>
 <<
 @-->
 <!-- include: head.html -->
@@ -192,6 +193,79 @@ page_scripts: <<
 
 <!-- include: reviews-google-link.html -->
 
+        </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════
+            CALLBACK — for the visitor who is not ready to book
+            because they are not sure what to book. Toggled by
+            show_callback_box in site.vars; when off, the section is
+            `hidden` rather than removed, so the Netlify form stays
+            registered on deploy and can be switched back on.
+        ═══════════════════════════════════════════════════════ -->
+        <section class="section section--sm section--soft" aria-labelledby="callback-heading" {{ callback_hidden }}>
+        <div class="section-inner">
+            <div class="callback-box">
+
+                <div class="callback-box__copy">
+                    <h2 class="callback-box__heading" id="callback-heading">Not sure which service you need?</h2>
+                    <p class="callback-box__text">Leave your number and {{ callback_sentence }}</p>
+                </div>
+
+                <div class="callback-box__action">
+                    <form id="callback-form"
+                          name="callback"
+                          method="POST"
+                          data-netlify="true"
+                          data-netlify-honeypot="bot-field"
+                          novalidate>
+
+                        <!-- Required by Netlify when submitting via fetch instead of a full page POST -->
+                        <input type="hidden" name="form-name" value="callback">
+
+                        <!-- Spam trap: a bot fills this, a person never sees it -->
+                        <p class="form-hp" aria-hidden="true">
+                            <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                        </p>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="callback-name">Name</label>
+                                <input class="form-input"
+                                       type="text"
+                                       id="callback-name"
+                                       name="name"
+                                       autocomplete="name"
+                                       required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="callback-phone">Phone</label>
+                                <input class="form-input"
+                                       type="tel"
+                                       id="callback-phone"
+                                       name="phone"
+                                       autocomplete="tel"
+                                       required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary form-submit">
+                            Call me back &rarr;
+                        </button>
+                    </form>
+
+                    <div class="form-success callback-box__success" id="callback-success" hidden>
+                        <div class="form-success__icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Thanks — we&rsquo;ll be in touch!</h3>
+                        <p>{{ callback_sentence }}</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
         </section>
 

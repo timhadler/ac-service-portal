@@ -138,3 +138,46 @@
     margin-top: auto;
   }
 }
+
+/* ── Callback box ─────────────────────────────────────────────
+   Copy and form side by side, wrapping rather than switching at a
+   breakpoint: the form drops under the copy as soon as the two no
+   longer fit, whatever the width. */
+.callback-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-6) var(--space-10);
+  padding: var(--space-8);
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.callback-box__copy {
+  flex: 1 1 18rem;
+}
+
+.callback-box__heading {
+  color: var(--color-brand-blue);
+  margin: 0 0 var(--space-3);
+}
+
+.callback-box__text {
+  margin: 0;
+  color: var(--color-text-mid);
+  font-size: var(--text-md);
+  line-height: var(--leading-loose);
+}
+
+.callback-box__action {
+  flex: 1 1 22rem;
+}
+
+/* The shared success state is sized for a full form card; inside this
+   shorter box it needs less air. */
+.callback-box__success {
+  padding: var(--space-4) 0;
+}
+
