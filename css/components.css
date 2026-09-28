@@ -40,8 +40,13 @@
 }
 
 /* A linked trust item (the Google rating, the injection anchor) keeps the
-   bar's colour and signals the link with an underline, not a new hue. */
+   bar's colour and signals the link with an underline, not a new hue.
+   The vertical padding, cancelled by an equal negative margin, gives a
+   44px tap target without making the bar any taller. */
 .trust-item a {
+  display: inline-block;
+  padding: var(--space-3) 0;
+  margin: calc(-1 * var(--space-3)) 0;
   color: inherit;
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255, 0.35);
