@@ -13,7 +13,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get in touch with AirCare — Christchurch's local heat pump cleaning specialists. Call, email, or send us a message and we'll get back to you promptly.">
+  <meta name="description" content="Get in touch with AirCare — Christchurch's local heat pump cleaning specialists. Call, email, or send us a message and Ros will call you back within 2 business days.">
 
   <!-- ── Canonical and social ─────────────────────────────────────
        Canonical is absolute and extensionless — the host serves
@@ -24,7 +24,7 @@
   <meta property="og:site_name" content="AirCare">
   <meta property="og:locale" content="en_NZ">
   <meta property="og:title" content="Get in touch with AirCare Christchurch">
-  <meta property="og:description" content="Get in touch with AirCare — Christchurch's local heat pump cleaning specialists. Call, email, or send us a message and we'll get back to you promptly.">
+  <meta property="og:description" content="Get in touch with AirCare — Christchurch's local heat pump cleaning specialists. Call, email, or send us a message and Ros will call you back within 2 business days.">
   <meta property="og:url" content="https://www.aircare.nz/contact">
   <meta property="og:image" content="https://www.aircare.nz/images/og/og-default.jpg">
   <meta property="og:image:width" content="1200">
@@ -32,7 +32,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Get in touch with AirCare Christchurch">
-  <meta name="twitter:description" content="Get in touch with AirCare — Christchurch's local heat pump cleaning specialists. Call, email, or send us a message and we'll get back to you promptly.">
+  <meta name="twitter:description" content="Get in touch with AirCare — Christchurch's local heat pump cleaning specialists. Call, email, or send us a message and Ros will call you back within 2 business days.">
   <meta name="twitter:image" content="https://www.aircare.nz/images/og/og-default.jpg">
 
   <title>Contact — AirCare | Christchurch Heat Pump Cleaning</title>
@@ -219,7 +219,7 @@
               </div>
               <h3>Thanks — we&rsquo;ll be in touch!</h3>
               <p>
-                We will get back to you shortly.<br>
+                Ros will call you back within 2 business days.<br>
                 Or call us now on <a class="form-success__link" href="tel:0800247227">0800 247 227</a>.
               </p>
             </div>
@@ -228,48 +228,47 @@
                   name="contact"
                   method="POST"
                   data-netlify="true"
+                  data-netlify-honeypot="bot-field"
                   novalidate>
 
               <!-- Required by Netlify when submitting via fetch instead of a full page POST -->
               <input type="hidden" name="form-name" value="contact">
 
+              <!-- Spam trap: a bot fills this, a person never sees it -->
+              <p class="form-hp" aria-hidden="true">
+                <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+              </p>
+
+              <!-- Name and phone are all Ros needs to call back, so they are
+                   the only two required text fields. -->
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label" for="fname">First name</label>
+                  <label class="form-label" for="name">Name</label>
                   <input class="form-input"
                          type="text"
-                         id="fname"
-                         name="fname"
-                         autocomplete="given-name"
+                         id="name"
+                         name="name"
+                         autocomplete="name"
                          required>
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="lname">Last name</label>
+                  <label class="form-label" for="phone">Phone</label>
                   <input class="form-input"
-                         type="text"
-                         id="lname"
-                         name="lname"
-                         autocomplete="family-name">
+                         type="tel"
+                         id="phone"
+                         name="phone"
+                         autocomplete="tel"
+                         required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="email">Email address</label>
+                <label class="form-label" for="email">Email address <span class="form-label__optional">(optional)</span></label>
                 <input class="form-input"
                        type="email"
                        id="email"
                        name="email"
-                       autocomplete="email"
-                       required>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="phone">Phone <span class="form-label__optional">(optional)</span></label>
-                <input class="form-input"
-                       type="tel"
-                       id="phone"
-                       name="phone"
-                       autocomplete="tel">
+                       autocomplete="email">
               </div>
 
               <div class="form-group">
@@ -298,12 +297,11 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="msg">Message</label>
+                <label class="form-label" for="msg">Message <span class="form-label__optional">(optional)</span></label>
                 <textarea class="form-input"
                           id="msg"
                           name="msg"
-                          rows="4"
-                          required></textarea>
+                          rows="4"></textarea>
               </div>
 
               <button type="submit" class="btn btn--primary form-submit">

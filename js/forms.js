@@ -90,31 +90,32 @@
 
     var valid = true;
 
-    var fname   = document.getElementById('fname');
+    var name    = document.getElementById('name');
+    var phone   = document.getElementById('phone');
     var email   = document.getElementById('email');
     var service = document.getElementById('service');
-    var msg     = document.getElementById('msg');
 
-    if (!fname.value.trim()) {
-      showError(fname, 'Please enter your first name.');
+    if (!name.value.trim()) {
+      showError(name, 'Please enter your name.');
       valid = false;
     }
 
-    if (!email.value.trim()) {
-      showError(email, 'Please enter your email address.');
+    if (!phone.value.trim()) {
+      showError(phone, 'Please enter your phone number.');
       valid = false;
-    } else if (!isValidEmail(email.value.trim())) {
+    } else if (!isValidPhone(phone.value)) {
+      showError(phone, 'Please enter a valid phone number.');
+      valid = false;
+    }
+
+    // Email and message are optional; an email, if given, must be usable.
+    if (email.value.trim() && !isValidEmail(email.value.trim())) {
       showError(email, 'Please enter a valid email address.');
       valid = false;
     }
 
     if (!service.value) {
       showError(service, 'Please select an option.');
-      valid = false;
-    }
-
-    if (!msg.value.trim()) {
-      showError(msg, 'Please add a message.');
       valid = false;
     }
 
@@ -133,6 +134,12 @@
 
   function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  // Loose on purpose: NZ landlines, mobiles, 0800 and +64 all pass, as
+  // long as there are enough digits to call back.
+  function isValidPhone(value) {
+    return value.replace(/\D/g, '').length >= 7;
   }
 
   // ── Error display ──────────────────────────────────────────────
