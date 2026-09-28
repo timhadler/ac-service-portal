@@ -101,6 +101,9 @@ structured_data: <<
              us with someone to call. Step two then asks the
              qualifying questions in the same card.
         ────────────────────────────────────────────────────── -->
+        <!-- Form column: the lead form, then one agency review directly
+             beneath it, so the reassurance sits where the decision is. -->
+        <div class="pm-hero__form-col">
         <div class="pm-form-card" id="pm-form">
 
           <!-- STEP ONE — the capture -->
@@ -244,6 +247,15 @@ structured_data: <<
           </div>
 
         </div><!-- /.pm-form-card -->
+
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+            <p class="review-card__text">&ldquo;We&rsquo;ve had a great experience working with AirCare. Ros and the team are always friendly, professional, and reliable. Communication is excellent, and they make coordinating heat pump servicing and cleaning for our rental properties easy and hassle-free.&rdquo;</p>
+            <div class="review-card__author">— Amanda Stent, Mosaic Property Management</div>
+          </article>
+
+<!-- include: reviews-google-link.html -->
+        </div><!-- /.pm-hero__form-col -->
 
       </div><!-- /.pm-hero__inner -->
     </section>
@@ -639,17 +651,10 @@ structured_data: <<
 
         <div class="reviews-header">
           <h2 id="pm-reviews-heading">What the agencies we work with say</h2>
-          <!-- Attributed to Google explicitly: this rating comes from
-               homeowner reviews, and sitting unlabelled under an
-               agency-testimonial heading it would read as 40 agency
-               reviews, which would not be true. -->
-          <div class="reviews-rating">
-            <span aria-hidden="true">★★★★★</span>
-            <span>5.0 across 40+ Google reviews</span>
-          </div>
+<!-- include: reviews-rating.html -->
         </div>
 
-        <div class="grid-3">
+        <div class="grid-2">
 
           <article class="review-card">
             <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
@@ -659,17 +664,13 @@ structured_data: <<
 
           <article class="review-card">
             <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
-            <p class="review-card__text">&ldquo;We&rsquo;ve had a great experience working with AirCare. Ros and the team are always friendly, professional, and reliable. Communication is excellent, and they make coordinating heat pump servicing and cleaning for our rental properties easy and hassle-free.&rdquo;</p>
-            <div class="review-card__author">— Amanda Stent, Mosaic Property Management</div>
-          </article>
-
-          <article class="review-card">
-            <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
             <p class="review-card__text">&ldquo;Rosalind and her team are true professionals&mdash;we engaged with them approximately a year ago to maintain and clean the heat pumps in our rental portfolio and our whole team has only good things to say. Their pricing model is simple and effective, they always have a solution for a tricky situation and go above and beyond for their clients. We&rsquo;re lucky to have them looking after us, our owners, and tenants heating systems.&rdquo;</p>
             <div class="review-card__author">— Grenadier Rent Shop</div>
           </article>
 
         </div>
+
+<!-- include: reviews-google-link.html -->
       </div>
     </section>
 

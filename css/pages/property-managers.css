@@ -173,6 +173,17 @@
   margin: var(--space-5) 0 0;
 }
 
+/* Form column — the lead form with one agency review beneath it. */
+.pm-hero__form-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.pm-hero__form-col .reviews-more {
+  margin: 0;
+}
+
 /* ── Lead form card ───────────────────────────────────────────
    Two-step: step one captures the lead, step two qualifies it.
    Both live in this one card so the second step lands exactly

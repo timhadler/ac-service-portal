@@ -308,6 +308,45 @@
   flex-shrink: 0;
 }
 
+/* On a light ground (a single review inside a white or soft section)
+   the card swaps its translucent dark-ground treatment for a surface. */
+.review-card--light {
+  background: var(--color-surface-white);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-xs);
+}
+
+.review-card--light .review-card__text {
+  color: var(--color-text-mid);
+}
+
+.review-card--light .review-card__author {
+  color: var(--color-brand-blue);
+}
+
+/* "Read all reviews on Google" — closes every review block. Coloured
+   by its ground, the same way icons are: brand blue by default, light
+   on the blue sections and the property managers hero. */
+.reviews-more {
+  margin: var(--space-6) 0 0;
+  font-size: var(--text-sm);
+}
+
+.reviews-more__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: var(--weight-semi);
+  color: var(--color-brand-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.section--blue .reviews-more__link,
+.pm-hero .reviews-more__link {
+  color: var(--color-brand-sky-light);
+}
+
 /* ── CTA section ──────────────────────────────────────────── */
 .cta-block {
   text-align: center;
