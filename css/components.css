@@ -266,6 +266,48 @@
   margin-top: auto;
 }
 
+/* ── Seasonal "why now" band (home + services) ───────────── */
+/* The one warm panel on the page outside a button, so the season's
+   message reads as the nudge it is. It wraps rather than switching
+   at a breakpoint: the button drops under the copy as soon as the two
+   no longer fit side by side, at whatever width that happens. */
+.why-now {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6) var(--space-10);
+  padding: var(--space-8);
+  background: var(--color-brand-orange-bg);
+  border: 1px solid var(--color-brand-orange-dim);
+  border-radius: var(--radius-lg);
+}
+
+.why-now__copy {
+  flex: 1 1 30rem;
+  max-width: var(--measure);
+}
+
+.why-now__eyebrow {
+  color: var(--color-brand-orange-dark);
+}
+
+.why-now__heading {
+  color: var(--color-brand-blue);
+  margin: 0 0 var(--space-3);
+}
+
+.why-now__text {
+  margin: 0;
+  color: var(--color-text-mid);
+  font-size: var(--text-md);
+  line-height: var(--leading-loose);
+}
+
+.why-now__action {
+  flex-shrink: 0;
+}
+
 /* ── CTA section ──────────────────────────────────────────── */
 .cta-block {
   text-align: center;

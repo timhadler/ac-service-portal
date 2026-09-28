@@ -1,0 +1,24 @@
+        <!-- ══════════════════════════════════════════════════════
+            WHY NOW — seasonal. The eyebrow, heading and body come
+            from the [season.*] group that `season` selects in
+            site.vars; nothing here changes between seasons.
+            why_now_ground is set per page so the band never sits on
+            the same ground as its neighbours.
+        ═══════════════════════════════════════════════════════ -->
+        <section class="section section--sm section--{{ why_now_ground }}" aria-labelledby="why-now-heading">
+            <div class="section-inner">
+                <div class="why-now">
+                    <div class="why-now__copy">
+                        <span class="label why-now__eyebrow">{{ why_now_eyebrow }}</span>
+                        <h2 class="why-now__heading" id="why-now-heading">{{ why_now_heading }}</h2>
+                        <p class="why-now__text">{{ why_now_body }}</p>
+                    </div>
+                    <a href="{{ booking_url }}"
+                        class="btn btn--primary why-now__action"
+                        target="_blank"
+                        rel="noopener">
+                        Book online
+                    </a>
+                </div>
+            </div>
+        </section>
