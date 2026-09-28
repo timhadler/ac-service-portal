@@ -168,6 +168,39 @@
   font-style: italic;
 }
 
+/* The intro asks a question and the injection block answers it, so the
+   two sit closer together than the intro would to anything else. */
+.why__section-text:has(+ .injection) {
+  margin-bottom: var(--space-6);
+}
+
+/* Injection system — the answer to "why not just the filters?". An
+   orange rule marks it as the point of the section without making it
+   a second heading band. */
+.injection {
+  max-width: var(--measure);
+  margin: 0 0 var(--space-10);
+  padding: var(--space-6);
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-brand-orange);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+}
+
+.injection__heading {
+  font-size: var(--text-xl);
+  color: var(--color-brand-blue);
+  margin: 0 0 var(--space-2);
+}
+
+.injection__text {
+  margin: 0;
+  color: var(--color-text-mid);
+  font-size: var(--text-md);
+  line-height: var(--leading-loose);
+}
+
 .why__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
