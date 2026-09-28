@@ -240,6 +240,13 @@
   background-image: url('../../images/tech2.jpeg');
 }
 
+/* One review under the benefit cards, capped at the reading measure
+   so a single card does not stretch across the whole column. */
+.why__review {
+  max-width: var(--measure);
+  margin-top: var(--space-10);
+}
+
 /* ── Services preview (home — 3 cards) ───────────────────── */
 .services-preview__grid {
   display: grid;
