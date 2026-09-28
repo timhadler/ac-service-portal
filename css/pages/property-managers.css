@@ -201,6 +201,15 @@
   margin-bottom: var(--space-2);
 }
 
+/* The hero's route to the published pricing. Ghost and one step
+   smaller than the submit, so the orange button stays the action.
+   Narrower side padding keeps the label on one line in the 360px card. */
+.pm-form-card__pricing {
+  font-size: var(--text-sm);
+  padding-inline: var(--space-4);
+  margin: var(--space-2) 0 var(--space-4);
+}
+
 .pm-form-card__intro {
   font-size: var(--text-sm);
   color: var(--color-text-mid);
@@ -510,6 +519,73 @@
 }
 
 .pm-panel__foot a {
+  color: var(--color-brand-sky-light);
+  font-weight: var(--weight-semi);
+}
+
+/* ── Two-part rate, top of the pricing panel ────────────────────
+   The standard rate is the one number on the page, so it gets the
+   display face at --text-3xl; the off-peak half is a phrase, not a
+   figure, and stays small. auto-fit puts the halves side by side when
+   the panel is wide enough and stacks them when it is not, without a
+   rule of its own at each breakpoint. */
+.pm-rate {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+}
+
+.pm-rate__name {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semi);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-brand-sky-light);
+  margin: 0 0 var(--space-2);
+}
+
+.pm-rate__figure {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-white);
+  margin: 0 0 var(--space-3);
+}
+
+.pm-rate__figure--text {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semi);
+}
+
+.pm-rate__unit {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.pm-rate__desc {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+.pm-rate__desc strong {
+  color: var(--color-white);
+}
+
+.pm-rate__desc a {
   color: var(--color-brand-sky-light);
   font-weight: var(--weight-semi);
 }

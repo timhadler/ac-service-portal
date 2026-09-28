@@ -109,9 +109,12 @@ structured_data: <<
           <!-- STEP ONE — the capture -->
           <div id="pm-step-1">
             <h2 class="pm-form-card__title">Request a portfolio programme</h2>
+            <a href="#pm-pricing" class="btn btn--ghost pm-form-card__pricing">
+              Check our pricing structure &darr;
+            </a>
             <p class="pm-form-card__intro">
               Two fields. We&rsquo;ll come back to you within 2 business days
-              with a schedule and a per-unit rate for your portfolio.
+              with a schedule and our current rates.
             </p>
 
             <form id="pm-form-lead"
@@ -172,8 +175,8 @@ structured_data: <<
             </div>
 
             <p class="pm-form__step-label">
-              While you&rsquo;re here, three optional questions. They help us come
-              back with a real rate for your portfolio, not a generic quote.
+              While you&rsquo;re here, three optional questions. They help us plan
+              a schedule around your portfolio.
             </p>
 
             <form id="pm-form-detail"
@@ -678,16 +681,19 @@ structured_data: <<
 
     <!-- ══════════════════════════════════════════════════════
          SCOPE AND PRICING MODEL
-         The structure is published; the rates are not.
+         The standard rate is published; the off-peak rate is not. The
+         figure is standard_price from src/site.vars, not price_deep_clean:
+         the copy labels it the May–September standard rate, and
+         price_deep_clean switches to the off-peak price in the quiet
+         season. The id is the target of the hero's pricing button.
     ═══════════════════════════════════════════════════════ -->
-    <section class="section section--soft" aria-labelledby="pm-scope-heading">
+    <section class="section section--soft" id="pm-pricing" aria-labelledby="pm-scope-heading">
       <div class="section-inner">
 
         <span class="label">Scope and pricing</span>
         <h2 id="pm-scope-heading">What&rsquo;s covered, and how it&rsquo;s priced</h2>
         <p class="section-intro">
-          We publish the pricing structure rather than a rate card, because the
-          number depends on your portfolio. The structure doesn&rsquo;t.
+          One standard price, and a lower rate when you schedule off-peak.
         </p>
 
         <div class="pm-scope__grid">
@@ -790,49 +796,75 @@ structured_data: <<
           <!-- Pricing structure -->
           <div class="pm-panel pm-panel--accent">
             <h3 class="pm-panel__title">How pricing works</h3>
+
+            <!-- Two-part rate. The figure is labelled a standard rate, never
+                 "from": it is the most a programme pays, not the least. -->
+            <div class="pm-rate">
+              <div class="pm-rate__part">
+                <p class="pm-rate__name">The Deep Clean</p>
+                <p class="pm-rate__figure">
+                  ${{ standard_price }}
+                  <span class="pm-rate__unit">per heat pump</span>
+                </p>
+                <p class="pm-rate__desc">
+                  <strong>Standard rate, May to September.</strong> Our standard
+                  public price, and the most you&rsquo;ll pay for a Deep Clean on
+                  a programme.
+                </p>
+              </div>
+              <div class="pm-rate__part pm-rate__part--alt">
+                <p class="pm-rate__name">Off-peak, October to April</p>
+                <p class="pm-rate__figure pm-rate__figure--text">Lower rate</p>
+                <p class="pm-rate__desc">
+                  Ask us for the current off-peak rate.
+                  <a href="#pm-form">Get the off-peak rate &rarr;</a>
+                </p>
+              </div>
+            </div>
+
             <ul class="pm-price" role="list">
 
               <li class="pm-price__item">
-                <h4 class="pm-price__term">Fixed per unit</h4>
+                <h4 class="pm-price__term">Two fixed rates per heat pump</h4>
                 <p class="pm-price__desc">
-                  One agreed rate per heat pump, set at the start of the
-                  programme. No per-job quoting, no surprises on the invoice.
+                  An off-peak rate and a standard rate, agreed when we set up your
+                  programme and reviewed annually. No per-job quoting.
                 </p>
               </li>
 
               <li class="pm-price__item">
-                <h4 class="pm-price__term">Volume tiers by portfolio size</h4>
+                <h4 class="pm-price__term">Committed batches, discounted</h4>
                 <p class="pm-price__desc">
-                  The per-unit rate steps down as the portfolio grows. Multiple
-                  units at the same address are discounted again, since
+                  Commit a large batch of upcoming jobs up front and we can
+                  discount the rate for the volume. Ask us when we set up your
+                  programme.
+                </p>
+              </li>
+
+              <li class="pm-price__item">
+                <h4 class="pm-price__term">Multiple units, one visit</h4>
+                <p class="pm-price__desc">
+                  Additional heat pumps at the same address are discounted, since
                   they&rsquo;re one visit.
-                </p>
-              </li>
-
-              <li class="pm-price__item">
-                <h4 class="pm-price__term">Off-peak scheduling, lower rate</h4>
-                <p class="pm-price__desc">
-                  Programmes scheduled October to April attract a lower rate
-                  than the May&ndash;September winter peak. You get the faster
-                  turnaround with it.
                 </p>
               </li>
 
               <li class="pm-price__item">
                 <h4 class="pm-price__term">Add-ons, your call</h4>
                 <p class="pm-price__desc">
-                  Most agencies have us apply recommended upgrades automatically
-                  and bill them with the job. It cuts down the back-and-forth. If
-                  you&rsquo;d rather approve each one, we&rsquo;ll quote and wait for
-                  your word.
+                  Upgrades are only recommended where a unit needs them. When we
+                  set up your agreement, you choose: we apply recommended upgrades
+                  and bill them with the job, or we quote and wait for your
+                  approval each time.
                 </p>
               </li>
 
             </ul>
 
             <p class="pm-panel__foot">
-              No minimum portfolio size. For a rate against your specific
-              portfolio, <a href="#pm-form">send us two fields</a> or call Ros
+              No minimum portfolio size. Existing agency rates stay as agreed
+              until your programme renews. To set up a programme,
+              <a href="#pm-form">send us two fields</a> or call Ros
               on <a href="tel:0800247227">0800 247 227</a>.
             </p>
           </div>
@@ -913,6 +945,25 @@ structured_data: <<
         </p>
 
         <div class="faq">
+
+          <details class="faq__item">
+            <summary class="faq__q">
+              What does it cost?
+              <svg class="faq__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p class="faq__a">
+              ${{ standard_price }} per heat pump from May to
+              September, our standard price. Programmes scheduled October to April
+              get a lower off-peak rate &mdash; ask us for the current rate.
+              Additional heat pumps at the same address are discounted, and a
+              large batch of upcoming jobs committed up front can be discounted
+              for the volume. Add-ons are extra, and only where a unit needs
+              them. Existing agency rates stay as agreed until your programme
+              renews.
+            </p>
+          </details>
 
           <details class="faq__item">
             <summary class="faq__q">
@@ -1037,11 +1088,10 @@ structured_data: <<
               </svg>
             </summary>
             <p class="faq__a">
-              You do, once, at the start. Most agencies have us apply recommended
-              upgrades automatically and bill them with the job, because
-              approving each one individually is exactly the admin they came to
-              us to avoid. If you&rsquo;d rather keep a closer eye on costs,
-              we&rsquo;ll quote and wait for your approval every time.
+              You do, once, when we set up your agreement. Either we apply
+              recommended upgrades and bill them with the job, or we quote and
+              wait for your approval each time. Upgrades are only ever
+              recommended where a unit actually needs them.
             </p>
           </details>
 
@@ -1087,8 +1137,8 @@ structured_data: <<
         <h2 id="pm-cta-heading">Put your portfolio on a programme</h2>
         <p>
           Two fields to start. We&rsquo;ll come back within 2 business days with
-          a programme built around your inspection cycle and a fixed per-unit rate for
-          your portfolio.
+          a programme built around your inspection cycle and our current
+          per-unit rates.
         </p>
         <div class="cta-block__actions">
           <a href="#pm-form" class="btn btn--primary">Request a portfolio programme</a>
