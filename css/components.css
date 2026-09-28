@@ -516,6 +516,15 @@
   margin-bottom: var(--space-5);
 }
 
+/* Netlify honeypot, shared by every form. A real field to a bot and
+   invisible to everyone else; it must not be display:none or some bots
+   skip it. */
+.form-hp {
+  position: absolute;
+  left: -5000px;
+  opacity: 0;
+}
+
 /* Two form-groups side by side — names, etc. */
 .form-row {
   display: grid;

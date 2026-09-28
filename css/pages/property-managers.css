@@ -274,14 +274,6 @@
   color: var(--color-brand-blue);
 }
 
-/* The honeypot is a real field to a bot and invisible to everyone
-   else; it must not be display:none or some bots skip it. */
-.pm-form__hp {
-  position: absolute;
-  left: -5000px;
-  opacity: 0;
-}
-
 /* ── Their problem ────────────────────────────────────────── */
 .pm-problem__grid {
   display: grid;
