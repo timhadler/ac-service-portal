@@ -18,6 +18,21 @@ Three constructs, and no more. Do not add a fourth.
 
 There are no loops, no conditionals and no slots, deliberately. If you need a
 conditional, add a second partial or a variable group in src/site.vars.
+
+Variable groups are applied two ways:
+
+  use: a.b, c.d       a page opts in to [a.b] and [c.d] from its front matter.
+  switch groups       [key.value] applies to EVERY page when the site-level
+                      `key` equals `value`; [key.none] applies when it is empty.
+                      This is how the season is set once for the whole site.
+                      A switch group may list `require: k1, k2` — site keys
+                      that must be non-empty while it is active — and a key
+                      that has switch groups but matches none of them is an
+                      error. Both fail the build, the hook and the deploy.
+                      A key with only a [key.none] group is optional: any
+                      real value selects nothing, empty selects the fallback.
+
+Precedence, lowest first: site, switch groups, use: groups, front matter.
 """
 
 import re
@@ -92,8 +107,36 @@ def substitute(text, scope):
     raise SystemExit('variable substitution did not settle — check for a cycle')
 
 
+def switch_groups(site):
+    """The [key.value] groups selected by site-level values. Fails loudly on
+    a value no group matches, or on an active group's missing requirement."""
+    base = {k: v for k, v in site.items() if '.' not in k}
+    groups = {k.split('.')[0] for k in site if '.' in k}
+    chosen = {}
+    for key, val in base.items():
+        if key not in groups:
+            continue
+        g = f"{key}.{val or 'none'}"
+        hits = {k[len(g) + 1:]: v for k, v in site.items() if k.startswith(g + '.')}
+        options = sorted({k.split('.')[1] for k in site if k.startswith(key + '.')})
+        if not hits and options == ['none'] and val:
+            continue    # only a [key.none] fallback: any real value is fine
+        if not hits:
+            raise SystemExit(f'site.vars: {key}: {val!r} matches no [{key}.*] group '
+                             f'(expected one of: {", ".join(options)})')
+        need = [k.strip() for k in hits.pop('require', '').split(',') if k.strip()]
+        missing = [k for k in need if not base.get(k)]
+        if missing:
+            raise SystemExit(f'site.vars: {key}: {val} requires {", ".join(missing)}, '
+                             f'which {"is" if len(missing) == 1 else "are"} empty. '
+                             f'Nothing was built.')
+        chosen.update(hits)
+    return chosen
+
+
 def build():
     site = parse_vars((SRC / 'site.vars').read_text(encoding='utf-8'), 'site.vars')
+    switched = switch_groups(site)
     out, sitemap = {}, []
 
     for src in sorted(PAGES.glob('*.html')):
@@ -104,6 +147,7 @@ def build():
         fm = parse_vars(m.group(1), src.name)
 
         scope = {k: v for k, v in site.items() if '.' not in k}
+        scope.update(switched)
         for g in (g.strip() for g in fm.pop('use', '').split(',') if g.strip()):
             hits = {k[len(g) + 1:]: v for k, v in site.items()
                     if k.startswith(g + '.')}
