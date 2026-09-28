@@ -1,4 +1,13 @@
 {{ page_scripts }}
+<script>
+  window.AIRCARE_ANALYTICS = {
+    ga4Id: '{{ ga4_id }}',
+    adsId: '{{ ads_conversion_id }}',
+    adsLabel: '{{ ads_conversion_label }}',
+    bookingUrl: '{{ booking_url }}'
+  };
+</script>
+<script src="./js/analytics.js" defer></script>
 
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();

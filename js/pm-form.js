@@ -67,6 +67,8 @@
 
     post(leadForm, btn, 'Request a portfolio programme →')
       .then(function () {
+        // Step one is the lead; counted by analytics.js (inert until IDs are set)
+        document.dispatchEvent(new CustomEvent('aircare:lead', { detail: { form: 'property-managers' } }));
         carryOverToStepTwo();
         showStepTwo();
       })

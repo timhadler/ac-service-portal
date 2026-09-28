@@ -165,6 +165,8 @@
   function showSuccess() {
     form.hidden    = true;
     success.hidden = false;
+    // Counted as a lead by analytics.js (inert until IDs are set)
+    document.dispatchEvent(new CustomEvent('aircare:lead', { detail: { form: 'callback' } }));
 
     // Move focus into the success block so screen readers announce it
     success.setAttribute('tabindex', '-1');
