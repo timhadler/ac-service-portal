@@ -66,6 +66,16 @@
   margin-top: var(--space-2);
 }
 
+/* A reassurance line under a card's description, set apart from the
+   description itself so it reads as a promise rather than more detail. */
+.service-card__note {
+  margin: calc(-1 * var(--space-2)) 0 var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-brand-blue);
+  line-height: var(--leading-snug);
+}
+
 /* ── Feature list inside a service card ───────────────────── */
 .service-card__features {
   list-style: none;
