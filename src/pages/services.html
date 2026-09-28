@@ -10,7 +10,6 @@ page_css:     services
 
 page_scripts: <<
 <script src="./js/navigation.js" defer></script>
-<script src="./js/prices.js"></script>
 <<
 @-->
 <!-- include: head.html -->
@@ -56,10 +55,10 @@ page_scripts: <<
                     <li>Indoor and outdoor unit cleaned</li>
                     <li>Coil sanitisation and pressure washed</li>
                     <li>Performance and temperature testing</li>
-                    <li>Additional units: <span data-price="deepCleanAdditional"></span> each</li>
+                    <li>Additional units: ${{ price_deep_clean_additional }} each</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price" data-price="deepClean"></span>
+                    <span class="service-card__price">${{ price_deep_clean }}</span>
                     <span class="service-card__duration">typically 30-45 mins</span>
                 </div>
             </article>
@@ -84,7 +83,7 @@ page_scripts: <<
                     <li>Supports healthier indoor air quality</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price" data-price="deepCleanPlus"></span>
+                    <span class="service-card__price">${{ price_deep_clean_plus }}</span>
                     <span class="service-card__duration">Up to 1 hour</span>
                 </div>
             </article>
@@ -108,7 +107,7 @@ page_scripts: <<
                     <li>Musty odours at the source</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price" data-price="mouldMaster"></span>
+                    <span class="service-card__price">${{ price_mould_master }}</span>
                     <span class="service-card__duration">Up to 2 hours</span>
                 </div>
             </article>
@@ -131,7 +130,7 @@ page_scripts: <<
                     <li>Supply vents cleaned</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price" data-price="ductDevil"></span>
+                    <span class="service-card__price">${{ price_duct_devil }}</span>
                     <span class="service-card__duration">1 hour</span>
                 </div>
             </article>
@@ -155,7 +154,7 @@ page_scripts: <<
                     <li>Call Ros directly for a quote: 0800 247 227</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price" data-price="commercial"></span>
+                    <span class="service-card__price">From ${{ price_commercial_from }}</span>
                     <span class="service-card__duration">Call for quote</span>
                 </div>
             </article>
@@ -187,11 +186,11 @@ page_scripts: <<
                 <ul class="service-card__features" role="list">
                     <li>Removes dust, mould spores and bacteria</li>
                     <li>Recommended every 2 years</li>
-                    <li>First filter: <span data-price="HRVFilter"></span></li>
-                    <li>Additional filters: <span data-price="HRVAdditional"></span></li>
+                    <li>First filter: ${{ price_hrv_filter }}</li>
+                    <li>Additional filters: ${{ price_hrv_additional }}</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price">From <span data-price="HRVFilter"></span></span>
+                    <span class="service-card__price">From ${{ price_hrv_filter }}</span>
                     <span class="service-card__duration">Quick visit</span>
                 </div>
             </article>
@@ -211,11 +210,11 @@ page_scripts: <<
                 <ul class="service-card__features" role="list">
                     <li>No roof-space hassle for you</li>
                     <li>Saves energy and keeps you cosy year-round</li>
-                    <li>First filter: <span data-price="DVSFilter"></span></li>
-                    <li>Additional filters: <span data-price="DVSAdditional"></span></li>
+                    <li>First filter: ${{ price_dvs_filter }}</li>
+                    <li>Additional filters: ${{ price_dvs_additional }}</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price">From <span data-price="DVSFilter"></span></span>
+                    <span class="service-card__price">From ${{ price_dvs_filter }}</span>
                     <span class="service-card__duration">Quick visit</span>
                 </div>
             </article>
@@ -237,7 +236,7 @@ page_scripts: <<
                     <li>Recommended every 1–2 years</li>
                 </ul>
                 <div class="service-card__footer">
-                    <span class="service-card__price" data-price="smartVentFilter"></span>
+                    <span class="service-card__price">${{ price_smart_vent_filter }}</span>
                     <span class="service-card__duration">Quick visit</span>
                 </div>
             </article>
@@ -257,11 +256,11 @@ page_scripts: <<
                 </p>
                 <ul class="service-card__features" role="list">
                 <li>Recommended every 2 years</li>
-                <li>First filter: <span data-price="betterVentFilter"></span></li>
-                <li>Additional filters: <span data-price="betterVentAdditional"></span></li>
+                <li>First filter: ${{ price_better_vent_filter }}</li>
+                <li>Additional filters: ${{ price_better_vent_additional }}</li>
                 </ul>
                 <div class="service-card__footer">
-                <span class="service-card__price">From <span data-price="betterVentFilter"></span></span>
+                <span class="service-card__price">From ${{ price_better_vent_filter }}</span>
                 <span class="service-card__duration">Quick visit</span>
                 </div>
             </article>
@@ -321,7 +320,7 @@ page_scripts: <<
                             <li>No unnecessary upselling</li>
                         </ul>
                         <div class="service-card__footer">
-                            <span class="service-card__price" data-price="emergency"></span>
+                            <span class="service-card__price">${{ price_emergency }}</span>
                             <span class="service-card__duration">1 hour</span>
                         </div>
                     </article>
