@@ -39,6 +39,22 @@
   flex-shrink: 0;
 }
 
+/* A linked trust item (the Google rating, the injection anchor) keeps the
+   bar's colour and signals the link with an underline, not a new hue. */
+.trust-item a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color var(--transition-fast), color var(--transition-fast);
+}
+
+.trust-item a:hover {
+  color: var(--color-white);
+  text-decoration-color: currentColor;
+  opacity: 1;
+}
+
 /* ── Service cards ────────────────────────────────────────── */
 .service-card {
   background: var(--color-surface-white);

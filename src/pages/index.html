@@ -55,31 +55,32 @@ page_scripts:    <<
             <div class="hero__inner">
             <div class="hero__copy">
                 <h1 class="hero__heading" id="hero-heading">
-                    <span class="hero__heading-line">Healthy heat pump,</span>
-                    <span class="hero__heading-line hero__heading-line--accent">happy home.</span>
+                    <span class="hero__heading-line">Heat pump cleaning in Christchurch,</span>
+                    <span class="hero__heading-line hero__heading-line--accent">done properly.</span>
                 </h1>
-                <p class="hero__subtext">Professional heat pump cleaning from a local Kiwi family.</p>
+                <p class="hero__subtext">${{ price_deep_clean }} per heat pump, fixed price. Indoor and outdoor units.</p>
 
                 <div class="hero__actions">
                     <a href="{{ booking_url }}"
                         class="btn btn--primary"
                         target="_blank"
                         rel="noopener">
-                        Book Online
+                        Book online
                     </a>
 
-                    <a href="tel:0800247227" class="hero__phone">
+                    <a href="{{ phone_href }}" class="hero__phone" aria-label="Call Ros free, {{ phone }}">
                         <span class="hero__phone-icon" aria-hidden="true">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                 <path d="M3 2h3l1.5 3.5-1.5 1A9 9 0 009.5 10.5l1-1.5L14 10.5V13a1 1 0 01-1 1C6.268 14 2 9.732 2 3a1 1 0 011-1z" fill="currentColor"/>
                             </svg>
                         </span>
                         <span class="hero__phone-text">
-                            <span class="hero__phone-label">Call us free</span>
-                            <span class="hero__phone-number">0800 247 227</span>
+                            <span class="hero__phone-label">Call Ros free</span>
+                            <span class="hero__phone-number">{{ phone }}</span>
                         </span>
                     </a>
                 </div>
+                <p class="hero__note">Pick your own time online. Takes two minutes.</p>
             </div>
 
             <div class="hero__figure">

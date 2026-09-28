@@ -95,6 +95,13 @@
   flex-wrap: wrap;
 }
 
+/* Reassurance under the two actions: why online is the easy route */
+.hero__note {
+  margin: var(--space-4) 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-sm);
+}
+
 /* Phone pill — the one white shape in the blue field, so the second
    way to get in touch reads as clearly as the orange button. It takes
    the same --control-height as .btn so the two sit as a matched pair;
