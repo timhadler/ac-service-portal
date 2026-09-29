@@ -524,11 +524,10 @@
 }
 
 /* ── Two-part rate, top of the pricing panel ────────────────────
-   The standard rate is the one number on the page, so it gets the
-   display face at --text-3xl; the off-peak half is a phrase, not a
-   figure, and stays small. auto-fit puts the halves side by side when
-   the panel is wide enough and stacks them when it is not, without a
-   rule of its own at each breakpoint. */
+   Both rates are published figures, so both halves get the display
+   face at --text-3xl and read as a matched pair. auto-fit puts the
+   halves side by side when the panel is wide enough and stacks them
+   when it is not, without a rule of its own at each breakpoint. */
 .pm-rate {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
@@ -560,11 +559,6 @@
   line-height: var(--leading-tight);
   color: var(--color-white);
   margin: 0 0 var(--space-3);
-}
-
-.pm-rate__figure--text {
-  font-size: var(--text-lg);
-  font-weight: var(--weight-semi);
 }
 
 .pm-rate__unit {
