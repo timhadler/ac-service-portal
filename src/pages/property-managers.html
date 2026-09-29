@@ -499,9 +499,9 @@ structured_data: <<
               Typical Turnaround
             </div>
             <p class="pm-fact__text">
-              <strong>Within 1 week</strong> from work order, October to April.
-              <strong>Within 2 weeks</strong> May to September, when winter demand
-              peaks. Book the portfolio off-peak and you get both: the faster
+              <strong>Within 1 week</strong> from work order, {{ off_peak_months }}.
+              <strong>Within 2 weeks</strong> {{ standard_months }}, through the
+              winter peak. Book the portfolio off-peak and you get both: the faster
               turnaround and the lower rate.
             </p>
           </div>
@@ -682,11 +682,10 @@ structured_data: <<
 
     <!-- ══════════════════════════════════════════════════════
          SCOPE AND PRICING MODEL
-         The standard rate is published; the off-peak rate is not. The
-         figure is standard_price from src/site.vars, not price_deep_clean:
-         the copy labels it the May–September standard rate, and
-         price_deep_clean switches to the off-peak price in the quiet
-         season. The id is the target of the hero's pricing button.
+         Both rates are fixed figures, standard_price and off_peak_price
+         from src/site.vars, never price_deep_clean: the card shows both
+         all year, and price_deep_clean switches with the season. The
+         months are standard_months and off_peak_months. The id is the target of the hero's pricing button.
     ═══════════════════════════════════════════════════════ -->
     <section class="section section--soft" id="pm-pricing" aria-labelledby="pm-scope-heading">
       <div class="section-inner">
@@ -808,13 +807,13 @@ structured_data: <<
                   <span class="pm-rate__unit">per heat pump</span>
                 </p>
                 <p class="pm-rate__desc">
-                  <strong>Standard rate, May to September.</strong> Our standard
+                  <strong>Standard rate, {{ standard_months }}.</strong> Our standard
                   public price, and the most you&rsquo;ll pay for a Deep Clean on
                   a programme.
                 </p>
               </div>
               <div class="pm-rate__part pm-rate__part--alt">
-                <p class="pm-rate__name">Off-peak, October to April</p>
+                <p class="pm-rate__name">Off-peak, {{ off_peak_months }}</p>
                 <p class="pm-rate__figure pm-rate__figure--text">Lower rate</p>
                 <p class="pm-rate__desc">
                   Ask us for the current off-peak rate.
@@ -946,8 +945,8 @@ structured_data: <<
               </svg>
             </summary>
             <p class="faq__a">
-              ${{ standard_price }} per heat pump from May to
-              September, our standard price. Programmes scheduled October to April
+              ${{ standard_price }} per heat pump from {{ standard_months }},
+              our standard price. Programmes scheduled {{ off_peak_months }}
               get a lower off-peak rate &mdash; ask us for the current rate.
               Additional heat pumps at the same address are discounted. Add-ons
               are extra, and only where a unit needs them. Existing agency rates stay as agreed until your programme
@@ -996,8 +995,8 @@ structured_data: <<
               </svg>
             </summary>
             <p class="faq__a">
-              Typically within a week from October to April. Within two weeks from May
-              to September, when everyone remembers their heat pump at once. Schedule
+              Typically within a week from {{ off_peak_months }}. Within two weeks from
+              {{ standard_months }}, when everyone remembers their heat pump at once. Schedule
               the programme in the quiet season and you get both: the faster
               turnaround and the lower rate.
             </p>
