@@ -474,6 +474,29 @@
   }
 }
 
+/* Touch-sized footer links. At desktop spacing each link was an 18px-tall
+   target — fine for a mouse, a miss-tap on a phone, and the footer is
+   where a visitor who scrolled the whole page looks for the phone
+   number. Keyed on the pointer as well as the width, so a tablet held
+   landscape (wider than 860px) gets them too. The list gap folds into
+   the row height, so the rhythm reads the same, just taller. */
+@media (max-width: 860px), (pointer: coarse) {
+  .footer__col ul {
+    gap: 0;
+  }
+
+  .footer__col a,
+  .footer__contact-item a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .footer__contact-item {
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: 540px) {
   .footer__top {
     grid-template-columns: 1fr;

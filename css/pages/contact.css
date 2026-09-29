@@ -73,7 +73,14 @@
   line-height: var(--leading-snug);
 }
 
+/* The phone and email are this page's main tap targets. Padding with a
+   matching negative margin grows the hit area to ~46px tall without
+   moving a pixel of the layout; the rows are far enough apart that the
+   enlarged areas never overlap. */
 .contact-detail__value a {
+  display: inline-block;
+  padding: var(--space-3) 0;
+  margin: calc(var(--space-3) * -1) 0;
   color: inherit;
   transition: color var(--transition-fast);
 }
