@@ -84,7 +84,7 @@
 <div class="site-wrapper has-sticky-cta">
 
     <header class="site-header">
-        <nav class="nav" aria-label="Main navigation">
+        <nav class="nav" aria-label="Main navigation" data-track-location="nav-desktop">
             <a href="index.html" class="nav__logo" aria-label="AirCare — home">
                 <img class="nav__logo-img" src="images/logo-wordmark.webp" alt="AirCare" width="1119" height="442">
             </a>
@@ -114,7 +114,7 @@
             </button>
         </nav>
 
-        <ul class="nav__mobile" id="nav-mobile" role="list">
+        <ul class="nav__mobile" id="nav-mobile" role="list" data-track-location="nav-mobile">
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="property-managers.html">Property managers</a></li>
@@ -136,7 +136,7 @@
          on desktop; on mobile it stacks and the sticky bar carries
          the CTA instead.
     ═══════════════════════════════════════════════════════ -->
-    <section class="pm-hero" aria-labelledby="pm-hero-heading">
+    <section class="pm-hero" aria-labelledby="pm-hero-heading" data-track-location="hero">
       <div class="pm-hero__inner">
 
         <div class="pm-hero__copy">
@@ -329,7 +329,7 @@
           </div>
 
           <!-- FINAL STATE — after step two, or after skipping it -->
-          <div class="form-success" id="pm-form-success" hidden>
+          <div class="form-success" id="pm-form-success" data-track-location="form-success" hidden>
             <div class="form-success__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -351,7 +351,7 @@
           </article>
 
             <!-- Closes every review block on the site. -->
-            <p class="reviews-more">
+            <p class="reviews-more" data-track-location="reviews">
                 <a class="reviews-more__link" href="https://search.google.com/local/reviews?placeid=ChIJ9-wXl9VKqUQROkkH3KQw9wE" target="_blank" rel="noopener">Read all reviews on Google<span class="sr-only"> (opens in a new tab)</span></a>
             </p>
         </div><!-- /.pm-hero__form-col -->
@@ -367,7 +367,7 @@
          hub and property managers. Same markup, different claims,
          because the two audiences are buying on different things.
     ════════════════════════════════════════════════════ -->
-    <div class="trust-bar" aria-label="Key trust signals">
+    <div class="trust-bar" aria-label="Key trust signals" data-track-location="trust-bar">
       <div class="trust-bar__inner">
 
         <div class="trust-item">
@@ -718,7 +718,7 @@
         </div>
 
             <!-- Closes every review block on the site. -->
-            <p class="reviews-more">
+            <p class="reviews-more" data-track-location="reviews">
                 <a class="reviews-more__link" href="https://search.google.com/local/reviews?placeid=ChIJ9-wXl9VKqUQROkkH3KQw9wE" target="_blank" rel="noopener">Read all reviews on Google<span class="sr-only"> (opens in a new tab)</span></a>
             </p>
       </div>
@@ -839,7 +839,7 @@
          all year, and price_deep_clean switches with the season. The
          months are standard_months and off_peak_months. The id is the target of the hero's pricing button.
     ═══════════════════════════════════════════════════════ -->
-    <section class="section section--soft" id="pm-pricing" aria-labelledby="pm-scope-heading">
+    <section class="section section--soft" id="pm-pricing" aria-labelledby="pm-scope-heading" data-track-location="pricing">
       <div class="section-inner">
 
         <span class="label">Scope and pricing</span>
@@ -1036,7 +1036,7 @@
           the tenant. You still have one point of contact.
         </p>
 
-        <div class="pm-exclusions__grid">
+        <div class="pm-exclusions__grid" data-track-location="partners">
 
           <div class="pm-exclusion">
             <div class="pm-exclusion__icon" aria-hidden="true">
@@ -1286,7 +1286,7 @@
           a programme built around your inspection cycle and our current
           per-unit rates.
         </p>
-        <div class="cta-block__actions">
+        <div class="cta-block__actions" data-track-location="final-cta">
           <a href="#pm-form" class="btn btn--primary">Request a portfolio programme</a>
           <a href="tel:0800247227" class="btn btn--blue">Call Ros &mdash; 0800 247 227</a>
         </div>
@@ -1298,7 +1298,7 @@
   <!-- ══════════════════════════════════════════════════════
        FOOTER
   ═══════════════════════════════════════════════════════ -->
-    <footer class="site-footer">
+    <footer class="site-footer" data-track-location="footer">
         <div class="footer__inner">
         <div class="footer__top">
 
@@ -1358,7 +1358,7 @@
      a phone between inspections; the serious evaluation happens
      on a desktop.
 ═══════════════════════════════════════════════════════ -->
-<div class="sticky-cta">
+<div class="sticky-cta" data-track-location="sticky-cta">
   <a href="#pm-form" class="btn btn--primary">Request a programme</a>
   <a href="tel:0800247227" class="btn btn--blue">Call Ros</a>
 </div>
