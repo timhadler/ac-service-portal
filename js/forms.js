@@ -24,13 +24,15 @@
  *
  * ── Testing locally ────────────────────────────────────────────────
  * Netlify Forms only processes on Netlify infrastructure, not locally.
- * While developing locally, submissions will hit the catch() block.
- * To test the success flow locally, temporarily uncomment the two
- * lines marked below inside submitForm().
+ * LOCAL_TESTING below short-circuits the fetch. Set it to false before
+ * deploy.
  */
 
 (function () {
   'use strict';
+
+  // ── Set to false before deploying to Netlify ──────────────────
+  var LOCAL_TESTING = true;
 
   var form    = document.getElementById('contact-form');
   var success = document.getElementById('form-success');
@@ -49,9 +51,10 @@
   // ── Submission ─────────────────────────────────────────────────
   function submitForm() {
 
-    // ── Local testing: uncomment these two lines to skip the fetch ──
-    showSuccess();
-    return;
+    if (LOCAL_TESTING) {
+      showSuccess();
+      return;
+    }
 
     var submitBtn = form.querySelector('[type="submit"]');
     setSubmitting(submitBtn, true);
@@ -179,8 +182,10 @@
   function showSuccess() {
     form.hidden    = true;
     success.hidden = false;
-    // Counted as a lead by analytics.js (inert until IDs are set)
-    document.dispatchEvent(new CustomEvent('aircare:lead', { detail: { form: 'contact' } }));
+    // Pushed to GTM as generate_lead by analytics.js
+    form.dispatchEvent(new CustomEvent('aircare:lead', {
+      bubbles: true, detail: { form: 'contact', step: 1, test: LOCAL_TESTING }
+    }));
 
     // Move focus into the success block so screen readers announce it
     success.setAttribute('tabindex', '-1');

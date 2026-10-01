@@ -67,8 +67,10 @@
 
     post(leadForm, btn, 'Request a portfolio programme →')
       .then(function () {
-        // Step one is the lead; counted by analytics.js (inert until IDs are set)
-        document.dispatchEvent(new CustomEvent('aircare:lead', { detail: { form: 'property-managers' } }));
+        // Step one is the lead; pushed to GTM as generate_lead by analytics.js
+        leadForm.dispatchEvent(new CustomEvent('aircare:lead', {
+          bubbles: true, detail: { form: 'property-managers', step: 1, test: LOCAL_TESTING }
+        }));
         carryOverToStepTwo();
         showStepTwo();
       })
@@ -88,7 +90,10 @@
     var btn = detForm.querySelector('[type="submit"]');
 
     post(detForm, btn, 'Send these too →')
-      .then(showSuccess)
+      .then(function () {
+        announceDetails('submit');
+        showSuccess();
+      })
       .catch(function () {
         // The lead is already captured, so this failure is not fatal —
         // say so plainly rather than alarming someone who is already
@@ -103,7 +108,20 @@
   // Step two is genuinely optional; skipping goes straight to the
   // same closing state as completing it.
   if (skipBtn) {
-    skipBtn.addEventListener('click', showSuccess);
+    skipBtn.addEventListener('click', function () {
+      announceDetails('skip');
+      showSuccess();
+    });
+  }
+
+  // Step two is not a lead, so it gets its own event, which analytics.js
+  // pushes as lead_details_submit or lead_details_skip. Dispatched from
+  // the two call sites rather than showSuccess, which both share.
+  function announceDetails(action) {
+    detForm.dispatchEvent(new CustomEvent('aircare:lead-details', {
+      bubbles: true,
+      detail: { form: 'property-managers', step: 2, action: action, test: LOCAL_TESTING }
+    }));
   }
 
   // ── Submission ─────────────────────────────────────────────────

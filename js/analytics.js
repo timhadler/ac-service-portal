@@ -1,51 +1,59 @@
 /**
  * analytics.js
  * ────────────
- * GA4 and Google Ads conversion tracking. Included on every page.
+ * Passes form events to Google Tag Manager. Included on every page.
  *
- * The IDs come from site.vars (ga4_id, ads_conversion_id,
- * ads_conversion_label) via window.AIRCARE_ANALYTICS in tail.html.
- * While they are empty this script does nothing: no tag is loaded,
- * no cookie is set, nothing is sent.
+ * GTM (GTM-K83QWL5G, installed in partials/head.html) owns every tag:
+ * GA4, Google Ads and all click tracking. Phone, email and booking
+ * clicks need nothing from this file. GTM's Link Click triggers see
+ * them directly and read the nearest data-track-location for the
+ * section. This file only covers what GTM cannot see for itself: a
+ * form reaching its success state, which the form scripts announce
+ * with a DOM event dispatched on the <form>.
  *
- * What is measured:
- *   - book_click  every click on a link to booking_url. Booking happens
- *                 off-site, so the click is the conversion we can see.
- *                 Also sent as the Ads conversion when both Ads values
- *                 are set.
- *   - generate_lead  a form reaching its success state. The form
- *                 scripts announce this with an "aircare:lead" event.
+ * What is pushed to the dataLayer:
+ *
+ *   event                 when                               form_step
+ *   generate_lead         contact, callback, PM step one     1
+ *   lead_details_submit   PM step two sent                   2
+ *   lead_details_skip     PM "No thanks, I'm done"           2
+ *
+ * Every push carries all four params, so GTM's merged dataLayer state
+ * never leaks a value from an earlier push:
+ *
+ *   form_name       the flow, constant across steps: contact, callback,
+ *                   property-managers. Not the Netlify form name.
+ *   form_step       1 or 2
+ *   track_location  nearest data-track-location around the form, else
+ *                   "untagged"
+ *   test_mode       true while the form's LOCAL_TESTING is on. GTM's
+ *                   lead triggers exclude these, so a short-circuited
+ *                   "success" never counts as a lead.
  */
 
 (function () {
   'use strict';
 
-  var cfg = window.AIRCARE_ANALYTICS || {};
-  var tagId = cfg.ga4Id || cfg.adsId;
-  if (!tagId) return;
-
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(tagId);
-  document.head.appendChild(s);
-
   window.dataLayer = window.dataLayer || [];
-  function gtag() { window.dataLayer.push(arguments); }
-  gtag('js', new Date());
-  if (cfg.ga4Id) gtag('config', cfg.ga4Id);
-  if (cfg.adsId) gtag('config', cfg.adsId);
 
-  document.addEventListener('click', function (e) {
-    var link = e.target.closest && e.target.closest('a[href]');
-    if (!link || !cfg.bookingUrl || link.href.indexOf(cfg.bookingUrl) !== 0) return;
+  function push(event, e) {
+    var d       = e.detail || {};
+    var section = e.target.closest && e.target.closest('[data-track-location]');
 
-    gtag('event', 'book_click', { link_url: link.href });
-    if (cfg.adsId && cfg.adsLabel) {
-      gtag('event', 'conversion', { send_to: cfg.adsId + '/' + cfg.adsLabel });
-    }
-  });
+    window.dataLayer.push({
+      event:          event,
+      form_name:      d.form || '',
+      form_step:      d.step || 1,
+      track_location: section ? section.getAttribute('data-track-location') : 'untagged',
+      test_mode:      d.test === true
+    });
+  }
 
   document.addEventListener('aircare:lead', function (e) {
-    gtag('event', 'generate_lead', { form_name: (e.detail && e.detail.form) || '' });
+    push('generate_lead', e);
+  });
+
+  document.addEventListener('aircare:lead-details', function (e) {
+    push(e.detail && e.detail.action === 'skip' ? 'lead_details_skip' : 'lead_details_submit', e);
   });
 })();
