@@ -58,7 +58,7 @@ page_scripts: <<
                 <div>
                   <div class="contact-detail__label">Phone (free)</div>
                   <div class="contact-detail__value">
-                    <a href="tel:0800247227">0800 247 227</a>
+                    <a href="{{ phone_href }}">{{ phone }}</a>
                   </div>
                 </div>
               </div>
@@ -73,7 +73,7 @@ page_scripts: <<
                 <div>
                   <div class="contact-detail__label">Email</div>
                   <div class="contact-detail__value">
-                    <a href="mailto:ros@aircare.nz">ros@aircare.nz</a>
+                    <a href="{{ email_href }}">{{ email }}</a>
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@ page_scripts: <<
               <h3>Thanks — we&rsquo;ll be in touch!</h3>
               <p>
                 {{ callback_sentence }}<br>
-                Or call us now on <a class="form-success__link" href="tel:0800247227">0800 247 227</a>.
+                Or call us now on <a class="form-success__link" href="{{ phone_href }}">{{ phone }}</a>.
               </p>
             </div>
 
